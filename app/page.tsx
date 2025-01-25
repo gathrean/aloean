@@ -1,24 +1,43 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-forest flex items-center justify-center h-[120px]">
+      <main className="flex-1 flex flex-col items-center justify-center p-8">
         <Image
           src="/AloEan.png"
           alt="AloEan Logo"
-          width={130} 
-          height={130} 
-          priority 
-          unoptimized= {true}
+          width={200}
+          height={200}
+          priority
+          unoptimized={true}
         />
-      </header>
 
-      <main className="flex-1 flex flex-col items-center justify-center p-8">
-        <h1 className="text-4xl font-bold text-gray-800">Hello, World!</h1>
+        <br />
+
+        <h1 className="text-4xl font-bold text-gray-800">AloEan</h1>
+
         <p className="mt-4 text-lg text-gray-600">
-          This is a homepage built with Next.js (app directory) and Tailwind CSS.
+          Choose a game below.
         </p>
+
+        {/* Button Section */}
+        <div className="mt-8 flex flex-col gap-4">
+          <Link href="/html-and-js">
+            <button className="bg-forest text-white p-4 rounded-md w-full">
+              Jumping Milo
+            </button>
+          </Link>
+
+          <button className="bg-forest text-white p-4 rounded-md w-full">
+            Big Back Map
+          </button>
+
+          <button className="bg-forest text-white p-4 rounded-md w-full">
+            Will I See You Again?
+          </button>
+        </div>
       </main>
     </div>
   );
