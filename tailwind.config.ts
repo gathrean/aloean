@@ -11,7 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        forest: '#2E6F40'
+        forest: '#2E6F40',
+        forest_light: '#52B76F'
       },
     },
   },

@@ -18,24 +18,23 @@ export default function Home() {
 
         <h1 className="text-4xl font-bold text-gray-800">AloEan</h1>
 
-        <p className="mt-4 text-lg text-gray-600">
+        <p className="mt-4 text-md text-gray-600">
           Choose a game below.
         </p>
 
-        {/* Button Section */}
         <div className="mt-8 flex flex-col gap-4">
           <Link href="/html-and-js">
-            <button className="bg-forest text-white p-4 rounded-md w-full">
-              Jumping Milo
+            <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
+              🐈‍⬛ Jumping Milo
             </button>
           </Link>
 
-          <button className="bg-forest text-white p-4 rounded-md w-full">
-            Big Back Map
+          <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
+            📍 Big Back Map
           </button>
 
-          <button className="bg-forest text-white p-4 rounded-md w-full">
-            Will I See You Again?
+          <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
+            🌹 Will I See You Again?
           </button>
         </div>
       </main>
