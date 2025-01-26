@@ -12,7 +12,8 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         forest: '#3C9054',
-        forest_light: '#52B76F'
+        forest_light: '#52B76F', 
+        forest_night: '#122B19'
       },
     },
   },
