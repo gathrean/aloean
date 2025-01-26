@@ -3,5 +3,34 @@ body {
 }
 
 #board {
-    background-image: url("./doodlejumpbg.png")
+    background-image: url("./doodlejumpbg.png");
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#controls button {
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#controls button:hover {
+    background-color: #45a049;
+}
+
+html, body, canvas {
+    touch-action: manipulation;
 }

@@ -199,8 +199,64 @@ function updateScore() {
         if (score < maxScore) {
             score = maxScore;
         }
-    } 
+    }
     else if (velocityY >= 0) {
         maxScore -= points;
     }
 }
+
+window.onload = function () {
+    board = document.getElementById("board");
+    board.height = boardHeight;
+    board.width = boardWidth;
+    context = board.getContext("2d"); // used for drawing on the board
+
+    // Load images
+    miloRightImg = new Image();
+    miloRightImg.src = "./milo-right.png";
+    milo.img = miloRightImg;
+    miloRightImg.onload = function () {
+        context.drawImage(milo.img, milo.x, milo.y, milo.width, milo.height);
+    }
+
+    miloLeftImg = new Image();
+    miloLeftImg.src = "./milo-left.png";
+
+    platformImg = new Image();
+    platformImg.src = "./platform.png"
+
+    velocityY = initialVelocityY;
+    placePlatforms();
+    requestAnimationFrame(update);
+    document.addEventListener("keydown", moveMilo);
+
+    // Button event listeners
+    document.getElementById("leftButton").addEventListener("click", () => {
+        simulateKeyPress("ArrowLeft");
+    });
+
+    document.getElementById("rightButton").addEventListener("click", () => {
+        simulateKeyPress("ArrowRight");
+    });
+
+    document.getElementById("spaceButton").addEventListener("click", () => {
+        simulateKeyPress("Space");
+    });
+}
+
+// Simulate key presses
+function simulateKeyPress(key) {
+    const event = new KeyboardEvent("keydown", { code: key });
+    moveMilo(event);
+}
+
+// prevent zooming in through double-tap on mobile
+let lastTouchEnd = 0;
+
+document.addEventListener('touchend', (e) => {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
