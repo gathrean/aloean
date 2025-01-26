@@ -45,19 +45,19 @@ export default function Home() {
 
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white">AloEan</h1>
 
-        <p className="mt-4 text-md text-gray-600 dark:text-gray-400">
-          Choose a game below.
+        <p className="mt-4 text-md text-gray-600 dark:text-gray-300">
+          Choose a game below
         </p>
 
         <div className="mt-8 flex flex-col gap-4">
           <Link href="/html-and-js">
             <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest dark:bg-forest_light dark:hover:bg-forest">
-              🐈‍⬛ Jumping Milo
+              🐈‍⬛ Milo Jump
             </button>
           </Link>
 
           <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest dark:bg-forest_light dark:hover:bg-forest">
-            📍 Big Back Map
+            📍 places to be
           </button>
 
           <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest dark:bg-forest_light dark:hover:bg-forest">
