@@ -6,8 +6,8 @@ let boardHeight = 576;
 let context;
 
 // Milo
-let miloWidth = 46;
-let miloHeight = 46;
+let miloWidth = 46 * 1.75;
+let miloHeight = 46 * 1.75;
 let miloX = boardWidth / 2 - miloWidth / 2;
 let miloY = boardHeight * 7 / 8 - miloHeight;
 let miloRightImg;
@@ -29,8 +29,8 @@ let gravity = 0.3;
 
 // Platforms
 let platformArray = [];
-let platformWidth = 60;
-let platformHeight = 18;
+let platformWidth = 60 * 1.25;
+let platformHeight = 18 * 1.25;
 let platformImg;
 
 // Scores
@@ -82,10 +82,22 @@ function update() {
 
     velocityY += gravity;
     milo.y += velocityY;
+
+    // Keep Milo within bounds
     if (milo.y > board.height) {
         gameOver = true;
     }
     context.drawImage(milo.img, milo.x, milo.y, milo.width, milo.height);
+
+    // Adjust platforms when Milo goes higher than 1/3 of the screen
+    let playerThreshold = boardHeight / 3;
+    if (velocityY < 0 && milo.y < playerThreshold) {
+        let offset = playerThreshold - milo.y;
+        milo.y = playerThreshold; // Lock player position
+        for (let platform of platformArray) {
+            platform.y += offset; // Move platforms down
+        }
+    }
 
     // Platforms
     for (let i = 0; i < platformArray.length; i++) {
@@ -99,9 +111,9 @@ function update() {
         context.drawImage(platform.img, platform.x, platform.y, platform.width, platform.height);
     }
 
-    // clear platforms and add new platforms
+    // Remove old platforms and add new ones
     while (platformArray.length > 0 && platformArray[0].y >= boardHeight) {
-        platformArray.shift(); // Removes first element from the array
+        platformArray.shift();
         newPlatform();
     }
 
@@ -138,7 +150,7 @@ function moveMilo(e) {
         velocityX = 0;
         velocityY = initialVelocityY;
         score = 0;
-        maxScore - 0;
+        maxScore = 0;
         gameOver = false;
         placePlatforms();
     }
