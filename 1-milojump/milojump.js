@@ -1,13 +1,13 @@
 // Board
 // based on the dimensions of background image
 let board;
-let boardWidth = 360 * 2;
-let boardHeight = 576 * 1.25;
+let boardWidth = 360;
+let boardHeight = 576;
 let context;
 
 // Milo
-let miloWidth = 46 * 2;
-let miloHeight = 46 * 2;
+let miloWidth = 46;
+let miloHeight = 46;
 let miloX = boardWidth / 2 - miloWidth / 2;
 let miloY = boardHeight * 7 / 8 - miloHeight;
 let miloRightImg;
@@ -24,13 +24,13 @@ let milo = {
 // Physics
 let velocityX = 0;
 let velocityY = 0;  // Milo jump speed
-let initialVelocityY = -8 * 1.25; // Starting velocity Y
+let initialVelocityY = -8; // Starting velocity Y
 let gravity = 0.3;
 
 // Platforms
 let platformArray = [];
-let platformWidth = 60 * 2;
-let platformHeight = 18 * 2;
+let platformWidth = 60;
+let platformHeight = 18;
 let platformImg;
 
 // Scores
@@ -112,7 +112,7 @@ function update() {
     context.fillText(score, 5, 20);
 
     if (gameOver) {
-        context.fillText("Game Over: Press 'Space' to Restart", boardWidth / 7 * 2, boardHeight * 7 / 8);
+        context.fillText("Game Over: Press 'Space' to Restart", boardWidth / 7, boardHeight * 7 / 8);
     }
 }
 
