@@ -120,10 +120,15 @@ function update() {
     // Score
     updateScore();
     context.fillStyle = "black";
-    context.font = "16px sans-serif";
+
+    // Set font size for the score
+    context.font = "24px sans-serif";
     context.fillText(score, 5, 20);
 
+    // Game Over message
     if (gameOver) {
+        // Set a different font size for the Game Over message
+        context.font = "16px sans-serif";
         context.fillText("Game Over: Press 'Space' to Restart", boardWidth / 7, boardHeight * 7 / 8);
     }
 }
@@ -158,27 +163,29 @@ function moveMilo(e) {
 
 function placePlatforms() {
     platformArray = [];
+    const platformSpacing = 175; // Divide the height into 5 sections
 
-    // Starting Platforms
+    // Starting Platform (at the bottom)
     let platform = {
         img: platformImg,
-        x: boardWidth / 2,
-        y: boardHeight - 50,
+        x: boardWidth / 2 - platformWidth / 2,
+        y: boardHeight - platformHeight,
         width: platformWidth,
         height: platformHeight
-    }
+    };
 
     platformArray.push(platform);
 
-    for (let i = 0; i < 6; i++) {
-        let randomX = Math.floor(Math.random() * boardWidth * 3 / 4); // (0 - 1) * boardWidth * 3 / 4
+    // Additional Platforms
+    for (let i = 1; i <= 4; i++) {
+        let randomX = Math.floor(Math.random() * 0.5 * (boardWidth - platformWidth)); // Ensure the platform fits within the width
         let platform = {
             img: platformImg,
             x: randomX,
-            y: boardHeight - 75 * i - 150,
+            y: boardHeight - platformSpacing * i,
             width: platformWidth,
             height: platformHeight
-        }
+        };
 
         platformArray.push(platform);
     }
@@ -205,7 +212,7 @@ function detectCollision(a, b) {
 }
 
 function updateScore() {
-    let points = Math.floor(50 * Math.random()); // (0-1) * 50 --> (0-50)
+    let points = Math.floor(1.5 * Math.random()); // (0-1) * 50 --> (0-50)
     if (velocityY < 0) { // Negative going up
         maxScore += points;
         if (score < maxScore) {
