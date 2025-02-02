@@ -29,9 +29,9 @@ export default function Valentines() {
     };
 
     return (
-        <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-forest_night">
+        <div className="flex flex-col min-h-screen bg-gray-50">
             <main className="flex-1 flex flex-col items-center justify-center p-8">
-                <h1 className="text-4xl font-bold text-gray-800 dark:text-white">
+                <h1 className="text-4xl font-bold text-gray-800">
                     Will you be my valentine's?
                 </h1>
 
@@ -41,7 +41,7 @@ export default function Valentines() {
                     <img src="/Valentines/cat-begging.gif" alt="Begging cat" />
                 ) : response === 'yes' ? (
                     <>
-                        <h2 className="text-3xl font-bold text-gray-800 dark:text-white">Thank you :)))</h2>
+                        <h2 className="text-3xl font-bold text-gray-800">Thank you :)))</h2>
                         <img src="/Valentines/thank-you-gif.gif" alt="Thank you gif" />
                     </>
                 ) : (
@@ -57,7 +57,7 @@ export default function Valentines() {
                                 setResponse('yes'); // Update the state when "Yes" is clicked
                                 submitResponse('yes'); // Send the response to the backend
                             }}
-                            className="bg-forest_light text-white p-4 rounded-full w-32 hover:bg-forest dark:bg-forest_light dark:hover:bg-forest"
+                            className="bg-forest_light text-white p-4 rounded-full w-32 hover:bg-forest"
                         >
                             Yes
                         </button>
@@ -67,7 +67,7 @@ export default function Valentines() {
                                 setResponse('no'); // Update the state when "No" is clicked
                                 submitResponse('no'); // Send the response to the backend
                             }}
-                            className="bg-forest_light text-white p-4 rounded-full w-32 hover:bg-forest dark:bg-forest_light dark:hover:bg-forest"
+                            className="bg-forest_light text-white p-4 rounded-full w-32 hover:bg-forest"
                         >
                             No
                         </button>
