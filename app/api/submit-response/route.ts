@@ -5,12 +5,14 @@ export async function POST(request: Request) {
     const { response } = await request.json(); // Expecting a 'response' (yes/no) in the body of the request
 
     try {
-        const db = await connectToDatabase();
-        const collection = db.collection('responses'); // This will create a 'responses' collection if it doesn't exist
+        // Pass 'valentines' as the database name
+        const db = await connectToDatabase('valentines');  // Connect to the 'valentines' database
+        const collection = db.collection('responses'); // Use the 'responses' collection
 
+        // Insert the response into the collection
         const result = await collection.insertOne({
-            response, // Insert the response into the collection
-            timestamp: new Date(), // Optional: Store the timestamp when the response was received
+            response, // Insert the response (yes/no)
+            timestamp: new Date(), // Store the timestamp when the response was received
         });
 
         return NextResponse.json({ message: 'Response saved successfully!' });
