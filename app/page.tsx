@@ -50,11 +50,12 @@ export default function Home() {
         </p>
 
         <div className="mt-8 flex flex-col gap-4">
-          <Link href="/html-and-js">
+          <Link href="/MiloJump/index.html">
             <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest dark:bg-forest_light dark:hover:bg-forest">
               🐈‍⬛ Milo Jump
             </button>
           </Link>
+
 
           <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest dark:bg-forest_light dark:hover:bg-forest">
             📍 places to be
@@ -65,7 +66,7 @@ export default function Home() {
           </button>
         </div>
       </main>
-      
+
     </div>
   );
 }

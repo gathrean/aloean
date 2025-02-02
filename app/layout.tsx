@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";  // Ensure the global styles are applied
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AloEan",
