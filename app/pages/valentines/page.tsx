@@ -5,26 +5,26 @@
 import { useState } from 'react';
 
 export default function Valentines() {
-    const [response, setResponse] = useState<string | null>(null); // Store the user's response (Yes or No)
+    const [response, setResponse] = useState<string | null>(null);
 
     const submitResponse = async (response: string) => {
         try {
-            const res = await fetch('/api/submit-response', { // The relative URL for the API route
+            const res = await fetch('/api/valentines/submit-response', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ response }), // Send the response (Yes or No) in the request body
+                body: JSON.stringify({ response }),
             });
 
             if (res.ok) {
                 const data = await res.json();
-                console.log(data.message); // Log the success message
+                console.log(data.message);
             } else {
                 console.error('Error submitting response');
             }
         } catch (error) {
-            console.error('Error:', error); // Handle any network errors
+            console.error('Error:', error); 
         }
     };
 
@@ -55,7 +55,7 @@ export default function Valentines() {
                         <button
                             onClick={() => {
                                 setResponse('yes'); // Update the state when "Yes" is clicked
-                                submitResponse('yes'); // Send the response to the backend
+                                submitResponse('Yes, I will be your Valentine :)'); // Send the response to the backend
                             }}
                             className="bg-forest_light text-white p-4 rounded-full w-32 hover:bg-forest"
                         >
@@ -65,7 +65,7 @@ export default function Valentines() {
                         <button
                             onClick={() => {
                                 setResponse('no'); // Update the state when "No" is clicked
-                                submitResponse('no'); // Send the response to the backend
+                                submitResponse('No, I won\'t be your Valentine :('); // Send the response to the backend
                             }}
                             className="bg-forest_light text-white p-4 rounded-full w-32 hover:bg-forest"
                         >
