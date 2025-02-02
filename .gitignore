@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/valentines-backed/node_modules
 /.pnp
 .pnp.*
 .yarn/*
