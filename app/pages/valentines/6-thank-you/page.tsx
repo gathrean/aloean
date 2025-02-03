@@ -7,18 +7,18 @@ export default function ThankYouPage() {
 
     return (
         <div className="valentines-page">
-            <h1 className="text-4xl font-bold">Thank you for being my girlfriend :)</h1>
+            <h1 className="text-4xl font-bold">THANK YOU FOR BEING MY VALENTINE AND MY GIRLFRIEND :)</h1>
             <img
-                src="/Valentines/flowers.gif"
+                src="/Valentines/red-roses.gif"
                 alt="Thank you flowers gif"
                 className="mt-4 w-64 h-64"
             />
-            <p className="mt-4 text-xl">You are amazing and im so lucky to have you in my life &lt;333</p>
+            <p className="mt-4 text-xl">YOU ARE AMAZING AND I AM SO LUCKY TO HAVE YOU IN MY LIFE &lt;333</p>
             <button
                 onClick={() => router.push('/')}
                 className="valentines-button mt-8"
             >
-                Finish
+                SEE YOU SOON!!
             </button>
         </div>
     );
