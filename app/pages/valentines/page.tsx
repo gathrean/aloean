@@ -1,78 +1,53 @@
-// app/pages/valentines/page.tsx
-
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Valentines() {
-    const [response, setResponse] = useState<string | null>(null);
+    const router = useRouter();
 
     const submitResponse = async (response: string) => {
         try {
-            const res = await fetch('/api/valentines/submit-response', {
+            await fetch('/api/valentines/submit-response', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ response }),
             });
-
-            if (res.ok) {
-                const data = await res.json();
-                console.log(data.message);
-            } else {
-                console.error('Error submitting response');
-            }
         } catch (error) {
-            console.error('Error:', error); 
+            console.error('Error:', error);
         }
     };
 
     return (
-        <div className="flex flex-col min-h-screen bg-gray-50">
+        <div className="flex flex-col min-h-screen bg-gray-50 text-center">
             <main className="flex-1 flex flex-col items-center justify-center p-8">
-                <h1 className="text-4xl font-bold text-gray-800">
-                    Will you be my valentine's?
-                </h1>
-
+                <h1 className="text-4xl font-bold text-gray-800">Will you be my Valentine?</h1>
+                <p className="text-2xl mt-2">🐢❤️🐻‍❄️</p>
                 <br />
-
-                {response === null ? (
-                    <img src="/Valentines/cat-begging.gif" alt="Begging cat" />
-                ) : response === 'yes' ? (
-                    <>
-                        <h2 className="text-3xl font-bold text-gray-800">Thank you :)))</h2>
-                        <img src="/Valentines/thank-you-gif.gif" alt="Thank you gif" />
-                    </>
-                ) : (
-                    <img src="/Valentines/sad-cat.gif" alt="Sad cat" />
-                )}
-
+                <img src="/Valentines/cat-begging.gif" alt="Begging cat" className="w-64 h-64" />
                 <br />
-
-                {response === null && (
-                    <div className="mt-8 flex gap-4">
-                        <button
-                            onClick={() => {
-                                setResponse('yes'); // Update the state when "Yes" is clicked
-                                submitResponse('Yes, I will be your Valentine :)'); // Send the response to the backend
-                            }}
-                            className="bg-forest_light text-white p-4 rounded-full w-32 hover:bg-forest"
-                        >
-                            Yes
-                        </button>
-
-                        <button
-                            onClick={() => {
-                                setResponse('no'); // Update the state when "No" is clicked
-                                submitResponse('No, I won\'t be your Valentine :('); // Send the response to the backend
-                            }}
-                            className="bg-forest_light text-white p-4 rounded-full w-32 hover:bg-forest"
-                        >
-                            No
-                        </button>
-                    </div>
-                )}
+                <div className="mt-8 flex gap-4">
+                    <button
+                        onClick={() => {
+                            submitResponse('Yes, I will be your Valentine!');
+                            router.push('/pages/valentines/1-yes');
+                        }}
+                        className="bg-red-500 text-white p-4 rounded-full w-48 hover:bg-red-600"
+                    >
+                        YESSS!!!!!!!!!
+                    </button>
+                    <button
+                        onClick={() => {
+                            submitResponse('No, I won\'t be your Valentine :(');
+                            router.push('/pages/valentines/1-no');
+                        }}
+                        className="bg-gray-500 text-white p-4 rounded-full w-32 hover:bg-gray-600"
+                    >
+                        nope
+                    </button>
+                </div>
             </main>
         </div>
     );

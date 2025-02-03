@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --valentines-bg: #ffe6f0;
+    --valentines-text: #ff66b2;
+    --valentines-button-bg: #ff3399;
+    --valentines-button-hover: #ff0066;
+    --valentines-font: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.valentines-page {
+    background-color: var(--valentines-bg);
+    color: var(--valentines-text);
+    font-family: var(--valentines-font);
+    text-align: center;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .checkbox-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.checkbox-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-option input {
+    margin-bottom: 0.5rem;
+    transform: scale(1.5);
+}
+
+.checkbox-image {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.checkbox-option:hover .checkbox-image {
+    transform: scale(0.95);
+}
+
+.checkbox-option input {
+    margin-left: 0.5rem;
+}
+
+.checkbox-option input {
+    margin-right: 0.5rem; 
+}
+
+.valentines-header {
+    text-color: #fff;
+}
+
+.valentines-button {
+    background-color: var(--valentines-button-bg);
+    color: white;
+    padding: 1rem;
+    border-radius: 9999px;
+    width: 12rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.valentines-button:hover {
+    background-color: var(--valentines-button-hover);
+}

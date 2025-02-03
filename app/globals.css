@@ -5,6 +5,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-bg-color: #f8f9fa;
+  --primary-text-color: #333333;
+  --primary-button-color: #38a169; 
+  --primary-button-hover-color: #2f855a;
+  --valentines-bg: #ffe6f0;
+  --valentines-text: #ff66b2;
+  --valentines-button-bg: #ff3399; 
+  --valentines-button-hover: #ff0066; 
+  --valentines-font: 'Poppins', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +24,22 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
   font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+
+button {
+  background-color: var(--primary-button-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 9999px;
+  width: 12rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-button-hover-color);
 }
