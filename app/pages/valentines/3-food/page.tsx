@@ -197,18 +197,20 @@ export default function FoodSelection() {
                     </label>
                 </div>
 
-                <button
-                    onClick={handleBack}
-                    className="back-button"
-                >
-                    Back
-                </button>
-                <button
-                    type="submit"
-                    className="valentines-button mt-8"
-                >
-                    Next
-                </button>
+                <div className="mt-8">
+                    <button
+                        onClick={handleBack}
+                        className="back-button"
+                    >
+                        Back
+                    </button>
+                    <button
+                        onClick={handleSubmit}
+                        className="valentines-button"
+                    >
+                        Next
+                    </button>
+                </div>
             </form>
         </div>
     );
