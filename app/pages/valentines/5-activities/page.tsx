@@ -34,7 +34,7 @@ export default function ActivitiesSelection() {
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="checkbox-container">
                     <label className="checkbox-option">
-                        <img src="/Valentines/arcade.jpg" alt="Arcade" className="checkbox-image" />
+                        <img src="/Valentines/5-activities/arcade.jpg" alt="Arcade" className="checkbox-image" />
                         <span>
                             <input
                                 type="checkbox"
@@ -46,7 +46,7 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/museum.jpg" alt="Arcade" className="checkbox-image" />
+                        <img src="/Valentines/5-activities/museum.jpg" alt="Arcade" className="checkbox-image" />
                         <span>
                             <input
                                 type="checkbox"
@@ -58,7 +58,7 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/sunset.jpg" alt="Arcade" className="checkbox-image" />
+                        <img src="/Valentines/5-activities/sunset.jpg" alt="Arcade" className="checkbox-image" />
                         <span>
                             <input
                                 type="checkbox"
@@ -70,7 +70,7 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/music-store.jpg" alt="Arcade" className="checkbox-image" />
+                        <img src="/Valentines/5-activities/music-store.jpg" alt="Arcade" className="checkbox-image" />
                         <span>
                             <input
                                 type="checkbox"
@@ -82,7 +82,7 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/photobooth.jpg" alt="Arcade" className="checkbox-image" />
+                        <img src="/Valentines/5-activities/photobooth.jpg" alt="Arcade" className="checkbox-image" />
                         <span>
                             <input
                                 type="checkbox"
@@ -94,7 +94,7 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/cafe.jpg" alt="Arcade" className="checkbox-image" />
+                        <img src="/Valentines/5-activities/cafe.jpg" alt="Arcade" className="checkbox-image" />
                         <span>
                             <input
                                 type="checkbox"
@@ -106,7 +106,7 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/build-a-bear.jpg" alt="Arcade" className="checkbox-image" />
+                        <img src="/Valentines/5-activities/build-a-bear.jpg" alt="Arcade" className="checkbox-image" />
                         <span>
                             <input
                                 type="checkbox"
@@ -118,7 +118,7 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/aquarium.jpg" alt="Arcade" className="checkbox-image" />
+                        <img src="/Valentines/5-activities/aquarium.jpg" alt="Arcade" className="checkbox-image" />
                         <span>
                             <input
                                 type="checkbox"
