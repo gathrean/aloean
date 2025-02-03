@@ -217,7 +217,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="(I can't decide, surprise me)"
+                                value="(I can't decide on the foods, surprise me)"
                                 onChange={handleFoodChange}
                             />
                             i can't decide!!!!! (Surprise Me!!!!)

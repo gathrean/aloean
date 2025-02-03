@@ -17,13 +17,45 @@ export default function DessertSelection() {
         );
     };
 
-    const handleSubmit = () => {
+    const submitResponse = async (response: string) => {
+        try {
+            const res = await fetch('/api/valentines/submit-response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ response }),
+            });
+
+            if (!res.ok) {
+                throw new Error('Failed to submit response');
+            }
+        } catch (error) {
+            console.error('Error submitting response:', error);
+        }
+    };
+
+    const handleSubmit = async () => {
         if (selectedDesserts.length === 0) {
             alert("Baby you didn’t pick one! (Select up to 3)");
+            return;
         } else if (selectedDesserts.length > 3) {
             alert("Damnnnn we big backing??? (Select up to 3)");
-        } else {
+            return;
+        }
+
+        // Format response
+        const formattedResponse =
+            selectedDesserts.length === 1
+                ? `I choose ${selectedDesserts[0]}`
+                : `I choose ${selectedDesserts.join(' and ')}`;
+
+        try {
+            // Ensure submission before navigating
+            await submitResponse(formattedResponse);
             router.push('/pages/valentines/5-activities');
+        } catch (error) {
+            console.error("Failed to submit response:", error);
         }
     };
 
@@ -142,7 +174,7 @@ export default function DessertSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="(I can't decide, surprise me)"
+                                value="(I can't decide on desserts, surprise me)"
                                 onChange={handleDessertChange}
                             />
                             i can't decide!!!!! (Surprise Me!!!!)
