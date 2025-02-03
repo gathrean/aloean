@@ -93,7 +93,7 @@ export default function ActivitiesSelection() {
                                 value="arcade"
                                 onChange={handleActivityChange}
                             />
-                            Vintage photo booth
+                            Vintage photo booth 👀
                         </span>
                     </label>
 

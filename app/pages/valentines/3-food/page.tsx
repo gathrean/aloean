@@ -35,7 +35,7 @@ export default function FoodSelection() {
         <div className="valentines-page">
             <h1 className="text-4xl font-bold mb-4">What food would you like to eat?</h1>
             <p className="text-lg mt-2 mb-4 font-medium">
-                Select up to 2
+                Pls select up to 2
             </p>
 
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
@@ -192,7 +192,7 @@ export default function FoodSelection() {
                                 value="idk"
                                 onChange={handleFoodChange}
                             />
-                            I can't decide!!!!! (Surprise Me!!!!)
+                            i can't decide!!!!! (Surprise Me!!!!)
                         </span>
                     </label>
                 </div>

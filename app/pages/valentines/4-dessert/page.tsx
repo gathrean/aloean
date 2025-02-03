@@ -18,8 +18,12 @@ export default function DessertSelection() {
     };
 
     const handleSubmit = () => {
-        if (selectedDesserts.length > 0) {
-            router.push('/pages/valentines/activities');
+        if (selectedDesserts.length === 0) {
+            alert("Baby you didn’t pick one!");
+        } else if (selectedDesserts.length > 3) {
+            alert("damnnnn we big backing??? (pls select 3)");
+        } else {
+            router.push('/pages/valentines/5-activities');
         }
     };
 
@@ -30,53 +34,136 @@ export default function DessertSelection() {
     return (
         <div className="valentines-page">
             <h1 className="text-4xl font-bold mb-4">Which dessert/snacks are we eating, my love?</h1>
+
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
-                <div>
-                    <label>
-                        <input
-                            type="checkbox"
-                            value="ice cream"
-                            onChange={handleDessertChange}
-                        />
-                        Ice Cream
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        <input
-                            type="checkbox"
-                            value="bubble tea"
-                            onChange={handleDessertChange}
-                        />
-                        Bubble Tea
-                    </label>
-                </div>
-                {/* Add more dessert options here */}
-                <div>
+                <p className="text-lg mt-2 mb-4 font-medium">
+                    Pls select up to 3
+                </p>
+
+                <div className="checkbox-container">
                     <label className="checkbox-option">
-                        <img src="/Valentines/idk.gif" alt="Arcade" className="checkbox-image" />
+                        <img src="/Valentines/4-dessert/icecream.jpg" alt="Ice Cream" className="checkbox-image" />
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="ice cream"
+                                onChange={handleDessertChange}
+                            />
+                            Ice Cream (Rocky Point)
+                        </span>
+                    </label>
+
+                    <label className="checkbox-option">
+                        <img src="/Valentines/4-dessert/bubble-tea.jpg" alt="Bubble Tea" className="checkbox-image" />
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="bubble tea"
+                                onChange={handleDessertChange}
+                            />
+                            Bubble Tea
+                        </span>
+                    </label>
+
+                    <label className="checkbox-option">
+                        <img src="/Valentines/4-dessert/mochi.jpg" alt="Mochi" className="checkbox-image" />
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="mochi"
+                                onChange={handleDessertChange}
+                            />
+                            Mochi
+                        </span>
+                    </label>
+
+                    <label className="checkbox-option">
+                        <img src="/Valentines/4-dessert/matcha.jpg" alt="Matcha" className="checkbox-image" />
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="matcha"
+                                onChange={handleDessertChange}
+                            />
+                            Matcha
+                        </span>
+                    </label>
+
+                    <label className="checkbox-option">
+                        <img src="/Valentines/4-dessert/chocolate.jpg" alt="Chocolate" className="checkbox-image" />
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="donuts"
+                                onChange={handleDessertChange}
+                            />
+                            Chocolate
+                        </span>
+                    </label>
+
+                    <label className="checkbox-option">
+                        <img src="/Valentines/4-dessert/frozen-yogurt.jpg" alt="Frozen Yogurt" className="checkbox-image" />
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="Frozen Yogurt"
+                                onChange={handleDessertChange}
+                            />
+                            Frozen Yogurt
+                        </span>
+                    </label>
+
+                    <label className="checkbox-option">
+                        <img src="/Valentines/4-dessert/indian-desserts.jpg" alt="Indian Desserts" className="checkbox-image" />
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="Indian Desserts"
+                                onChange={handleDessertChange}
+                            />
+                            Indian Desserts
+                        </span>
+                    </label>
+
+                    <label className="checkbox-option">
+                        <img src="/Valentines/4-dessert/filipino-desserts.jpg" alt="Filipino Desserts" className="checkbox-image" />
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="Filipino Desserts"
+                                onChange={handleDessertChange}
+                            />
+                            Filipino Desserts
+                        </span>
+                    </label>
+
+                    <label className="checkbox-option">
+                        <img src="/Valentines/idk.gif" alt="I can't decide" className="checkbox-image" />
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="idk"
+                                onChange={handleDessertChange}
                             />
                             i can't decide!!!!! (Surprise Me!!!!)
                         </span>
                     </label>
                 </div>
 
-                <button
-                    onClick={handleBack}
-                    className="back-button"
-                >
-                    Back
-                </button>
-                <button
-                    type="submit"
-                    className="valentines-button mt-8"
-                >
-                    Next
-                </button>
+                <div className="mt-8">
+                    <button
+                        onClick={handleBack}
+                        className="back-button"
+                    >
+                        Back
+                    </button>
+                    <button
+                        onClick={handleSubmit}
+                        className="valentines-button"
+                    >
+                        Next
+                    </button>
+                </div>
             </form>
         </div>
     );
