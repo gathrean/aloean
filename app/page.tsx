@@ -10,8 +10,8 @@ export default function Home() {
         <Image
           src="/AloEan.png"
           alt="AloEan Logo"
-          width={200}
-          height={200}
+          width={300}
+          height={300}
           priority
           unoptimized={true}
         />
@@ -37,13 +37,13 @@ export default function Home() {
             </button>
           </Link>
 
-          <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
+          {/* <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
             📍 places to be
-          </button>
+          </button> */}
 
-          <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
+          {/* <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
             🌹 Will I See You Again?
-          </button>
+          </button> */}
         </div>
 
       </main>
