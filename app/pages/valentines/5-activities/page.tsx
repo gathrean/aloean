@@ -18,7 +18,11 @@ export default function ActivitiesSelection() {
     };
 
     const handleSubmit = () => {
-        if (selectedActivities.length > 0) {
+        if (selectedActivities.length === 0) {
+            alert("Baby you didn’t pick one! (Select up to 5)");
+        } else if (selectedActivities.length > 5) {
+            alert("Damnnnn you don't want us to do anything? :((( (Select up to 5)");
+        } else {
             router.push('/pages/valentines/6-thank-you');
         }
     };

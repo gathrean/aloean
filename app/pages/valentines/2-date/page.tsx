@@ -16,7 +16,7 @@ export default function DateSelection() {
         if (selectedDate) {
             router.push('/pages/valentines/3-food');
         } else {
-            alert("You didn't select a date! (Try refreshing the page)")
+            alert("You didn't select a date! (Or try refreshing the page)")
         }
     };
 

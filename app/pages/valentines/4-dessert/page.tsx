@@ -19,9 +19,9 @@ export default function DessertSelection() {
 
     const handleSubmit = () => {
         if (selectedDesserts.length === 0) {
-            alert("Baby you didn’t pick one!");
+            alert("Baby you didn’t pick one! (Select up to 3)");
         } else if (selectedDesserts.length > 3) {
-            alert("damnnnn we big backing??? (pls select 3)");
+            alert("Damnnnn we big backing??? (Select up to 3)");
         } else {
             router.push('/pages/valentines/5-activities');
         }
