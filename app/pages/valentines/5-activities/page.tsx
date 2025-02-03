@@ -46,7 +46,7 @@ export default function ActivitiesSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="Arcade"
                                 onChange={handleActivityChange}
                             />
                             Arcade (Granville Rec Room)
@@ -58,7 +58,7 @@ export default function ActivitiesSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="Museum Date"
                                 onChange={handleActivityChange}
                             />
                             Museum Date
@@ -70,7 +70,7 @@ export default function ActivitiesSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="Sunset Watching"
                                 onChange={handleActivityChange}
                             />
                             Watch the sunset
@@ -82,7 +82,7 @@ export default function ActivitiesSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="Music Store"
                                 onChange={handleActivityChange}
                             />
                             Music Store
@@ -94,7 +94,7 @@ export default function ActivitiesSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="Vintage Photo Booth"
                                 onChange={handleActivityChange}
                             />
                             Vintage photo booth 👀
@@ -106,7 +106,7 @@ export default function ActivitiesSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="Cafe Date"
                                 onChange={handleActivityChange}
                             />
                             Cafe date
@@ -118,7 +118,7 @@ export default function ActivitiesSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="Build-A-Bear"
                                 onChange={handleActivityChange}
                             />
                             Build-A-Bear
@@ -130,7 +130,7 @@ export default function ActivitiesSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="Aquarium"
                                 onChange={handleActivityChange}
                             />
                             Aquarium
@@ -142,7 +142,7 @@ export default function ActivitiesSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="arcade"
+                                value="(I can't decide, surprise me)"
                                 onChange={handleActivityChange}
                             />
                             i can't decide!!!!! (Surprise Me!!!!)

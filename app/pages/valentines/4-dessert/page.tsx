@@ -46,7 +46,7 @@ export default function DessertSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="ice cream"
+                                value="Ice Cream"
                                 onChange={handleDessertChange}
                             />
                             Ice Cream (Rocky Point)
@@ -58,7 +58,7 @@ export default function DessertSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="bubble tea"
+                                value="Bubble Tea"
                                 onChange={handleDessertChange}
                             />
                             Bubble Tea
@@ -70,7 +70,7 @@ export default function DessertSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="mochi"
+                                value="Mochi"
                                 onChange={handleDessertChange}
                             />
                             Mochi
@@ -82,7 +82,7 @@ export default function DessertSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="matcha"
+                                value="Matcha"
                                 onChange={handleDessertChange}
                             />
                             Matcha
@@ -94,7 +94,7 @@ export default function DessertSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="donuts"
+                                value="Chocolate"
                                 onChange={handleDessertChange}
                             />
                             Chocolate
@@ -142,7 +142,7 @@ export default function DessertSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="idk"
+                                value="(I can't decide, surprise me)"
                                 onChange={handleDessertChange}
                             />
                             i can't decide!!!!! (Surprise Me!!!!)
