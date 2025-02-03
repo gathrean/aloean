@@ -27,6 +27,10 @@ export default function FoodSelection() {
         }
     };
 
+    const handleBack = () => {
+        router.back();
+    };
+
     return (
         <div className="valentines-page">
             <h1 className="text-4xl font-bold mb-4">What food would you like to eat?</h1>
@@ -193,6 +197,12 @@ export default function FoodSelection() {
                     </label>
                 </div>
 
+                <button
+                    onClick={handleBack}
+                    className="back-button"
+                >
+                    Back
+                </button>
                 <button
                     type="submit"
                     className="valentines-button mt-8"

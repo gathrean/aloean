@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import '../valentines.css'; 
+import '../valentines.css';
 
 export default function DateSelection() {
     const [selectedDate, setSelectedDate] = useState('');
@@ -15,7 +15,13 @@ export default function DateSelection() {
     const handleSubmit = () => {
         if (selectedDate) {
             router.push('/pages/valentines/3-food');
+        } else {
+            alert("You didn't select a date! (Try refreshing the page)")
         }
+    };
+
+    const handleBack = () => {
+        router.back();
     };
 
     return (
@@ -27,12 +33,20 @@ export default function DateSelection() {
                 onChange={handleDateChange}
                 className="border-2 border-gray-300 p-2 rounded-md"
             />
-            <button
-                onClick={handleSubmit}
-                className="valentines-button mt-8"
-            >
-                Next
-            </button>
+            <div className="flex justify-between mt-8">
+                <button
+                    onClick={handleBack}
+                    className="back-button"
+                >
+                    Back
+                </button>
+                <button
+                    onClick={handleSubmit}
+                    className="valentines-button"
+                >
+                    Next
+                </button>
+            </div>
         </div>
     );
 }

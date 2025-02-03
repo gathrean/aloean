@@ -23,6 +23,10 @@ export default function ActivitiesSelection() {
         }
     };
 
+    const handleBack = () => {
+        router.back();
+    };
+
     return (
         <div className="valentines-page">
             <h1 className="text-4xl font-bold mb-4">What activities do you want to do after, my love?</h1>
@@ -142,6 +146,12 @@ export default function ActivitiesSelection() {
                     </label>
                 </div>
 
+                <button
+                    onClick={handleBack}
+                    className="back-button"
+                >
+                    Back
+                </button>
                 <button
                     type="submit"
                     className="valentines-button mt-8"

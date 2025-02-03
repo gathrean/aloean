@@ -19,9 +19,12 @@ export default function DessertSelection() {
 
     const handleSubmit = () => {
         if (selectedDesserts.length > 0) {
-            // Store or send the selected desserts
             router.push('/pages/valentines/activities');
         }
+    };
+
+    const handleBack = () => {
+        router.back();
     };
 
     return (
@@ -61,6 +64,13 @@ export default function DessertSelection() {
                         </span>
                     </label>
                 </div>
+
+                <button
+                    onClick={handleBack}
+                    className="back-button"
+                >
+                    Back
+                </button>
                 <button
                     type="submit"
                     className="valentines-button mt-8"
