@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+import './valentines.css';
+
 export default function Valentines() {
     const router = useRouter();
 
@@ -21,10 +23,10 @@ export default function Valentines() {
     };
 
     return (
-        <div className="flex flex-col min-h-screen bg-gray-50 text-center">
+        <div className="valentines-page">
             <main className="flex-1 flex flex-col items-center justify-center p-8">
-                <h1 className="text-4xl font-bold text-gray-800">Will you be my Valentine?</h1>
-                <p className="text-2xl mt-2">🐢❤️🐻‍❄️</p>
+                <h1 className="text-5xl font-bold">Will you be my Valentine?</h1>
+                <p className="text-4xl mt-2">🐢❤️🐻‍❄️</p>
                 <br />
                 <img src="/Valentines/cat-begging.gif" alt="Begging cat" className="w-64 h-64" />
                 <br />
@@ -45,7 +47,7 @@ export default function Valentines() {
                         }}
                         className="bg-gray-500 text-white p-4 rounded-full w-32 hover:bg-gray-600"
                     >
-                        nope
+                        nope...
                     </button>
                 </div>
             </main>
