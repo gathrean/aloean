@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import '../valentines.css'; 
+import '../valentines.css';
 
 export default function DessertSelection() {
     const [selectedDesserts, setSelectedDesserts] = useState<string[]>([]);
@@ -25,8 +25,8 @@ export default function DessertSelection() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen p-8">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">Which dessert/snacks are we eating, my love?</h1>
+        <div className="valentines-page">
+            <h1 className="text-4xl font-bold mb-4">Which dessert/snacks are we eating, my love?</h1>
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div>
                     <label>
@@ -50,18 +50,20 @@ export default function DessertSelection() {
                 </div>
                 {/* Add more dessert options here */}
                 <div>
-                    <label>
-                        <input
-                            type="checkbox"
-                            value="surprise"
-                            onChange={handleDessertChange}
-                        />
-                        I can't decide!!! (Surprise me)
+                    <label className="checkbox-option">
+                        <img src="/Valentines/idk.gif" alt="Arcade" className="checkbox-image" />
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="arcade"
+                            />
+                            i can't decide!!!!! (Surprise Me!!!!)
+                        </span>
                     </label>
                 </div>
                 <button
                     type="submit"
-                    className="mt-4 bg-orange-500 text-white p-4 rounded-full w-40 hover:bg-orange-600"
+                    className="valentines-button mt-8"
                 >
                     Next
                 </button>

@@ -28,7 +28,7 @@ export default function Valentines() {
                 <h1 className="text-5xl font-bold">Will you be my Valentine?</h1>
                 <p className="text-4xl mt-2">🐢❤️🐻‍❄️</p>
                 <br />
-                <img src="/Valentines/cat-begging.gif" alt="Begging cat" className="w-64 h-64" />
+                <img src="/Valentines/cat-begging.gif" alt="Begging cat" className="w-120 h-120" />
                 <br />
                 <div className="mt-8 flex gap-4">
                     <button

@@ -14,14 +14,13 @@ export default function DateSelection() {
 
     const handleSubmit = () => {
         if (selectedDate) {
-            // Store or send the selected date
-            router.push('/pages/valentines/food');
+            router.push('/pages/valentines/3-food');
         }
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen p-8">
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">Pick a date night theme!</h1>
+        <div className="valentines-page">
+            <h1 className="text-4xl font-bold mb-4">Pick a date night theme!</h1>
             <input
                 type="date"
                 value={selectedDate}
@@ -30,7 +29,7 @@ export default function DateSelection() {
             />
             <button
                 onClick={handleSubmit}
-                className="mt-4 bg-purple-500 text-white p-4 rounded-full w-40 hover:bg-purple-600"
+                className="valentines-button mt-8"
             >
                 Next
             </button>

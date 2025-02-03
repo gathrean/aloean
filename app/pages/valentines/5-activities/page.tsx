@@ -19,7 +19,6 @@ export default function ActivitiesSelection() {
 
     const handleSubmit = () => {
         if (selectedActivities.length > 0) {
-            // Store or send the selected activities
             router.push('/pages/valentines/6-thank-you');
         }
     };
