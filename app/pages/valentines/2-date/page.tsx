@@ -12,11 +12,37 @@ export default function DateSelection() {
         setSelectedDate(e.target.value);
     };
 
+    const submitResponse = async (response: string) => {
+        try {
+            await fetch('/api/valentines/submit-response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ response }),
+            });
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
     const handleSubmit = () => {
         if (selectedDate) {
+            // Format the selected date as "Month Day, Year"
+            const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+            });
+
+            // Create the response string
+            const response = `I will be free on ${formattedDate}`;
+
+            // Submit the response
+            submitResponse(response);
             router.push('/pages/valentines/3-food');
         } else {
-            alert("You didn't select a date! (Or try refreshing the page)")
+            alert("You didn't select a date! (Or try refreshing the page)");
         }
     };
 
