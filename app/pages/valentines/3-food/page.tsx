@@ -17,13 +17,41 @@ export default function FoodSelection() {
         );
     };
 
-    const handleSubmit = () => {
+    const submitResponse = async (response: string) => {
+        try {
+            await fetch('/api/valentines/submit-response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ response }),
+            });
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    const handleSubmit = async () => {
         if (selectedFood.length === 0) {
             alert("Baby you didn’t pick one! (Select up to 2)");
+            return;
         } else if (selectedFood.length > 2) {
             alert("Damnnnn we big backing??? (Select up to 2)");
-        } else {
+            return;
+        }
+
+        // Format response
+        const formattedResponse =
+            selectedFood.length === 1
+                ? `I choose ${selectedFood[0]}`
+                : `I choose ${selectedFood[0]} and ${selectedFood[1]}`;
+
+        try {
+            // Ensure submission before navigating
+            await submitResponse(formattedResponse);
             router.push('/pages/valentines/4-dessert');
+        } catch (error) {
+            console.error("Failed to submit response:", error);
         }
     };
 
@@ -45,7 +73,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="sushi"
+                                value="Sushi"
                                 onChange={handleFoodChange}
                             />
                             Sushi
@@ -57,7 +85,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="tacos"
+                                value="Tacos"
                                 onChange={handleFoodChange}
                             />
                             Tacos
@@ -69,7 +97,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="kbbq"
+                                value="KBBQ"
                                 onChange={handleFoodChange}
                             />
                             KBBQ
@@ -81,7 +109,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="bigway"
+                                value="Big Way Hotpot"
                                 onChange={handleFoodChange}
                             />
                             Big Way Hotpot
@@ -93,7 +121,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="pokebowls"
+                                value="Poke Bowls"
                                 onChange={handleFoodChange}
                             />
                             Poke Bowls
@@ -105,7 +133,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="chipotle"
+                                value="Chipotle"
                                 onChange={handleFoodChange}
                             />
                             Chipotle
@@ -117,7 +145,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="pizza"
+                                value="Pizza"
                                 onChange={handleFoodChange}
                             />
                             Pizza
@@ -129,7 +157,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="donair"
+                                value="Donair"
                                 onChange={handleFoodChange}
                             />
                             Donair
@@ -141,7 +169,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="sandwich"
+                                value="Sandwich"
                                 onChange={handleFoodChange}
                             />
                             Sandwich
@@ -153,7 +181,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="chungchun"
+                                value="Chung Chun Rice Dogs"
                                 onChange={handleFoodChange}
                             />
                             Chung Chun Rice Dog
@@ -165,7 +193,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="fish and chips"
+                                value="Fish and Chips"
                                 onChange={handleFoodChange}
                             />
                             Fish & Chips
@@ -189,7 +217,7 @@ export default function FoodSelection() {
                         <span>
                             <input
                                 type="checkbox"
-                                value="idk"
+                                value="(I can't decide, surprise me)"
                                 onChange={handleFoodChange}
                             />
                             i can't decide!!!!! (Surprise Me!!!!)
