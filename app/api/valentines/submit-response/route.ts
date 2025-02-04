@@ -3,6 +3,12 @@ import { connectToDatabase } from '@/lib/mongodb';
 
 export async function POST(request: Request) {
     try {
+        // Ensure the content type is JSON
+        if (!request.headers.get('content-type')?.includes('application/json')) {
+            console.error('Invalid content type');
+            return NextResponse.json({ message: 'Invalid content type. Expected application/json' }, { status: 400 });
+        }
+
         // Parse incoming JSON request body
         const { response } = await request.json();
 
