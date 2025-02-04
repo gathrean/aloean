@@ -20,11 +20,13 @@ export default function Nope() {
                 className="mt-4"
             />
 
+            <br></br>
+
             <button
                 onClick={() => router.push('/pages/valentines')}
-                className="mt-4 bg-gray-800 text-white p-4 rounded-full w-60 hover:bg-gray-900"
+                className="font-bold back-button"
             >
-                WAIT! TAKE ME BACK!
+                WAIT! GO BACK!
             </button>
         </div>
     );

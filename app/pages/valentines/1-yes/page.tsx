@@ -8,6 +8,7 @@ export default function ThankYou() {
 
     return (
         <div className="valentines-page">
+            <h1 className="text-xl font-bold mb-2">( LEVEL 1 )</h1>
             <h1 className="text-4xl font-bold">LET&apos;S GOOOOOOOOOO</h1>
 
             <Image
@@ -27,7 +28,7 @@ export default function ThankYou() {
                 onClick={() => router.push('/pages/valentines/2-date')}
                 className="valentines-button font-bold"
             >
-                CLICK ME
+                NEXT LEVEL
             </button>
         </div>
     );

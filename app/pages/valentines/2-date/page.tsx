@@ -60,6 +60,7 @@ export default function DateSelection() {
 
     return (
         <div className="valentines-page">
+            <h1 className="text-xl font-bold mb-2">( LEVEL 2 )</h1>
             <h1 className="text-4xl font-bold mb-4">WILL I SEE YOU AGAIN? 🫣</h1>
 
             <label className="block font-bold text-lg mb-2">WE WILL SEE EACH OTHER ON _____</label>
@@ -102,18 +103,8 @@ export default function DateSelection() {
             </select>
 
             <div className="flex justify-between mt-8">
-                <button
-                    onClick={handleBack}
-                    className="font-bold back-button"
-                >
-                    GO BACK
-                </button>
-                <button
-                    onClick={handleSubmit}
-                    className="font-bold valentines-button"
-                >
-                    NEXT PAGE
-                </button>
+                <button onClick={handleBack}className="font-bold back-button">GO BACK</button>
+                <button onClick={handleSubmit} className="font-bold valentines-button">NEXT LEVEL</button>
             </div>
         </div>
     );

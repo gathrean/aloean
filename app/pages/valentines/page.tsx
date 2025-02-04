@@ -26,8 +26,8 @@ export default function Valentines() {
             <main className="flex-1 flex flex-col items-center justify-center p-8">
                 <h1 className="text-5xl font-bold">WILL YOU BE MY VALENTINE?</h1>
                 <br></br>
-                <p className="text-3xl mt-2">🐢❤️🐻‍❄️</p>
-                <p className="text-xl font-bold">( V ALOE NT EAN E )</p>
+                <p className="text-3xl font-bold mt-2">🐢❤️🐻‍❄️</p>
+                <p className="font-bold">( V-ALOE-NT-EAN-E )</p>
                 <br />
                 <Image
                     src="/Valentines/cat-begging.gif"

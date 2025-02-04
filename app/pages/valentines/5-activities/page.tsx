@@ -1,9 +1,21 @@
 'use client';
-import Image from 'next/image'; // Add this import at the top
+import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import '../valentines.css';
+
+const activities = [
+    { src: '/Valentines/5-activities/arcade.jpg', alt: 'Arcade', value: 'Arcade', label: 'ARCADE (GRANVILLE REC ROOM)' },
+    { src: '/Valentines/5-activities/museum.jpg', alt: 'Museum', value: 'Museum Date', label: 'MUSEUM DATE' },
+    { src: '/Valentines/5-activities/sunset.jpg', alt: 'Sunset', value: 'Sunset Watching', label: 'WATCH THE SUNSET' },
+    { src: '/Valentines/5-activities/music-store.jpg', alt: 'Music Store', value: 'Music Store', label: 'MUSIC STORE' },
+    { src: '/Valentines/5-activities/photobooth.jpg', alt: 'Vintage Photo Booth', value: 'Vintage Photo Booth', label: 'PHOTO BOOTH (VINTAGE) 👀' },
+    { src: '/Valentines/5-activities/cafe.jpg', alt: 'Cafe', value: 'Cafe Date', label: 'CAFE DATE' },
+    { src: '/Valentines/5-activities/build-a-bear.jpg', alt: 'Build-A-Bear', value: 'Build-A-Bear', label: 'BUILD-A-BEAT' },
+    { src: '/Valentines/5-activities/aquarium.jpg', alt: 'Aquarium', value: 'Aquarium', label: 'AQUARIUM' },
+    { src: '/Valentines/idk.gif', alt: 'Surprise Me', value: "CAN'T DECIDE (SURPRISE ME)", label: "CAN'T DECIDE (SURPRISE ME)" }
+];
 
 export default function ActivitiesSelection() {
     const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
@@ -12,9 +24,7 @@ export default function ActivitiesSelection() {
     const handleActivityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setSelectedActivities((prev) =>
-            e.target.checked
-                ? [...prev, value]
-                : prev.filter((item) => item !== value)
+            e.target.checked ? [...prev, value] : prev.filter((item) => item !== value)
         );
     };
 
@@ -22,15 +32,10 @@ export default function ActivitiesSelection() {
         try {
             const res = await fetch('/api/valentines/submit-response', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ response }),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ response })
             });
-
-            if (!res.ok) {
-                throw new Error('Failed to submit response');
-            }
+            if (!res.ok) throw new Error('Failed to submit response');
         } catch (error) {
             console.error('Error submitting response:', error);
         }
@@ -44,210 +49,35 @@ export default function ActivitiesSelection() {
             alert("Damnnnn you don't want us to do anything? :((( (Select up to 5)");
             return;
         }
-
         try {
-            // Send multiple responses (one per activity)
-            for (const activity of selectedActivities) {
-                await submitResponse(activity);
-            }
-
-            // Navigate to the next page after all responses are submitted
+            await Promise.all(selectedActivities.map(activity => submitResponse(activity)));
             router.push('/pages/valentines/6-thank-you');
         } catch (error) {
             console.error("Failed to submit responses:", error);
         }
     };
 
-    const handleBack = () => {
-        router.back();
-    };
-
     return (
         <div className="valentines-page">
-            <h1 className="text-4xl font-bold mb-4">What activities do you want to do after, my love?</h1>
-
-            <p className="text-lg mt-2 mb-4 font-medium">
-                Select up to 5
-            </p>
+            <h1 className="text-xl font-bold mb-2">( LEVEL 5 )</h1>
+            <h1 className="text-4xl font-bold mb-4">WHAT ACTIVITIES DO YOU WANT TO DO AFTER, MY LOVE?</h1>
+            <p className="text-lg mt-2 mb-4 font-medium">SELECT 1 - 5</p>
 
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="checkbox-container">
-                    <label className="checkbox-option">
-                        <Image
-                            src="/Valentines/5-activities/arcade.jpg"
-                            alt="Arcade"
-                            className="checkbox-image"
-                            width={500}
-                            height={300}
-                        />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Arcade"
-                                onChange={handleActivityChange}
-                            />
-                            Arcade (Granville Rec Room)
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image
-                            src="/Valentines/5-activities/museum.jpg"
-                            alt="Museum"
-                            className="checkbox-image"
-                            width={500}
-                            height={300}
-                        />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Museum Date"
-                                onChange={handleActivityChange}
-                            />
-                            Museum Date
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image
-                            src="/Valentines/5-activities/sunset.jpg"
-                            alt="Sunset"
-                            className="checkbox-image"
-                            width={500}
-                            height={300}
-                        />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Sunset Watching"
-                                onChange={handleActivityChange}
-                            />
-                            Watch the sunset
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image
-                            src="/Valentines/5-activities/music-store.jpg"
-                            alt="Music Store"
-                            className="checkbox-image"
-                            width={500}
-                            height={300}
-                        />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Music Store"
-                                onChange={handleActivityChange}
-                            />
-                            Music Store
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image
-                            src="/Valentines/5-activities/photobooth.jpg"
-                            alt="Vintage Photo Booth"
-                            className="checkbox-image"
-                            width={500}
-                            height={300}
-                        />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Vintage Photo Booth"
-                                onChange={handleActivityChange}
-                            />
-                            Vintage photo booth 👀
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image
-                            src="/Valentines/5-activities/cafe.jpg"
-                            alt="Cafe"
-                            className="checkbox-image"
-                            width={500}
-                            height={300}
-                        />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Cafe Date"
-                                onChange={handleActivityChange}
-                            />
-                            Cafe date
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image
-                            src="/Valentines/5-activities/build-a-bear.jpg"
-                            alt="Build-A-Bear"
-                            className="checkbox-image"
-                            width={500}
-                            height={300}
-                        />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Build-A-Bear"
-                                onChange={handleActivityChange}
-                            />
-                            Build-A-Bear
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image
-                            src="/Valentines/5-activities/aquarium.jpg"
-                            alt="Aquarium"
-                            className="checkbox-image"
-                            width={500}
-                            height={300}
-                        />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Aquarium"
-                                onChange={handleActivityChange}
-                            />
-                            Aquarium
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image
-                            src="/Valentines/idk.gif"
-                            alt="Surprise Me"
-                            className="checkbox-image"
-                            width={500}
-                            height={300}
-                        />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="i can&apos;t decide!!!!! (Surprise Me!!!!)"
-                                onChange={handleActivityChange}
-                            />
-                            i can&apos;t decide!!!!! (Surprise Me!!!!)
-                        </span>
-                    </label>
+                    {activities.map(({ src, alt, value, label }) => (
+                        <label key={value} className="checkbox-option">
+                            <Image src={src} alt={alt} className="checkbox-image" width={500} height={300} />
+                            <span>
+                                <input type="checkbox" value={value} onChange={handleActivityChange} />
+                                {label}
+                            </span>
+                        </label>
+                    ))}
                 </div>
-
                 <div className="mt-8">
-                    <button
-                        onClick={handleBack}
-                        className="back-button"
-                    >
-                        Back
-                    </button>
-                    <button
-                        onClick={handleSubmit}
-                        className="valentines-button"
-                    >
-                        Next
-                    </button>
+                    <button type="button" onClick={router.back} className="back-button font-bold">GO BACK</button>
+                    <button type="submit" className="valentines-button font-bold">NEXT LEVEL</button>
                 </div>
             </form>
         </div>

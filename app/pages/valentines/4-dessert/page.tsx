@@ -1,9 +1,22 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image'; // Import Image for optimization
+import Image from 'next/image';
 
 import '../valentines.css';
+
+const desserts = [
+    { name: 'Ice Cream', src: '/Valentines/4-dessert/icecream.jpg', label: 'ICE CREAM' },
+    { name: 'Bubble Tea', src: '/Valentines/4-dessert/bubble-tea.jpg', label: 'BUBBLE TEA' },
+    { name: 'Mochi', src: '/Valentines/4-dessert/mochi.jpg', label: 'MOCHI' },
+    { name: 'Matcha', src: '/Valentines/4-dessert/matcha.jpg', label: 'MATCHA' },
+    { name: 'Chocolate', src: '/Valentines/4-dessert/chocolate.jpg', label: 'CHOCOLATES' },
+    { name: 'Frozen Yogurt', src: '/Valentines/4-dessert/frozen-yogurt.jpg', label: 'FROZEN YOGURT' },
+    { name: 'Indian Desserts', src: '/Valentines/4-dessert/indian-desserts.jpg', label: 'INDIAN DESSERTS' },
+    { name: 'Filipino Desserts', src: '/Valentines/4-dessert/filipino-desserts.jpg', label: 'FILIPINO DESSERTS' },
+    { name: 'No Desserts', src: '/Valentines/4-dessert/no-desserts.jpg', label: 'NO DESSERTS' },
+    { name: "(I can't decide on desserts, surprise me)", src: '/Valentines/idk.gif', label: "CAN'T DECIDE (SURPRISE ME)" }
+];
 
 export default function DessertSelection() {
     const [selectedDesserts, setSelectedDesserts] = useState<string[]>([]);
@@ -12,9 +25,7 @@ export default function DessertSelection() {
     const handleDessertChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setSelectedDesserts((prev) =>
-            e.target.checked
-                ? [...prev, value]
-                : prev.filter((item) => item !== value)
+            e.target.checked ? [...prev, value] : prev.filter((item) => item !== value)
         );
     };
 
@@ -22,15 +33,10 @@ export default function DessertSelection() {
         try {
             const res = await fetch('/api/valentines/submit-response', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ response }),
             });
-
-            if (!res.ok) {
-                throw new Error('Failed to submit response');
-            }
+            if (!res.ok) throw new Error('Failed to submit response');
         } catch (error) {
             console.error('Error submitting response:', error);
         }
@@ -38,21 +44,19 @@ export default function DessertSelection() {
 
     const handleSubmit = async () => {
         if (selectedDesserts.length === 0) {
-            alert("Baby you didn’t pick one! (Select up to 3)");
+            alert("baby you didn’t pick one! (Select up to 3)");
             return;
         } else if (selectedDesserts.length > 3) {
-            alert("Damnnnn we big backing??? (Select up to 3)");
+            alert("damnnnn we big backing??? (Select up to 3)");
             return;
         }
 
-        // Format response
         const formattedResponse =
             selectedDesserts.length === 1
                 ? `I choose ${selectedDesserts[0]}`
                 : `I choose ${selectedDesserts.join(' and ')}`;
 
         try {
-            // Ensure submission before navigating
             await submitResponse(formattedResponse);
             router.push('/pages/valentines/5-activities');
         } catch (error) {
@@ -60,142 +64,26 @@ export default function DessertSelection() {
         }
     };
 
-    const handleBack = () => {
-        router.back();
-    };
-
     return (
         <div className="valentines-page">
-            <h1 className="text-4xl font-bold mb-4">Which dessert/snacks are we eating, my love?</h1>
-
+            <h1 className="text-xl font-bold mb-2">( LEVEL 4 )</h1>
+            <h1 className="text-4xl font-bold mb-4">WHICH DESSERTS / SNACKS ARE WE EATING, MY LOVE?</h1>
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
-                <p className="text-lg mt-2 mb-4 font-medium">
-                    Pls select up to 3
-                </p>
-
+                <p className="text-lg mt-2 mb-4 font-medium">SELECT 1 - 3</p>
                 <div className="checkbox-container">
-                    <label className="checkbox-option">
-                        <Image src="/Valentines/4-dessert/icecream.jpg" alt="Ice Cream" className="checkbox-image" width={300} height={300} />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Ice Cream"
-                                onChange={handleDessertChange}
-                            />
-                            Ice Cream (Rocky Point)
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image src="/Valentines/4-dessert/bubble-tea.jpg" alt="Bubble Tea" className="checkbox-image" width={300} height={300} />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Bubble Tea"
-                                onChange={handleDessertChange}
-                            />
-                            Bubble Tea
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image src="/Valentines/4-dessert/mochi.jpg" alt="Mochi" className="checkbox-image" width={300} height={300} />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Mochi"
-                                onChange={handleDessertChange}
-                            />
-                            Mochi
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image src="/Valentines/4-dessert/matcha.jpg" alt="Matcha" className="checkbox-image" width={300} height={300} />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Matcha"
-                                onChange={handleDessertChange}
-                            />
-                            Matcha
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image src="/Valentines/4-dessert/chocolate.jpg" alt="Chocolate" className="checkbox-image" width={300} height={300} />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Chocolate"
-                                onChange={handleDessertChange}
-                            />
-                            Chocolate
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image src="/Valentines/4-dessert/frozen-yogurt.jpg" alt="Frozen Yogurt" className="checkbox-image" width={300} height={300} />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Frozen Yogurt"
-                                onChange={handleDessertChange}
-                            />
-                            Frozen Yogurt
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image src="/Valentines/4-dessert/indian-desserts.jpg" alt="Indian Desserts" className="checkbox-image" width={300} height={300} />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Indian Desserts"
-                                onChange={handleDessertChange}
-                            />
-                            Indian Desserts
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image src="/Valentines/4-dessert/filipino-desserts.jpg" alt="Filipino Desserts" className="checkbox-image" width={300} height={300} />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Filipino Desserts"
-                                onChange={handleDessertChange}
-                            />
-                            Filipino Desserts
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <Image src="/Valentines/idk.gif" alt="I can't decide" className="checkbox-image" width={300} height={300} />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="(I can&apos;t decide on desserts, surprise me)"
-                                onChange={handleDessertChange}
-                            />
-                            i can&apos;t decide!!!!! (Surprise Me!!!!)
-                        </span>
-                    </label>
+                    {desserts.map((dessert) => (
+                        <label key={dessert.name} className="checkbox-option">
+                            <Image src={dessert.src} alt={dessert.name} className="checkbox-image" width={300} height={300} />
+                            <span>
+                                <input type="checkbox" value={dessert.name} onChange={handleDessertChange} />
+                                {dessert.label}
+                            </span>
+                        </label>
+                    ))}
                 </div>
-
                 <div className="mt-8">
-                    <button
-                        onClick={handleBack}
-                        className="back-button"
-                    >
-                        Back
-                    </button>
-                    <button
-                        onClick={handleSubmit}
-                        className="valentines-button"
-                    >
-                        Next
-                    </button>
+                    <button onClick={() => router.back()} className="back-button font-bold">GO BACK</button>
+                    <button onClick={handleSubmit} className="valentines-button font-bold">NEXT LEVEL</button>
                 </div>
             </form>
         </div>

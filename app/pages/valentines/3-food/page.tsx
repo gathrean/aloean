@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image'; // ✅ Import Image from Next.js
+import Image from 'next/image';
 
 import '../valentines.css';
 
@@ -62,7 +62,8 @@ export default function FoodSelection() {
 
     return (
         <div className="valentines-page">
-            <h1 className="text-4xl font-bold mb-4">WHAT FOOD WOULD YOU LIKE TO EAT? 👀</h1>
+            <h1 className="text-xl font-bold mb-2">( LEVEL 3 )</h1>
+            <h1 className="text-4xl font-bold mb-4">WHAT FOOD WOULD YOU LIKE TO EAT, MY LOVE?</h1>
             <p className="text-lg font-bold mt-1 mb-4">
                 SELECT 1 - 2
             </p>
@@ -82,7 +83,7 @@ export default function FoodSelection() {
                         { src: "/Valentines/3-food/chungchun.jpeg", alt: "CHUNG CHUN RICE DOG", value: "Chung Chun Rice Dogs" },
                         { src: "/Valentines/3-food/fishnchips.jpg", alt: "FISH & CHIPS", value: "Fish and Chips" },
                         { src: "/Valentines/3-food/pasta.jpg", alt: "PASTA", value: "Pasta" },
-                        { src: "/Valentines/idk.gif", alt: "I can't decide", value: "(I can&apos;t decide on the foods, surprise me)" }
+                        { src: "/Valentines/idk.gif", alt: "CAN'T DECIDE (SURPRISE ME)", value: "CAN&apos;T DECIDE (SURPRISE ME)" }
                     ].map(({ src, alt, value }) => (
                         <label className="checkbox-option" key={value}>
                             <Image src={src} alt={alt} width={120} height={120} className="checkbox-image" />
@@ -99,12 +100,8 @@ export default function FoodSelection() {
                 </div>
 
                 <div className="mt-8">
-                    <button onClick={handleBack} className="back-button">
-                        Back
-                    </button>
-                    <button onClick={handleSubmit} className="valentines-button">
-                        Next
-                    </button>
+                    <button onClick={handleBack} className="back-button font-bold">GO BACK</button>
+                    <button onClick={handleSubmit} className="valentines-button font-bold">NEXT LEVEL</button>
                 </div>
             </form>
         </div>
