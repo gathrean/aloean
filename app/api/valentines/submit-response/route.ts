@@ -2,9 +2,17 @@ import { NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
 
 export async function POST(request: Request) {
-    const { response } = await request.json();
-
     try {
+        // Parse incoming JSON request body
+        const { response } = await request.json();
+
+        // Validate that response exists and is a string (or whatever format you expect)
+        if (!response || typeof response !== 'string') {
+            console.error('Invalid or missing response:', response);
+            return NextResponse.json({ message: 'Invalid response data' }, { status: 400 });
+        }
+
+        // Proceed with DB connection and insertion
         const db = await connectToDatabase();
         const collection = db.collection('responses');
 
@@ -21,11 +29,11 @@ export async function POST(request: Request) {
         }).replace(',', '');
 
         const result = await collection.insertOne({
-            response,           
-            timestamp: formattedTimestamp, 
+            response,
+            timestamp: formattedTimestamp,
         });
-        
-        console.log('Inserted document:', result);        
+
+        console.log('Inserted document:', result);
 
         return NextResponse.json({ message: 'Response saved successfully!' });
     } catch (err) {
