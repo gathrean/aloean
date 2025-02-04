@@ -1,3 +1,0 @@
-# aloean
-
-Welcome to aloean.
