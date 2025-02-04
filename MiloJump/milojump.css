@@ -1,0 +1,37 @@
+body {
+    text-align: center;
+}
+
+#board {
+    background-image: url("./doodlejumpbg.png");
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+#controls button {
+    width: 120px;
+    height: 80px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    border: none;
+    background-color: #52B76F;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#controls button:hover {
+    background-color: #45a049;
+}
+
+html, body, canvas {
+    touch-action: manipulation;
+}
