@@ -135,3 +135,25 @@ html, body {
     opacity: 1;
     transform: translateY(0);
 } 
+
+.falling-rose {
+    position: absolute;
+    top: -10px;
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
