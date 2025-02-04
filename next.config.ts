@@ -7,8 +7,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true, // Disable default image optimization
-  },
-  basePath: "/aloean"
+  }
 };
 
 export default nextConfig;
