@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
 
 :root {
-    --valentines-bg: #ffe6f0;
-    --valentines-text: #ff66b2;
-    --valentines-button-bg: #ff3399;
-    --valentines-button-hover: #ff0066;
-    --valentines-font: 'Poppins', sans-serif;
+    --valentines-bg: #C21911;
+    --valentines-text: #FFF;
+    --valentines-button-bg: #DC362C;
+    --valentines-button-hover: #8F0600;
+    --valentines-font: 'Helvetica', Arial, sans-serif;
 }
 
 html, body {
@@ -81,40 +81,48 @@ html, body {
     margin-right: 0.5rem; 
 }
 
+.valentines-input-box {
+    color: #C21911;
+}
+
 .valentines-header {
     text-color: #fff;
 }
 
 .valentines-button {
-    background-color: var(--valentines-button-bg);
-    color: white;
+    background-color: #FFF;
+    color: var(--valentines-bg);
     padding: 1rem;
-    border-radius: 9999px;
+    border-radius: 25px;
     width: 12rem;
+    margin: 0 10px 0 10px;
+    
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     font-size: 1.2rem;
-    margin: 10px 10px 0 10px;
 }
 
 .valentines-button:hover {
-    background-color: var(--valentines-button-hover);
+    background-color: #FFF;
+    transform: scale(1.1);
 }
 
 .back-button {
+    background-color: #FFF;
+    color: #4A4547;
     padding: 1rem;
-    border-radius: 9999px;
+    border-radius: 25px;
     width: 12rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1.2rem;
-    background-color: gray;
-    color: white;
     margin: 0 10px 0 10px;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2rem;
 }
 
 .back-button:hover {
-    background-color: #444;
+    background-color: #FFF;
+    transform: scale(1.1);
 }
 
 .hidden {
@@ -126,4 +134,4 @@ html, body {
 .visible {
     opacity: 1;
     transform: translateY(0);
-}
+} 

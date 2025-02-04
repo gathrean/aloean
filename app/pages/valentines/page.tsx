@@ -25,8 +25,9 @@ export default function Valentines() {
         <div className="valentines-page">
             <main className="flex-1 flex flex-col items-center justify-center p-8">
                 <h1 className="text-5xl font-bold">WILL YOU BE MY VALENTINE?</h1>
-                <p className="text-4xl mt-2">🐢❤️🐻‍❄️</p>
-                <p>(V-<b>A-L-O-E</b>-N-T-<b>E-A-N-</b>E)</p>
+                <br></br>
+                <p className="text-3xl mt-2">🐢❤️🐻‍❄️</p>
+                <p className="text-xl font-bold">( V ALOE NT EAN E )</p>
                 <br />
                 <Image
                     src="/Valentines/cat-begging.gif"
@@ -42,16 +43,16 @@ export default function Valentines() {
                             submitResponse('No, I won\'t be your Valentine :(');
                             router.push('/pages/valentines/1-no');
                         }}
-                        className="bg-gray-500 text-white p-4 rounded-full w-32 hover:bg-gray-600"
+                        className="back-button font-bold"
                     >
-                        nope...
+                        No.
                     </button>
                     <button
                         onClick={() => {
                             submitResponse('Yes, I will be your Valentine!');
                             router.push('/pages/valentines/1-yes');
                         }}
-                        className="bg-red-500 text-white p-4 rounded-full w-48 hover:bg-red-600"
+                        className="valentines-button font-bold"
                     >
                         YESSS!!!!!!!!!
                     </button>

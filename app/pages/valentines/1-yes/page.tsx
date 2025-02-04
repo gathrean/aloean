@@ -18,14 +18,16 @@ export default function ThankYou() {
                 className="mt-4 object-cover"
             />
 
-            <p className="mt-4">✋🏽 WAIT!</p>
-            <p className="mt-4">Hold on my love, there&apos;s more</p>
+            <p className="font-bold mt-4">✋🏽</p>
+            <p className="font-bold">WAIT!</p>
+            <p className="font-bold">HOLD ON MY LOVE THERE&apos;S MORE</p>
 
+            <br></br>
             <button
                 onClick={() => router.push('/pages/valentines/2-date')}
-                className="valentines-button mt-2"
+                className="valentines-button font-bold"
             >
-                click me!!!
+                CLICK ME
             </button>
         </div>
     );

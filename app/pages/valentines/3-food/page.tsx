@@ -62,26 +62,26 @@ export default function FoodSelection() {
 
     return (
         <div className="valentines-page">
-            <h1 className="text-4xl font-bold mb-4">What food would you like to eat?</h1>
-            <p className="text-lg mt-2 mb-4 font-medium">
-                Pls select up to 2
+            <h1 className="text-4xl font-bold mb-4">WHAT FOOD WOULD YOU LIKE TO EAT? 👀</h1>
+            <p className="text-lg font-bold mt-1 mb-4">
+                SELECT 1 - 2
             </p>
 
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="checkbox-container">
                     {[
-                        { src: "/Valentines/3-food/sushi.jpg", alt: "Sushi", value: "Sushi" },
-                        { src: "/Valentines/3-food/tacos.jpg", alt: "Tacos", value: "Tacos" },
+                        { src: "/Valentines/3-food/sushi.jpg", alt: "SUSHI", value: "Sushi" },
+                        { src: "/Valentines/3-food/tacos.jpg", alt: "TACOS", value: "Tacos" },
                         { src: "/Valentines/3-food/kbbq.jpg", alt: "KBBQ", value: "KBBQ" },
-                        { src: "/Valentines/3-food/bigway.jpg", alt: "Big Way Hotpot", value: "Big Way Hotpot" },
-                        { src: "/Valentines/3-food/poke-bowl.jpg", alt: "Poke Bowls", value: "Poke Bowls" },
-                        { src: "/Valentines/3-food/Chipotle.jpg", alt: "Chipotle", value: "Chipotle" },
-                        { src: "/Valentines/3-food/pizza.jpg", alt: "Pizza", value: "Pizza" },
-                        { src: "/Valentines/3-food/donair.jpg", alt: "Donair", value: "Donair" },
-                        { src: "/Valentines/3-food/sandwich.jpg", alt: "Sandwich", value: "Sandwich" },
-                        { src: "/Valentines/3-food/chungchun.jpeg", alt: "Chung Chun", value: "Chung Chun Rice Dogs" },
-                        { src: "/Valentines/3-food/fishnchips.jpg", alt: "Fish & Chips", value: "Fish and Chips" },
-                        { src: "/Valentines/3-food/pasta.jpg", alt: "Pasta", value: "Pasta" },
+                        { src: "/Valentines/3-food/bigway.jpg", alt: "BIG WAY HOTPOT", value: "Big Way Hotpot" },
+                        { src: "/Valentines/3-food/poke-bowl.jpg", alt: "POKE BOWLS", value: "Poke Bowls" },
+                        { src: "/Valentines/3-food/Chipotle.jpg", alt: "CHIPOTLE", value: "Chipotle" },
+                        { src: "/Valentines/3-food/pizza.jpg", alt: "PIZZA", value: "Pizza" },
+                        { src: "/Valentines/3-food/donair.jpg", alt: "DONAIR", value: "Donair" },
+                        { src: "/Valentines/3-food/sandwich.jpg", alt: "SANDWICH", value: "Sandwich" },
+                        { src: "/Valentines/3-food/chungchun.jpeg", alt: "CHUNG CHUN RICE DOG", value: "Chung Chun Rice Dogs" },
+                        { src: "/Valentines/3-food/fishnchips.jpg", alt: "FISH & CHIPS", value: "Fish and Chips" },
+                        { src: "/Valentines/3-food/pasta.jpg", alt: "PASTA", value: "Pasta" },
                         { src: "/Valentines/idk.gif", alt: "I can't decide", value: "(I can&apos;t decide on the foods, surprise me)" }
                     ].map(({ src, alt, value }) => (
                         <label className="checkbox-option" key={value}>
