@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'; // ✅ Import Image from Next.js
 
 import '../valentines.css';
 
@@ -68,174 +69,40 @@ export default function FoodSelection() {
 
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="checkbox-container">
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/sushi.jpg" alt="Sushi" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Sushi"
-                                onChange={handleFoodChange}
-                            />
-                            Sushi
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/tacos.jpg" alt="Tacos" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Tacos"
-                                onChange={handleFoodChange}
-                            />
-                            Tacos
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/kbbq.jpg" alt="KBBQ" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="KBBQ"
-                                onChange={handleFoodChange}
-                            />
-                            KBBQ
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/bigway.jpg" alt="Big Way Hotpot" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Big Way Hotpot"
-                                onChange={handleFoodChange}
-                            />
-                            Big Way Hotpot
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/poke-bowl.jpg" alt="Poke Bowls" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Poke Bowls"
-                                onChange={handleFoodChange}
-                            />
-                            Poke Bowls
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/Chipotle.jpg" alt="Chipotle" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Chipotle"
-                                onChange={handleFoodChange}
-                            />
-                            Chipotle
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/pizza.jpg" alt="Pizza" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Pizza"
-                                onChange={handleFoodChange}
-                            />
-                            Pizza
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/donair.jpg" alt="Donair" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Donair"
-                                onChange={handleFoodChange}
-                            />
-                            Donair
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/sandwich.jpg" alt="Sandwich" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Sandwich"
-                                onChange={handleFoodChange}
-                            />
-                            Sandwich
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/chungchun.jpeg" alt="Chung Chun" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Chung Chun Rice Dogs"
-                                onChange={handleFoodChange}
-                            />
-                            Chung Chun Rice Dog
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/fishnchips.jpg" alt="Fish & Chips" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Fish and Chips"
-                                onChange={handleFoodChange}
-                            />
-                            Fish & Chips
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/3-food/pasta.jpg" alt="Pasta" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="Pasta"
-                                onChange={handleFoodChange}
-                            />
-                            Pasta
-                        </span>
-                    </label>
-
-                    <label className="checkbox-option">
-                        <img src="/Valentines/idk.gif" alt="I can't decide" className="checkbox-image" />
-                        <span>
-                            <input
-                                type="checkbox"
-                                value="(I can't decide on the foods, surprise me)"
-                                onChange={handleFoodChange}
-                            />
-                            i can't decide!!!!! (Surprise Me!!!!)
-                        </span>
-                    </label>
+                    {[
+                        { src: "/Valentines/3-food/sushi.jpg", alt: "Sushi", value: "Sushi" },
+                        { src: "/Valentines/3-food/tacos.jpg", alt: "Tacos", value: "Tacos" },
+                        { src: "/Valentines/3-food/kbbq.jpg", alt: "KBBQ", value: "KBBQ" },
+                        { src: "/Valentines/3-food/bigway.jpg", alt: "Big Way Hotpot", value: "Big Way Hotpot" },
+                        { src: "/Valentines/3-food/poke-bowl.jpg", alt: "Poke Bowls", value: "Poke Bowls" },
+                        { src: "/Valentines/3-food/Chipotle.jpg", alt: "Chipotle", value: "Chipotle" },
+                        { src: "/Valentines/3-food/pizza.jpg", alt: "Pizza", value: "Pizza" },
+                        { src: "/Valentines/3-food/donair.jpg", alt: "Donair", value: "Donair" },
+                        { src: "/Valentines/3-food/sandwich.jpg", alt: "Sandwich", value: "Sandwich" },
+                        { src: "/Valentines/3-food/chungchun.jpeg", alt: "Chung Chun", value: "Chung Chun Rice Dogs" },
+                        { src: "/Valentines/3-food/fishnchips.jpg", alt: "Fish & Chips", value: "Fish and Chips" },
+                        { src: "/Valentines/3-food/pasta.jpg", alt: "Pasta", value: "Pasta" },
+                        { src: "/Valentines/idk.gif", alt: "I can't decide", value: "(I can&apos;t decide on the foods, surprise me)" }
+                    ].map(({ src, alt, value }) => (
+                        <label className="checkbox-option" key={value}>
+                            <Image src={src} alt={alt} width={120} height={120} className="checkbox-image" />
+                            <span>
+                                <input
+                                    type="checkbox"
+                                    value={value}
+                                    onChange={handleFoodChange}
+                                />
+                                {alt}
+                            </span>
+                        </label>
+                    ))}
                 </div>
 
                 <div className="mt-8">
-                    <button
-                        onClick={handleBack}
-                        className="back-button"
-                    >
+                    <button onClick={handleBack} className="back-button">
                         Back
                     </button>
-                    <button
-                        onClick={handleSubmit}
-                        className="valentines-button"
-                    >
+                    <button onClick={handleSubmit} className="valentines-button">
                         Next
                     </button>
                 </div>

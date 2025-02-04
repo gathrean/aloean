@@ -33,7 +33,7 @@ export default function Home() {
 
           <Link href="/pages/valentines">
             <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
-              💘 Valentine's 2025
+            💘 Valentine&apos;s 2025
             </button>
           </Link>
 

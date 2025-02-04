@@ -24,6 +24,8 @@ export async function POST(request: Request) {
             response,           
             timestamp: formattedTimestamp, 
         });
+        
+        console.log('Inserted document:', result);        
 
         return NextResponse.json({ message: 'Response saved successfully!' });
     } catch (err) {

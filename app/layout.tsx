@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-
+import { Inter } from "next/font/google";  // ✅ Import Google font properly
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], weight: ["400", "600"] });  // ✅ Load weights
 
 export const metadata: Metadata = {
   title: "AloEan",
@@ -15,13 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       </head>
-      <body className="antialiased">
+      <body className={`${inter.className} antialiased`}>
         {children}
       </body>
     </html>

@@ -1,9 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
-import './valentines.css';
+import Image from 'next/image';
+import './/valentines.css';
 
 export default function Valentines() {
     const router = useRouter();
@@ -29,7 +28,13 @@ export default function Valentines() {
                 <p className="text-4xl mt-2">🐢❤️🐻‍❄️</p>
                 <p>(V-<b>A-L-O-E</b>-N-T-<b>E-A-N-</b>E)</p>
                 <br />
-                <img src="/Valentines/cat-begging.gif" alt="Begging cat" className="w-120 h-120" />
+                <Image
+                    src="/Valentines/cat-begging.gif"
+                    alt="Valentine's Day Image"
+                    width={300}
+                    height={300}
+                    className="mt-4"
+                />
                 <br />
                 <div className="mt-8 flex gap-4">
                     <button

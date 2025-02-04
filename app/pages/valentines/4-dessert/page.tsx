@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'; // Import Image for optimization
 
 import '../valentines.css';
 
@@ -74,7 +75,7 @@ export default function DessertSelection() {
 
                 <div className="checkbox-container">
                     <label className="checkbox-option">
-                        <img src="/Valentines/4-dessert/icecream.jpg" alt="Ice Cream" className="checkbox-image" />
+                        <Image src="/Valentines/4-dessert/icecream.jpg" alt="Ice Cream" className="checkbox-image" width={300} height={300} />
                         <span>
                             <input
                                 type="checkbox"
@@ -86,7 +87,7 @@ export default function DessertSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/4-dessert/bubble-tea.jpg" alt="Bubble Tea" className="checkbox-image" />
+                        <Image src="/Valentines/4-dessert/bubble-tea.jpg" alt="Bubble Tea" className="checkbox-image" width={300} height={300} />
                         <span>
                             <input
                                 type="checkbox"
@@ -98,7 +99,7 @@ export default function DessertSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/4-dessert/mochi.jpg" alt="Mochi" className="checkbox-image" />
+                        <Image src="/Valentines/4-dessert/mochi.jpg" alt="Mochi" className="checkbox-image" width={300} height={300} />
                         <span>
                             <input
                                 type="checkbox"
@@ -110,7 +111,7 @@ export default function DessertSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/4-dessert/matcha.jpg" alt="Matcha" className="checkbox-image" />
+                        <Image src="/Valentines/4-dessert/matcha.jpg" alt="Matcha" className="checkbox-image" width={300} height={300} />
                         <span>
                             <input
                                 type="checkbox"
@@ -122,7 +123,7 @@ export default function DessertSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/4-dessert/chocolate.jpg" alt="Chocolate" className="checkbox-image" />
+                        <Image src="/Valentines/4-dessert/chocolate.jpg" alt="Chocolate" className="checkbox-image" width={300} height={300} />
                         <span>
                             <input
                                 type="checkbox"
@@ -134,7 +135,7 @@ export default function DessertSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/4-dessert/frozen-yogurt.jpg" alt="Frozen Yogurt" className="checkbox-image" />
+                        <Image src="/Valentines/4-dessert/frozen-yogurt.jpg" alt="Frozen Yogurt" className="checkbox-image" width={300} height={300} />
                         <span>
                             <input
                                 type="checkbox"
@@ -146,7 +147,7 @@ export default function DessertSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/4-dessert/indian-desserts.jpg" alt="Indian Desserts" className="checkbox-image" />
+                        <Image src="/Valentines/4-dessert/indian-desserts.jpg" alt="Indian Desserts" className="checkbox-image" width={300} height={300} />
                         <span>
                             <input
                                 type="checkbox"
@@ -158,7 +159,7 @@ export default function DessertSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/4-dessert/filipino-desserts.jpg" alt="Filipino Desserts" className="checkbox-image" />
+                        <Image src="/Valentines/4-dessert/filipino-desserts.jpg" alt="Filipino Desserts" className="checkbox-image" width={300} height={300} />
                         <span>
                             <input
                                 type="checkbox"
@@ -170,14 +171,14 @@ export default function DessertSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/idk.gif" alt="I can't decide" className="checkbox-image" />
+                        <Image src="/Valentines/idk.gif" alt="I can't decide" className="checkbox-image" width={300} height={300} />
                         <span>
                             <input
                                 type="checkbox"
-                                value="(I can't decide on desserts, surprise me)"
+                                value="(I can&apos;t decide on desserts, surprise me)"
                                 onChange={handleDessertChange}
                             />
-                            i can't decide!!!!! (Surprise Me!!!!)
+                            i can&apos;t decide!!!!! (Surprise Me!!!!)
                         </span>
                     </label>
                 </div>

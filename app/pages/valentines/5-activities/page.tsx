@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image'; // Add this import at the top
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -72,7 +73,13 @@ export default function ActivitiesSelection() {
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="checkbox-container">
                     <label className="checkbox-option">
-                        <img src="/Valentines/5-activities/arcade.jpg" alt="Arcade" className="checkbox-image" />
+                        <Image
+                            src="/Valentines/5-activities/arcade.jpg"
+                            alt="Arcade"
+                            className="checkbox-image"
+                            width={500}
+                            height={300}
+                        />
                         <span>
                             <input
                                 type="checkbox"
@@ -84,7 +91,13 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/5-activities/museum.jpg" alt="Museum" className="checkbox-image" />
+                        <Image
+                            src="/Valentines/5-activities/museum.jpg"
+                            alt="Museum"
+                            className="checkbox-image"
+                            width={500}
+                            height={300}
+                        />
                         <span>
                             <input
                                 type="checkbox"
@@ -96,7 +109,13 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/5-activities/sunset.jpg" alt="Sunset" className="checkbox-image" />
+                        <Image
+                            src="/Valentines/5-activities/sunset.jpg"
+                            alt="Sunset"
+                            className="checkbox-image"
+                            width={500}
+                            height={300}
+                        />
                         <span>
                             <input
                                 type="checkbox"
@@ -108,7 +127,13 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/5-activities/music-store.jpg" alt="Music Store" className="checkbox-image" />
+                        <Image
+                            src="/Valentines/5-activities/music-store.jpg"
+                            alt="Music Store"
+                            className="checkbox-image"
+                            width={500}
+                            height={300}
+                        />
                         <span>
                             <input
                                 type="checkbox"
@@ -120,7 +145,13 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/5-activities/photobooth.jpg" alt="Vintage Photo Booth" className="checkbox-image" />
+                        <Image
+                            src="/Valentines/5-activities/photobooth.jpg"
+                            alt="Vintage Photo Booth"
+                            className="checkbox-image"
+                            width={500}
+                            height={300}
+                        />
                         <span>
                             <input
                                 type="checkbox"
@@ -132,7 +163,13 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/5-activities/cafe.jpg" alt="Cafe" className="checkbox-image" />
+                        <Image
+                            src="/Valentines/5-activities/cafe.jpg"
+                            alt="Cafe"
+                            className="checkbox-image"
+                            width={500}
+                            height={300}
+                        />
                         <span>
                             <input
                                 type="checkbox"
@@ -144,7 +181,13 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/5-activities/build-a-bear.jpg" alt="Build-A-Bear" className="checkbox-image" />
+                        <Image
+                            src="/Valentines/5-activities/build-a-bear.jpg"
+                            alt="Build-A-Bear"
+                            className="checkbox-image"
+                            width={500}
+                            height={300}
+                        />
                         <span>
                             <input
                                 type="checkbox"
@@ -156,7 +199,13 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/5-activities/aquarium.jpg" alt="Aquarium" className="checkbox-image" />
+                        <Image
+                            src="/Valentines/5-activities/aquarium.jpg"
+                            alt="Aquarium"
+                            className="checkbox-image"
+                            width={500}
+                            height={300}
+                        />
                         <span>
                             <input
                                 type="checkbox"
@@ -168,14 +217,20 @@ export default function ActivitiesSelection() {
                     </label>
 
                     <label className="checkbox-option">
-                        <img src="/Valentines/idk.gif" alt="Surprise Me" className="checkbox-image" />
+                        <Image
+                            src="/Valentines/idk.gif"
+                            alt="Surprise Me"
+                            className="checkbox-image"
+                            width={500}
+                            height={300}
+                        />
                         <span>
                             <input
                                 type="checkbox"
-                                value="(I can't decide on activities, surprise me)"
+                                value="i can&apos;t decide!!!!! (Surprise Me!!!!)"
                                 onChange={handleActivityChange}
                             />
-                            i can't decide!!!!! (Surprise Me!!!!)
+                            i can&apos;t decide!!!!! (Surprise Me!!!!)
                         </span>
                     </label>
                 </div>
