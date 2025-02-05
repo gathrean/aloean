@@ -11,7 +11,7 @@ export default function Nope() {
             <h1 className="text-4xl font-bold text-gray-300">
                 i see...
             </h1>
-            <div className="image-container mt-4">
+            <div className="gif-container mt-4">
                 <Image
                     src="/Valentines/1/spiderman.jpeg"
                     alt="Sad cat gif"
@@ -25,7 +25,7 @@ export default function Nope() {
 
             <button
                 onClick={() => router.push('/valentines')}
-                className="font-bold back-button"
+                className="font-bold valentines-page-button back-button"
             >
                 WAIT! GO BACK!
             </button>

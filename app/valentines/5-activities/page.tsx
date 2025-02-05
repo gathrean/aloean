@@ -72,13 +72,13 @@ export default function ActivitiesSelection() {
             <p className="text-lg mt-2 mb-4 font-bold">SELECT 1 - 5</p>
 
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
-                <div className="checkbox-container">
+                <div className="card-grid">
                     {activities.map(({ src, alt, value, label }) => (
                         <label
                             key={value}
-                            className={`checkbox-option ${selectedActivities.includes(value) ? 'selected' : ''}`}
+                            className={`card-selection ${selectedActivities.includes(value) ? 'selected' : ''}`}
                         >
-                            <span className="checkbox-text">
+                            <span className="card-text">
                                 <input
                                     type="checkbox"
                                     value={value}
@@ -86,10 +86,10 @@ export default function ActivitiesSelection() {
                                 />
                                 {label}
                             </span>
-                            <div className="image-container">
-                                <Image src={src} alt={alt} className="checkbox-image" width={120} height={120} />
+                            <div className="card-image-container">
+                                <Image src={src} alt={alt} className="card-image" width={120} height={120} />
                             </div>
-                            <span className="checkbox-text">
+                            <span className="card-text">
                                 <input
                                     type="checkbox"
                                     value={value}
@@ -102,8 +102,8 @@ export default function ActivitiesSelection() {
                 </div>
 
                 <div className="mt-8">
-                    <button onClick={handleBack} className="back-button font-bold">GO BACK</button>
-                    <button type="submit" className="valentines-button font-bold">NEXT LEVEL</button>
+                    <button onClick={handleBack} className="font-bold valentines-page-button back-button">GO BACK</button>
+                    <button type="submit" className="font-bold valentines-page-button next-button">NEXT LEVEL</button>
                 </div>
             </form>
         </div>

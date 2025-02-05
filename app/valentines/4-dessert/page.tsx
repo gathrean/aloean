@@ -63,7 +63,7 @@ export default function DessertSelection() {
             </p>
 
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
-                <div className="checkbox-container">
+                <div className="card-grid">
                     {[
                         { src: "/Valentines/4-dessert/icecream.jpg", alt: "ICE CREAM", value: "ICE CREAM" },
                         { src: "/Valentines/4-dessert/bubble-tea.jpg", alt: "BUBBLE TEA", value: "BBUBBLE TEA" },
@@ -77,10 +77,10 @@ export default function DessertSelection() {
                         { src: "/Valentines/shrug.png", alt: "CAN'T DECIDE; SURPRISE ME", value: "CAN'T DECIDE; SURPRISE ME" }
                     ].map(({ src, alt, value }) => (
                         <label
-                            className={`checkbox-option ${selectedDesserts.includes(value) ? 'selected' : ''}`}
+                            className={`card-selection ${selectedDesserts.includes(value) ? 'selected' : ''}`}
                             key={value}
                         >
-                            <span className="checkbox-text">
+                            <span className="card-text">
                                 <input
                                     type="checkbox"
                                     value={value}
@@ -88,10 +88,10 @@ export default function DessertSelection() {
                                 />
                                 {alt}
                             </span>
-                            <div className="image-container">
-                                <Image src={src} alt={alt} width={120} height={120} className="checkbox-image" />
+                            <div className="card-image-container">
+                                <Image src={src} alt={alt} width={120} height={120} className="card-image" />
                             </div>
-                            <span className="checkbox-text">
+                            <span className="card-text">
                                 <input
                                     type="checkbox"
                                     value={value}
@@ -104,8 +104,8 @@ export default function DessertSelection() {
                 </div>
 
                 <div className="mt-8">
-                    <button onClick={handleBack} className="back-button font-bold">GO BACK</button>
-                    <button onClick={handleSubmit} className="valentines-button font-bold">NEXT LEVEL</button>
+                    <button onClick={handleBack} className="font-bold valentines-page-button back-button">GO BACK</button>
+                    <button onClick={handleSubmit} className="font-bold valentines-page-button next-button">NEXT LEVEL</button>
                 </div>
             </form>
         </div>

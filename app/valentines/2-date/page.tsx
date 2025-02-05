@@ -68,7 +68,7 @@ export default function DateSelection() {
                 type="date"
                 value={selectedDate}
                 onChange={handleDateChange}
-                className="w-64 p-2 rounded-md valentines-input-box"
+                className="w-64 p-2 rounded-md date-page-input-box"
             />
 
             <br></br>
@@ -76,7 +76,7 @@ export default function DateSelection() {
             <select
                 value={selectedLocation}
                 onChange={handleLocationChange}
-                className="w-64 p-2 rounded-md valentines-input-box"
+                className="w-64 p-2 rounded-md date-page-input-box"
             >
                 <option value="" disabled>📍 📍 📍</option>
                 <option value="Columbia Station">Columbia Station</option>
@@ -90,7 +90,7 @@ export default function DateSelection() {
             <select
                 value={selectedTime}
                 onChange={handleTimeChange}
-                className="w-64 p-2 rounded-md mb-6 valentines-input-box"
+                className="w-64 p-2 rounded-md mb-6 date-page-input-box"
             >
                 <option value="">🕰️ 🕰️ 🕰️</option>
                 {Array.from({ length: 7 }, (_, i) => {
@@ -103,8 +103,8 @@ export default function DateSelection() {
             </select>
 
             <div className="flex justify-between mt-8">
-                <button onClick={handleBack}className="font-bold back-button">GO BACK</button>
-                <button onClick={handleSubmit} className="font-bold valentines-button">NEXT LEVEL</button>
+                <button onClick={handleBack}className="font-bold valentines-page-button back-button">GO BACK</button>
+                <button onClick={handleSubmit} className="font-bold valentines-page-button next-button">NEXT LEVEL</button>
             </div>
         </div>
     );

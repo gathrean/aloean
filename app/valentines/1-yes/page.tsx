@@ -11,7 +11,7 @@ export default function ThankYou() {
             <h1 className="text-xl font-bold mb-2">( LEVEL 1 )</h1>
             <h1 className="text-4xl font-bold">LET&apos;S GOOOOOOOOOO</h1>
 
-            <div className="image-container mt-4">
+            <div className="gif-container mt-4">
                 <Image
                     src="/Valentines/1/bee.gif"
                     alt="bee gif"
@@ -28,7 +28,7 @@ export default function ThankYou() {
             <br></br>
             <button
                 onClick={() => router.push('/valentines/2-date')}
-                className="valentines-button font-bold"
+                className="font-bold next-button valentines-page-button"
             >
                 NEXT LEVEL
             </button>

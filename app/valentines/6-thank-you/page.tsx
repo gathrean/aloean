@@ -2,7 +2,9 @@
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+
 import '../valentines.css';
+import './falling-roses.css';
 
 // Define the type for the falling rose
 type FallingRose = {
@@ -51,7 +53,7 @@ export default function ThankYouPage() {
                 />
             ))}
 
-            <h1 className="text-4xl font-bold">MY LOVE, BABY, حبيبتي,</h1>
+            <h1 className="text-4xl font-bold">@ MY BABY, حبيبتي, MY LOVE,</h1>
             <h1 className="text-4xl font-bold">THANK YOU FOR BEING MY VALENTINE AND MY GIRLFRIEND :)</h1>
             <Image
                 src="/Valentines/red-roses.gif"
@@ -66,15 +68,15 @@ export default function ThankYouPage() {
             <p className="mt-1 mb-1 font-bold text-xl">SEE YOU SOON !!!</p>
             <p className="mt-1 mb-4 font-bold text-xl">-BUBS</p>
 
-            <button onClick={() => router.push('/')} className="valentines-button font-bold mt-8">
+            <button onClick={() => router.push('/')} className="font-bold valentines-page-button next-button mt-8">
                 PRINT RESULTS
             </button>
 
             <div className="mt-4">
-                <button onClick={() => router.push('/valentines')} className="back-button font-bold mt-8">
+                <button onClick={() => router.push('/valentines')} className="font-bold valentines-page-button back-button mt-8">
                     RESTART
                 </button>
-                <button onClick={() => router.push('/')} className="back-button font-bold mt-8">
+                <button onClick={() => router.push('/')} className="font-bold valentines-page-button back-button mt-8">
                     GO HOME
                 </button>
             </div>

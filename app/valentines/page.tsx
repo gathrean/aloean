@@ -43,7 +43,7 @@ export default function Valentines() {
                             submitResponse('No, I won\'t be your Valentine :(');
                             router.push('/valentines/1-no');
                         }}
-                        className="back-button font-bold"
+                        className="font-bold valentines-page-button back-button"
                     >
                         No.
                     </button>
@@ -52,7 +52,7 @@ export default function Valentines() {
                             submitResponse('Yes, I will be your Valentine!');
                             router.push('/valentines/1-yes');
                         }}
-                        className="valentines-button font-bold"
+                        className="font-bold valentines-page-button next-button"
                     >
                         YESSS!!!!!!!!!
                     </button>

@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
-
+/************************
+        GENERAL CSS
+************************/
 :root {
     --valentines-bg: #C21911;
     --valentines-text: #FFF;
@@ -11,6 +12,16 @@
 html, body {
     height: 100%;
     margin: 0;
+}
+
+.gif-container {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .valentines-page {
@@ -26,7 +37,16 @@ html, body {
     align-items: center;
 }
 
-.checkbox-container {
+.date-page-input-box {
+    color: #C21911;
+}
+
+/************************
+        CARDS
+************************/
+
+/* GRID */
+.card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
@@ -34,44 +54,62 @@ html, body {
     margin-bottom: 2rem;
 }
 
+/* GRID */
 @media (max-width: 1400px) {
-    .checkbox-container {
+    .card-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* GRID */
 @media (max-width: 1000px) {
-    .checkbox-container {
+    .card-grid {
         grid-template-columns: 1fr;
     }
 }
 
-.checkbox-option {
+.card-selection {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: var(--valentines-bg);
     background-color: #fff;
     padding: 20px;
     border-radius: 40px;
 }
 
-.checkbox-text {
+/* Hides the checkbox for the cards selection page */
+.card-selection input {
+    display: none;
+    margin: 0rem 0.5rem 0.5rem 0.5rem
+}
+
+.card-selection:hover {
+    transform: scale(1.05);
+    background-color: #EBEBEB;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-selection.selected {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* The red text show on top and bottom sides of each card */
+.card-text {
     display: flex;
     align-items: center;
     font-weight: bold;
 }
 
-.checkbox-option input {
-    margin-bottom: 0.5rem;
-    transform: scale(1.5);
-}
-
-.checkbox-image {
+/* The image shown in the middle */
+.card-image {
     width: 250px;
     height: 125px;
     margin-bottom: 0.5rem;
@@ -79,80 +117,11 @@ html, body {
     transition: transform 0.3s ease;
 }
 
-.checkbox-option {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/************************
+    IMAGES IN THE CARDS
+************************/
 
-.checkbox-option:hover {
-    transform: scale(1.05);
-    background-color: #EBEBEB;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.checkbox-option input {
-    display: none;
-    margin-left: 0.5rem;
-}
-
-.checkbox-option input {
-    margin-right: 0.5rem; 
-}
-
-.valentines-input-box {
-    color: #C21911;
-}
-
-.valentines-header {
-    text-color: #fff;
-}
-
-.checkbox-option.selected {
-    background-color: #000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
-}
-
-.checkbox-option.selected .checkbox-text {
-    color: #fff;
-}
-
-.valentines-button {
-    background-color: #FFF;
-    color: var(--valentines-bg);
-    padding: 1rem;
-    border-radius: 25px;
-    width: 12rem;
-    margin: 0 10px 0 10px;
-    
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1.2rem;
-}
-
-.valentines-button:hover {
-    background-color: #FFF;
-    transform: scale(1.1);
-}
-
-.back-button {
-    background-color: #FFF;
-    color: #4A4547;
-    padding: 1rem;
-    border-radius: 25px;
-    width: 12rem;
-    margin: 0 10px 0 10px;
-
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1.2rem;
-}
-
-.back-button:hover {
-    background-color: #FFF;
-    transform: scale(1.1);
-}
-
-.image-container {
+.card-image-container {
     width: 400px;
     height: 200px;
     overflow: hidden;
@@ -162,7 +131,7 @@ html, body {
     align-items: center;
 }
 
-.image-container img {
+.card-image-container img {
     object-fit: cover;
     object-position: center;
 }
@@ -178,24 +147,30 @@ html, body {
     transform: translateY(0);
 } 
 
-.falling-rose {
-    position: absolute;
-    top: -100px;
-    width: 50px;
-    height: 50px;
-    opacity: 1;
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+/************************
+        BUTTONS
+************************/
+
+.valentines-page-button {
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 25px;
+    width: 12rem;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2rem;
 }
 
-@keyframes fall {
-    0% {
-        transform: translateY(0);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
+.valentines-page-button:hover {
+    background-color: #FFF;
+    transform: scale(1.1);
+}
+
+.next-button {
+    color: var(--valentines-bg);
+}
+
+.back-button {
+    color: #4A4547;
 }
