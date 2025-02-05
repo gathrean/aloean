@@ -10,7 +10,7 @@ export default function AudioPlayer() {
     const [isPlaying, setIsPlaying] = useState(false);
 
     useEffect(() => {
-        const audio = new Audio('/music.mp3'); // 🎵 Change to your music file
+        const audio = new Audio('/will-i-see-you-again.mp3'); // 🎵 Change to your music file
         audio.loop = true; // Ensure it loops
         audioRef.current = audio;
 
