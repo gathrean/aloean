@@ -35,8 +35,8 @@ export default function AudioPlayer() {
 
     return (
         <div className="audio-player text-white">
-            <button onClick={togglePlay} className="font-bold">
-                {isPlaying ? '⏸ Pause' : '▶️ Play'}
+            <button onClick={togglePlay} className="play-pause-button">
+                {isPlaying ? '⏸' : '▶️'}
             </button>
         </div>
     );

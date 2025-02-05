@@ -1,7 +1,25 @@
-.audio-player {
-    position: fixed;
-    bottom: 1rem;
-    left: 1rem;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+body {
+    position: relative;
+}
+
+.play-pause-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-pause-button:hover {
+    background-color: #333;
 }

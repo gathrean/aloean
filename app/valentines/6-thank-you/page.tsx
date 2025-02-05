@@ -57,7 +57,7 @@ export default function ThankYouPage() {
                 />
             ))}
 
-            <h1 className="text-4xl font-bold">@ MY BABY, حبيبتي, MY LOVE,</h1>
+            <h1 className="text-4xl font-bold">MY BABY, حبيبتي, MY LOVE,</h1>
             <h1 className="text-4xl font-bold">THANK YOU FOR BEING MY VALENTINE AND MY GIRLFRIEND :)</h1>
             <Image
                 src="/Valentines/red-roses.gif"
