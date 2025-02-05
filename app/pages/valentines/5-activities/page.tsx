@@ -62,14 +62,14 @@ export default function ActivitiesSelection() {
         { src: '/Valentines/5-activities/cafe.jpg', alt: 'Cafe', value: 'Cafe Date', label: 'CAFE DATE' },
         { src: '/Valentines/5-activities/build-a-bear.jpg', alt: 'Build-A-Bear', value: 'Build-A-Bear', label: 'BUILD-A-BEAR' },
         { src: '/Valentines/5-activities/aquarium.jpg', alt: 'Aquarium', value: 'Aquarium', label: 'AQUARIUM' },
-        { src: '/Valentines/idk.gif', alt: 'Surprise Me', value: "CAN'T DECIDE (SURPRISE ME)", label: "CAN'T DECIDE (SURPRISE ME)" }
+        { src: '/Valentines/shrug.png', alt: 'Surprise Me', value: "CAN'T DECIDE (SURPRISE ME)", label: "CAN'T DECIDE (SURPRISE ME)" }
     ];
 
     return (
         <div className="valentines-page">
             <h1 className="text-xl font-bold mb-2">( LEVEL 5 )</h1>
             <h1 className="text-4xl font-bold mb-4">WHAT ACTIVITIES DO YOU WANT TO DO AFTER, MY LOVE?</h1>
-            <p className="text-lg mt-2 mb-4 font-medium">SELECT 1 - 5</p>
+            <p className="text-lg mt-2 mb-4 font-bold">SELECT 1 - 5</p>
 
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="checkbox-container">
@@ -78,6 +78,14 @@ export default function ActivitiesSelection() {
                             key={value}
                             className={`checkbox-option ${selectedActivities.includes(value) ? 'selected' : ''}`}
                         >
+                            <span className="checkbox-text">
+                                <input
+                                    type="checkbox"
+                                    value={value}
+                                    onChange={handleActivityChange}
+                                />
+                                {label}
+                            </span>
                             <div className="image-container">
                                 <Image src={src} alt={alt} className="checkbox-image" width={120} height={120} />
                             </div>

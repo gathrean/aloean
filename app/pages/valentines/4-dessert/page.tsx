@@ -74,12 +74,20 @@ export default function DessertSelection() {
                         { src: "/Valentines/4-dessert/indian-desserts.jpg", alt: "INDIAN DESSERTS", value: "INDIAN DESSERTS" },
                         { src: "/Valentines/4-dessert/filipino-desserts.jpg", alt: "FILIPINO DESSERTS", value: "FILIPINO DESSERTS" },
                         { src: "/Valentines/4-dessert/no-desserts.jpg", alt: "NO DESSERTS", value: "NO DESSERTS" },
-                        { src: "/Valentines/idk.gif", alt: "CAN'T DECIDE; SURPRISE ME", value: "CAN'T DECIDE; SURPRISE ME" }
+                        { src: "/Valentines/shrug.png", alt: "CAN'T DECIDE; SURPRISE ME", value: "CAN'T DECIDE; SURPRISE ME" }
                     ].map(({ src, alt, value }) => (
                         <label
                             className={`checkbox-option ${selectedDesserts.includes(value) ? 'selected' : ''}`}
                             key={value}
                         >
+                            <span className="checkbox-text">
+                                <input
+                                    type="checkbox"
+                                    value={value}
+                                    onChange={handleDessertChange}
+                                />
+                                {alt}
+                            </span>
                             <div className="image-container">
                                 <Image src={src} alt={alt} width={120} height={120} className="checkbox-image" />
                             </div>
