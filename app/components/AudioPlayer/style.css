@@ -1,0 +1,7 @@
+.audio-player {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}

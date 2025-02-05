@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";  // ✅ Import Google font properly
+import { Inter } from "next/font/google";
 import "./globals.css";
+import AudioPlayer from './components/AudioPlayer/page';
 
-const inter = Inter({ subsets: ["latin"], weight: ["400", "600"] });  // ✅ Load weights
+const inter = Inter({ subsets: ["latin"], weight: ["400", "600"] });
 
 export const metadata: Metadata = {
   title: "AloEan",
   description: "Hey hey hey",
 };
 
-export default function RootLayout({
+export default function RootLayout({ 
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -24,6 +25,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         {children}
+        <AudioPlayer />
       </body>
     </html>
   );
