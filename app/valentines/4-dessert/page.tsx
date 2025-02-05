@@ -30,10 +30,10 @@ export default function DessertSelection() {
 
     const handleSubmit = async () => {
         if (selectedDesserts.length === 0) {
-            alert("baby you didn’t pick one! (Select up to 3)");
+            alert("baby you didn’t pick one!\n\n(Select up to 3)");
             return;
         } else if (selectedDesserts.length > 3) {
-            alert("damnnnn we big backing??? (Select up to 3)");
+            alert("damnnnn we big backing???\n\n(Select up to 3)");
             return;
         }
 

@@ -29,10 +29,10 @@ export default function ActivitiesSelection() {
 
     const handleSubmit = async () => {
         if (selectedActivities.length === 0) {
-            alert("Baby you didn’t pick one! (Select up to 5)");
+            alert("baby you didn’t pick one!\n\n(Select up to 5)");
             return;
         } else if (selectedActivities.length > 5) {
-            alert("Damnnnn you don't want us to do anything? :((( (Select up to 5)");
+            alert("damnnnn we're not doing anything?\n\n(Select up to 5)");
             return;
         }
 

@@ -38,7 +38,7 @@ export default function DateSelection() {
 
     const handleSubmit = () => {
         if (!selectedDate || !selectedLocation || !selectedTime) {
-            alert("Baby you didn't pick all the options!!!! 😅 (Or try refreshing the page if it's trippin)");
+            alert("my love you gotta pick all the options! (or try refreshing the page if it's trippin)");
             return;
         }
 
@@ -78,21 +78,22 @@ export default function DateSelection() {
                 onChange={handleLocationChange}
                 className="w-64 p-2 rounded-md date-page-input-box"
             >
-                <option value="" disabled>📍 📍 📍</option>
+                <option value="" disabled>📍</option>
                 <option value="Columbia Station">Columbia Station</option>
                 <option value="New West Station">New West Station</option>
-                <option value="Park outside your place">Park outside your place</option>
+                <option value="Braid Station">Braid Station</option>
+                <option value="The park outside of your place">The park outside of your place</option>
             </select>
 
 
             <br></br>
-            <label className="block font-bold text-lg mb-2">@ _____</label>
+            <label className="block font-bold text-lg mb-2">@ __ : __</label>
             <select
                 value={selectedTime}
                 onChange={handleTimeChange}
                 className="w-64 p-2 rounded-md mb-6 date-page-input-box"
             >
-                <option value="">🕰️ 🕰️ 🕰️</option>
+                <option value="">🕰️</option>
                 {Array.from({ length: 7 }, (_, i) => {
                     const hour = 11 + Math.floor(i / 2);
                     const minutes = i % 2 === 0 ? "00" : "30";
