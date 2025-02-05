@@ -89,14 +89,7 @@ export default function ActivitiesSelection() {
                             <div className="card-image-container">
                                 <Image src={src} alt={alt} className="card-image" width={120} height={120} />
                             </div>
-                            <span className="card-text">
-                                <input
-                                    type="checkbox"
-                                    value={value}
-                                    onChange={handleActivityChange}
-                                />
-                                {label}
-                            </span>
+                            <span className="card-text">{alt}</span>
                         </label>
                     ))}
                 </div>

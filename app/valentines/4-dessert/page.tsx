@@ -91,14 +91,7 @@ export default function DessertSelection() {
                             <div className="card-image-container">
                                 <Image src={src} alt={alt} width={120} height={120} className="card-image" />
                             </div>
-                            <span className="card-text">
-                                <input
-                                    type="checkbox"
-                                    value={value}
-                                    onChange={handleDessertChange}
-                                />
-                                {alt}
-                            </span>
+                            <span className="card-text">{alt}</span>
                         </label>
                     ))}
                 </div>

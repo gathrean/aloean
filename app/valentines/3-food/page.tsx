@@ -57,6 +57,7 @@ export default function FoodSelection() {
     };
 
     const handleBack = () => {
+        setSelectedFood([]);
         router.back();
     };
 
@@ -100,14 +101,7 @@ export default function FoodSelection() {
                             <div className="card-image-container">
                                 <Image src={src} alt={alt} width={120} height={120} className="card-image" />
                             </div>
-                            <span className="card-text">
-                                <input
-                                    type="checkbox"
-                                    value={value}
-                                    onChange={handleFoodChange}
-                                />
-                                {alt}
-                            </span>
+                            <span className="card-text">{alt}</span>
                         </label>
                     ))}
                 </div>
