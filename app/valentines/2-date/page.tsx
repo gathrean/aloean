@@ -28,8 +28,8 @@ export default function DateSelection() {
             return;
         }
 
-        // Convert YYYY-MM-DD to "Month Day, Year" format
-        const formattedDate = new Date(responseDate).toLocaleDateString('en-US', {
+        const localDate = new Date(responseDate + "T00:00");
+        const formattedDate = localDate.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
