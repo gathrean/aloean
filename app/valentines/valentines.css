@@ -9,6 +9,16 @@
     --valentines-font: 'Helvetica', Arial, sans-serif;
 }
 
+::selection {
+    background-color: #8F0600;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: #8F0600;
+    color: white;
+}
+
 html, body {
     height: 100%;
     margin: 0;
