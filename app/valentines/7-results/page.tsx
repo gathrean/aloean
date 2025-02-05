@@ -36,8 +36,8 @@ export default function ResultsPage() {
 
                     <h3 className="text-xl font-bold mt-4">AND THEN WE WILL BE MUNCHING ON</h3>
                     <ul>
-                        <li>{valentineData.responseFood1 || "N/A"}</li>
-                        <li>{valentineData.responseFood2 || "N/A"}</li>
+                        <li>{valentineData.responseDessert1 || "N/A"}</li>
+                        <li>{valentineData.responseDessert2 || "N/A"}</li>
                     </ul>
 
                     <h3 className="text-xl font-bold mt-4">AND WE WILL BE DOING</h3>

@@ -55,8 +55,8 @@ export default function FoodSelection() {
         // Overwrite desserts while keeping existing data
         const updatedData = {
             ...storedData,
-            responseDessert1: selectedFood[0] || null,
-            responseDessert2: selectedFood[1] || null, // Optional second dessert
+            responseFood1: selectedFood[0] || null,
+            responseFood2: selectedFood[1] || null, // Optional second dessert
         };
 
         localStorage.setItem("valentineResponse", JSON.stringify(updatedData));
@@ -68,7 +68,7 @@ export default function FoodSelection() {
                 body: JSON.stringify(updatedData),
             });
 
-            router.push('/valentines/5-activities');
+            router.push('/valentines/4-dessert');
         } catch (error) {
             console.error("Failed to submit response:", error);
         }
