@@ -71,7 +71,7 @@ export default function ThankYouPage() {
             </button>
 
             <div className="mt-4">
-                <button onClick={() => router.push('/pages/valentines')} className="back-button font-bold mt-8">
+                <button onClick={() => router.push('/valentines')} className="back-button font-bold mt-8">
                     RESTART
                 </button>
                 <button onClick={() => router.push('/')} className="back-button font-bold mt-8">

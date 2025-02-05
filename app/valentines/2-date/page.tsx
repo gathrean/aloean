@@ -51,7 +51,7 @@ export default function DateSelection() {
         const response = `I will be free on ${formattedDate}, let's meet at ${selectedLocation} at ${selectedTime}.`;
 
         submitResponse(response);
-        router.push('/pages/valentines/3-food');
+        router.push('/valentines/3-food');
     };
 
     const handleBack = () => {

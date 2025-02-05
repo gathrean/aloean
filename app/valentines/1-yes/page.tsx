@@ -27,7 +27,7 @@ export default function ThankYou() {
 
             <br></br>
             <button
-                onClick={() => router.push('/pages/valentines/2-date')}
+                onClick={() => router.push('/valentines/2-date')}
                 className="valentines-button font-bold"
             >
                 NEXT LEVEL

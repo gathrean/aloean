@@ -41,7 +41,7 @@ export default function Valentines() {
                     <button
                         onClick={() => {
                             submitResponse('No, I won\'t be your Valentine :(');
-                            router.push('/pages/valentines/1-no');
+                            router.push('/valentines/1-no');
                         }}
                         className="back-button font-bold"
                     >
@@ -50,7 +50,7 @@ export default function Valentines() {
                     <button
                         onClick={() => {
                             submitResponse('Yes, I will be your Valentine!');
-                            router.push('/pages/valentines/1-yes');
+                            router.push('/valentines/1-yes');
                         }}
                         className="valentines-button font-bold"
                     >

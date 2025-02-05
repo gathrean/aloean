@@ -50,7 +50,7 @@ export default function FoodSelection() {
         try {
             // Ensure submission before navigating
             await submitResponse(formattedResponse);
-            router.push('/pages/valentines/4-dessert');
+            router.push('/valentines/4-dessert');
         } catch (error) {
             console.error("Failed to submit response:", error);
         }

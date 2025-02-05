@@ -43,7 +43,7 @@ export default function ActivitiesSelection() {
 
         try {
             await submitResponse(formattedResponse);
-            router.push('/pages/valentines/6-thank-you');
+            router.push('/valentines/6-thank-you');
         } catch (error) {
             console.error("Failed to submit response:", error);
         }

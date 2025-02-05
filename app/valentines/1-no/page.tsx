@@ -24,7 +24,7 @@ export default function Nope() {
             <br></br>
 
             <button
-                onClick={() => router.push('/pages/valentines')}
+                onClick={() => router.push('/valentines')}
                 className="font-bold back-button"
             >
                 WAIT! GO BACK!

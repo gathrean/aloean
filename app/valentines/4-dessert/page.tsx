@@ -44,7 +44,7 @@ export default function DessertSelection() {
 
         try {
             await submitResponse(formattedResponse);
-            router.push('/pages/valentines/5-activities');
+            router.push('/valentines/5-activities');
         } catch (error) {
             console.error("Failed to submit response:", error);
         }
