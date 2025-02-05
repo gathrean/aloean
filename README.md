@@ -15,3 +15,21 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+This project is hosted on both Vercel and GitHub Pages (See `gh-pages` branch for the deployment setup).
+
+Before deploying to GitHub Pages, you'll need to run the following commands:
+
+1. Prepare the project for deployment:
+```bash
+npm run predeploy
+```
+
+2. Build the project
+```bash
+npm run build
+```
+
+## Conclusion
+
+Thank you for checking out this project. Don't hesitate to reach out if you have any questions or feedback.
