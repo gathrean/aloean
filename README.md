@@ -20,13 +20,11 @@ This project is hosted on both Vercel and GitHub Pages (See `gh-pages` branch fo
 
 Before deploying to GitHub Pages, you'll need to run the following commands:
 
-1. Prepare the project for deployment:
 ```bash
+# 1. Prepare the project for deployment:
 npm run predeploy
-```
 
-2. Build the project
-```bash
+# 2. Build the project
 npm run build
 ```
 
