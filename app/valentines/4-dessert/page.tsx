@@ -50,9 +50,10 @@ export default function DessertSelection() {
         }
     };
 
-    const handleBack = () => {
+    const handleBack = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
         router.back();
-    };
+    };    
 
     return (
         <div className="valentines-page">

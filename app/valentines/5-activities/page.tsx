@@ -49,9 +49,10 @@ export default function ActivitiesSelection() {
         }
     };
 
-    const handleBack = () => {
+    const handleBack = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
         router.back();
-    };
+    };    
 
     const activities = [
         { src: '/Valentines/5-activities/arcade.jpg', alt: 'Arcade', value: 'Arcade', label: 'ARCADE (GRANVILLE REC ROOM)' },

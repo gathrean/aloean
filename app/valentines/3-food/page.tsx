@@ -56,8 +56,8 @@ export default function FoodSelection() {
         }
     };
 
-    const handleBack = () => {
-        setSelectedFood([]);
+    const handleBack = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
         router.back();
     };
 
