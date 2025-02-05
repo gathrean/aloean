@@ -92,7 +92,7 @@ export default function FoodSelection() {
                     {[
                         { src: "/Valentines/3-food/sushi.jpg", alt: "SUSHI", value: "SUSHI" },
                         { src: "/Valentines/3-food/tacos.jpg", alt: "TACOS", value: "TACOS" },
-                        { src: "/Valentines/3-food/kbbq.jpg", alt: "KBBQ", value: "KBBQ" },
+                        { src: "/Valentines/3-food/k-bbq.jpg", alt: "KBBQ", value: "KBBQ" },
                         { src: "/Valentines/3-food/bigway.jpg", alt: "BIG WAY HOTPOT", value: "BIG WAY HOTPOT" },
                         { src: "/Valentines/3-food/poke-bowl.jpg", alt: "POKE BOWLS", value: "POKE BOWLS" },
                         { src: "/Valentines/3-food/chipotle.jpg", alt: "CHIPOTLE", value: "CHIPOTLE" },
