@@ -31,7 +31,7 @@ export default function Home() {
             </button>
           </Link>
 
-          <Link href="/pages/valentines">
+          <Link href="/valentines">
             <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
             💘 Valentine&apos;s 2025
             </button>
