@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #3C9054;
-  --foreground: #171717;
-  --primary-bg-color: #f8f9fa;
-  --primary-text-color: #333333;
-  --primary-button-color: #38a169; 
-  --primary-button-hover-color: #2f855a;
+  --background: #3C9054; /* Sea green */
+  --foreground: #171717; /* Eerie black */
+  --primary-bg-color: #f8f9fa; /* Sea salt white */
+  --primary-text-color: #333333; /* Jet gray */
+  --primary-button-color: #38a169; /* Shamrock green */
+  --primary-button-hover-color: #2f855a; /* Sea green */
 }
 
 @media (prefers-color-scheme: dark) {
