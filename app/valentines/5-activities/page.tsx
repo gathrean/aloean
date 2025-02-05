@@ -1,48 +1,73 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+
 import '../valentines.css';
 
 export default function ActivitiesSelection() {
     const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
     const router = useRouter();
 
+    useEffect(() => {
+        // Retrieve previous selections
+        const storedValentineResponse = JSON.parse(localStorage.getItem('valentineResponse') || '{}');
+        const storedActivities = JSON.parse(sessionStorage.getItem('selectedActivities') || '[]');
+
+        // Set the previous foods from storage
+        setSelectedActivities(storedActivities);
+    }, []);
+
     const handleActivityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        setSelectedActivities((prev) =>
-            e.target.checked ? [...prev, value] : prev.filter((item) => item !== value)
-        );
-    };
+        let updatedSelection;
 
-    const submitResponse = async (response: string) => {
-        try {
-            await fetch('/api/valentines/submit-response', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ response }),
-            });
-        } catch (error) {
-            console.error('Error submitting response:', error);
+        if (e.target.checked) {
+            updatedSelection = [...selectedActivities, value];
+        } else {
+            updatedSelection = selectedActivities.filter((item) => item !== value);
         }
+
+        setSelectedActivities(updatedSelection);
+
+        // Retrieve previous responses and update only the desserts
+        const storedData = JSON.parse(localStorage.getItem("valentineResponse") || "{}");
+        const updatedData = { ...storedData, selectedDesserts: updatedSelection };
+
+        localStorage.setItem("valentineResponse", JSON.stringify(updatedData));
     };
 
     const handleSubmit = async () => {
         if (selectedActivities.length === 0) {
-            alert("baby you didn’t pick one!\n\n(Select up to 5)");
+            alert("baby you didn’t pick one!\n\n(Select up to 2)");
             return;
         } else if (selectedActivities.length > 5) {
-            alert("damnnnn we're not doing anything?\n\n(Select up to 5)");
+            alert("damnnnn we big backing???\n\n(Select up to 2)");
             return;
         }
 
-        const formattedResponse =
-            selectedActivities.length === 1
-                ? `I want to do ${selectedActivities[0]}`
-                : `I want to do ${selectedActivities.join(' and ')}`;
+        // Retrieve previous responses
+        const storedData = JSON.parse(localStorage.getItem("valentineResponse") || "{}");
+
+        // Overwrite desserts while keeping existing data
+        const updatedData = {
+            ...storedData,
+            responseActivity1: selectedActivities[0] || null,
+            responseActivity2: selectedActivities[1] || null, // Optional additional activity
+            responseActivity3: selectedActivities[2] || null, // Optional additional activity
+            responseActivity4: selectedActivities[3] || null, // Optional additional activity
+            responseActivity5: selectedActivities[4] || null, // Optional additional activity
+        };
+
+        localStorage.setItem("valentineResponse", JSON.stringify(updatedData));
 
         try {
-            await submitResponse(formattedResponse);
+            await fetch('/api/valentines/submit-response', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedData),
+            });
+
             router.push('/valentines/6-thank-you');
         } catch (error) {
             console.error("Failed to submit response:", error);
@@ -52,7 +77,7 @@ export default function ActivitiesSelection() {
     const handleBack = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         router.back();
-    };    
+    };
 
     const activities = [
         { src: '/Valentines/5-activities/arcade.jpg', alt: 'Arcade', value: 'Arcade', label: 'ARCADE (GRANVILLE REC ROOM)' },
@@ -83,6 +108,7 @@ export default function ActivitiesSelection() {
                                 <input
                                     type="checkbox"
                                     value={value}
+                                    checked={selectedActivities.includes(value)}
                                     onChange={handleActivityChange}
                                 />
                                 {label}

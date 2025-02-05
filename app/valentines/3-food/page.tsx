@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -9,28 +9,36 @@ export default function FoodSelection() {
     const [selectedFood, setSelectedFood] = useState<string[]>([]);
     const router = useRouter();
 
+    useEffect(() => {
+        // Retrieve previous selections
+        const storedValentineResponse = JSON.parse(localStorage.getItem('valentineResponse') || '{}');
+        const storedFoodData = JSON.parse(sessionStorage.getItem('selectedFoods') || '[]');
+
+        console.log("Stored Valentine Response:", storedValentineResponse);
+        console.log("🍽️ Selected Food Data:", storedFoodData);
+        // Set the previous foods from storage
+        setSelectedFood(storedFoodData);
+    }, []);
+
     const handleFoodChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        setSelectedFood((prev) =>
-            e.target.checked
-                ? [...prev, value]
-                : prev.filter((item) => item !== value)
-        );
+        let updatedSelection;
+
+        if (e.target.checked) {
+            updatedSelection = [...selectedFood, value];
+        } else {
+            updatedSelection = selectedFood.filter((item) => item !== value);
+        }
+
+        setSelectedFood(updatedSelection);
+
+        // Retrieve previous responses and update only the food
+        const storedData = JSON.parse(localStorage.getItem("valentineResponse") || "{}");
+        const updatedData = { ...storedData, selectedFood: updatedSelection };
+
+        localStorage.setItem("valentineResponse", JSON.stringify(updatedData));
     };
 
-    const submitResponse = async (response: string) => {
-        try {
-            await fetch('/api/valentines/submit-response', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ response }),
-            });
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
 
     const handleSubmit = async () => {
         if (selectedFood.length === 0) {
@@ -41,16 +49,26 @@ export default function FoodSelection() {
             return;
         }
 
-        // Format response
-        const formattedResponse =
-            selectedFood.length === 1
-                ? `I choose ${selectedFood[0]}`
-                : `I choose ${selectedFood[0]} and ${selectedFood[1]}`;
+        // Retrieve previous responses
+        const storedData = JSON.parse(localStorage.getItem("valentineResponse") || "{}");
+
+        // Overwrite desserts while keeping existing data
+        const updatedData = {
+            ...storedData,
+            responseDessert1: selectedFood[0] || null,
+            responseDessert2: selectedFood[1] || null, // Optional second dessert
+        };
+
+        localStorage.setItem("valentineResponse", JSON.stringify(updatedData));
 
         try {
-            // Ensure submission before navigating
-            await submitResponse(formattedResponse);
-            router.push('/valentines/4-dessert');
+            await fetch('/api/valentines/submit-response', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedData),
+            });
+
+            router.push('/valentines/5-activities');
         } catch (error) {
             console.error("Failed to submit response:", error);
         }
@@ -94,6 +112,7 @@ export default function FoodSelection() {
                                 <input
                                     type="checkbox"
                                     value={value}
+                                    checked={selectedFood.includes(value)}
                                     onChange={handleFoodChange}
                                 />
                                 {alt}

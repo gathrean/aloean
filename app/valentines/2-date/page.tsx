@@ -5,31 +5,31 @@ import { useRouter } from 'next/navigation';
 import '../valentines.css';
 
 export default function DateSelection() {
-    const [selectedDate, setSelectedDate] = useState('');
-    const [selectedLocation, setSelectedLocation] = useState('');
-    const [selectedTime, setSelectedTime] = useState('');
+    const [responseDate, setResponseDate] = useState('');
+    const [responseLocation, setResponseLocation] = useState('');
+    const [responseTime, setResponseTime] = useState('');
     const router = useRouter();
 
     const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSelectedDate(e.target.value);
+        setResponseDate(e.target.value);
     };
 
     const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedLocation(e.target.value);
+        setResponseLocation(e.target.value);
     };
 
     const handleTimeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedTime(e.target.value);
+        setResponseTime(e.target.value);
     };
 
-    const submitResponse = async (response: string) => {
+    const submitResponse = async () => {
         try {
             await fetch('/api/valentines/submit-response', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ response }),
+                body: JSON.stringify({ responseDate, responseLocation, responseTime }),
             });
         } catch (error) {
             console.error('Error:', error);
@@ -37,20 +37,18 @@ export default function DateSelection() {
     };
 
     const handleSubmit = () => {
-        if (!selectedDate || !selectedLocation || !selectedTime) {
+        if (!responseDate || !responseLocation || !responseTime) {
             alert("my love you gotta pick all the options! (or try refreshing the page if it's trippin)");
             return;
         }
-
-        const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', {
-            month: 'long',
-            day: 'numeric',
-            year: 'numeric',
-        });
-
-        const response = `I will be free on ${formattedDate}, let's meet at ${selectedLocation} at ${selectedTime}.`;
-
-        submitResponse(response);
+    
+        // Store in local storage for future steps
+        localStorage.setItem("valentineResponse", JSON.stringify({
+            responseDate,
+            responseLocation,
+            responseTime,
+        }));
+    
         router.push('/valentines/3-food');
     };
 
@@ -66,7 +64,7 @@ export default function DateSelection() {
             <label className="block font-bold text-lg mb-2">WE WILL SEE EACH OTHER ON _____</label>
             <input
                 type="date"
-                value={selectedDate}
+                value={responseDate}
                 onChange={handleDateChange}
                 className="w-64 p-2 rounded-md date-page-input-box"
             />
@@ -74,7 +72,7 @@ export default function DateSelection() {
             <br></br>
             <label className="block font-bold text-lg mb-2">AT THIS PLACE _____</label>
             <select
-                value={selectedLocation}
+                value={responseLocation}
                 onChange={handleLocationChange}
                 className="w-64 p-2 rounded-md date-page-input-box"
             >
@@ -85,11 +83,10 @@ export default function DateSelection() {
                 <option value="The park outside of your place">The park outside of your place</option>
             </select>
 
-
             <br></br>
             <label className="block font-bold text-lg mb-2">@ __ : __</label>
             <select
-                value={selectedTime}
+                value={responseTime}
                 onChange={handleTimeChange}
                 className="w-64 p-2 rounded-md mb-6 date-page-input-box"
             >
@@ -104,7 +101,7 @@ export default function DateSelection() {
             </select>
 
             <div className="flex justify-between mt-8">
-                <button onClick={handleBack}className="font-bold valentines-page-button back-button">GO BACK</button>
+                <button onClick={handleBack} className="font-bold valentines-page-button back-button">GO BACK</button>
                 <button onClick={handleSubmit} className="font-bold valentines-page-button next-button">NEXT LEVEL</button>
             </div>
         </div>

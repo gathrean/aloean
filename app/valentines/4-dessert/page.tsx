@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -9,41 +9,62 @@ export default function DessertSelection() {
     const [selectedDesserts, setSelectedDesserts] = useState<string[]>([]);
     const router = useRouter();
 
+    useEffect(() => {
+        // Retrieve previous selections
+        const storedValentineResponse = JSON.parse(localStorage.getItem('valentineResponse') || '{}');
+        const storedDesserts = JSON.parse(sessionStorage.getItem('selectedDesserts') || '[]');
+
+        // Set the previous dessert from storage
+        setSelectedDesserts(storedDesserts);
+    }, []);
+
     const handleDessertChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
-        setSelectedDesserts((prev) =>
-            e.target.checked ? [...prev, value] : prev.filter((item) => item !== value)
-        );
-    };
+        let updatedSelection;
 
-    const submitResponse = async (response: string) => {
-        try {
-            await fetch('/api/valentines/submit-response', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ response }),
-            });
-        } catch (error) {
-            console.error('Error submitting response:', error);
+        if (e.target.checked) {
+            updatedSelection = [...selectedDesserts, value];
+        } else {
+            updatedSelection = selectedDesserts.filter((item) => item !== value);
         }
+
+        setSelectedDesserts(updatedSelection);
+
+        // Retrieve previous responses and update only the desserts
+        const storedData = JSON.parse(localStorage.getItem("valentineResponse") || "{}");
+        const updatedData = { ...storedData, selectedDesserts: updatedSelection };
+
+        localStorage.setItem("valentineResponse", JSON.stringify(updatedData));
     };
 
     const handleSubmit = async () => {
         if (selectedDesserts.length === 0) {
-            alert("baby you didn’t pick one!\n\n(Select up to 3)");
+            alert("baby you didn’t pick one!\n\n(Select up to 2)");
             return;
-        } else if (selectedDesserts.length > 3) {
-            alert("damnnnn we big backing???\n\n(Select up to 3)");
+        } else if (selectedDesserts.length > 2) {
+            alert("damnnnn we big backing???\n\n(Select up to 2)");
             return;
         }
 
-        const formattedResponse =
-            selectedDesserts.length === 1
-                ? `I choose ${selectedDesserts[0]}`
-                : `I choose ${selectedDesserts.join(' and ')}`;
+        // Retrieve previous responses
+        const storedData = JSON.parse(localStorage.getItem("valentineResponse") || "{}");
+
+        // Overwrite desserts while keeping existing data
+        const updatedData = {
+            ...storedData,
+            responseDessert1: selectedDesserts[0] || null,
+            responseDessert2: selectedDesserts[1] || null, // Optional second dessert
+        };
+
+        localStorage.setItem("valentineResponse", JSON.stringify(updatedData));
 
         try {
-            await submitResponse(formattedResponse);
+            await fetch('/api/valentines/submit-response', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(updatedData),
+            });
+
             router.push('/valentines/5-activities');
         } catch (error) {
             console.error("Failed to submit response:", error);
@@ -53,21 +74,21 @@ export default function DessertSelection() {
     const handleBack = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         router.back();
-    };    
+    };
 
     return (
         <div className="valentines-page">
             <h1 className="text-xl font-bold mb-2">( LEVEL 4 )</h1>
             <h1 className="text-4xl font-bold mb-4">WHICH DESSERTS / SNACKS ARE WE EATING, MY LOVE?</h1>
             <p className="text-lg font-bold mt-1 mb-4">
-                SELECT 1 - 3
+                SELECT 1 - 2
             </p>
 
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="card-grid">
                     {[
                         { src: "/Valentines/4-dessert/icecream.jpg", alt: "ICE CREAM", value: "ICE CREAM" },
-                        { src: "/Valentines/4-dessert/bubble-tea.jpg", alt: "BUBBLE TEA", value: "BBUBBLE TEA" },
+                        { src: "/Valentines/4-dessert/bubble-tea.jpg", alt: "BUBBLE TEA", value: "BUBBLE TEA" },
                         { src: "/Valentines/4-dessert/mochi.jpg", alt: "MOCHI", value: "MOCHI" },
                         { src: "/Valentines/4-dessert/matcha.jpg", alt: "MATCHA", value: "MATCHA" },
                         { src: "/Valentines/4-dessert/chocolate.jpg", alt: "CHOCOLATES", value: "CHOCOLATES" },
@@ -86,6 +107,7 @@ export default function DessertSelection() {
                                     type="checkbox"
                                     value={value}
                                     onChange={handleDessertChange}
+                                    checked={selectedDesserts.includes(value)}
                                 />
                                 {alt}
                             </span>

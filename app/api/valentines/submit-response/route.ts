@@ -10,33 +10,51 @@ export async function POST(request: Request) {
         }
 
         // Parse incoming JSON request body
-        const { response } = await request.json();
+        const {
+            responseDate,
+            responseLocation,
+            responseTime,
+            responseFood1,
+            responseFood2,
+            responseDessert1,
+            responseDessert2 = null,
+            responseActivity1,
+            responseActivity2 = null,
+            responseActivity3 = null,
+            responseActivity4 = null,
+            responseActivity5 = null,
+        } = await request.json();
 
-        // Validate that response exists and is a string (or whatever format you expect)
-        if (!response || typeof response !== 'string') {
-            console.error('Invalid or missing response:', response);
-            return NextResponse.json({ message: 'Invalid response data' }, { status: 400 });
+        // Validate required fields
+        if (
+            !responseDate ||
+            !responseLocation ||
+            !responseTime ||
+            !responseFood1 ||
+            !responseDessert1 ||
+            !responseActivity1
+        ) {
+            console.error('Missing required response fields');
+            return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
         }
 
         // Proceed with DB connection and insertion
         const db = await connectToDatabase();
         const collection = db.collection('responses');
 
-        const now = new Date();
-
-        const formattedTimestamp = now.toLocaleString('en-GB', {
-            hour12: true,
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-        }).replace(',', '');
-
         const result = await collection.insertOne({
-            response,
-            timestamp: formattedTimestamp,
+            responseDate,
+            responseLocation,
+            responseTime,
+            responseFood1,
+            responseFood2,
+            responseDessert1,
+            responseDessert2,
+            responseActivity1,
+            responseActivity2,
+            responseActivity3,
+            responseActivity4,
+            responseActivity5
         });
 
         console.log('Inserted document:', result);

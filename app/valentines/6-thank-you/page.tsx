@@ -17,6 +17,7 @@ type FallingRose = {
 export default function ThankYouPage() {
     const router = useRouter();
     const [fallingRoses, setFallingRoses] = useState<FallingRose[]>([]);
+    const [valentineData, setValentineData] = useState<{ [key: string]: any } | null>(null);
 
     useEffect(() => {
         const createFallingRoses = () => {
@@ -33,6 +34,13 @@ export default function ThankYouPage() {
         };
 
         createFallingRoses();
+
+        // Retrieve and parse data from localStorage
+        const storedData = JSON.parse(localStorage.getItem("valentineResponse") || "{}");
+        console.log("💌 Stored Valentine Response:", storedData);
+
+        // Set the data in state
+        setValentineData(storedData);
     }, []);
 
     return (
@@ -68,12 +76,19 @@ export default function ThankYouPage() {
             <p className="mt-1 mb-1 font-bold text-xl">SEE YOU SOON !!!</p>
             <p className="mt-1 mb-4 font-bold text-xl">-BUBS</p>
 
-            <button onClick={() => router.push('/')} className="font-bold valentines-page-button next-button mt-8">
+            <button onClick={() => router.push('/valentines/7-results')} className="font-bold valentines-page-button next-button mt-8">
                 PRINT RESULTS
             </button>
 
             <div className="mt-4">
-                <button onClick={() => router.push('/valentines')} className="font-bold valentines-page-button back-button mt-8">
+                <button
+                    onClick={() => {
+                        localStorage.clear();
+                        sessionStorage.clear();
+                        router.push('/valentines'); // Redirects to the restart page
+                    }}
+                    className="font-bold valentines-page-button back-button mt-8"
+                >
                     RESTART
                 </button>
                 <button onClick={() => router.push('/')} className="font-bold valentines-page-button back-button mt-8">
