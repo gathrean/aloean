@@ -10,8 +10,6 @@ export default function ActivitiesSelection() {
     const router = useRouter();
 
     useEffect(() => {
-        // Retrieve previous selections
-        const storedValentineResponse = JSON.parse(localStorage.getItem('valentineResponse') || '{}');
         const storedActivities = JSON.parse(sessionStorage.getItem('selectedActivities') || '[]');
 
         // Set the previous foods from storage
@@ -42,7 +40,7 @@ export default function ActivitiesSelection() {
             alert("baby you didn’t pick one!\n\n(Select up to 2)");
             return;
         } else if (selectedActivities.length > 5) {
-            alert("damnnnn we big backing???\n\n(Select up to 2)");
+            alert("damn hol up we can only do so much in one day???\n\n(Select up to 5)");
             return;
         }
 
@@ -80,14 +78,14 @@ export default function ActivitiesSelection() {
     };
 
     const activities = [
-        { src: '/Valentines/5-activities/arcade.jpg', alt: 'Arcade', value: 'Arcade', label: 'ARCADE (GRANVILLE REC ROOM)' },
-        { src: '/Valentines/5-activities/museum.jpg', alt: 'Museum', value: 'Museum Date', label: 'MUSEUM DATE' },
-        { src: '/Valentines/5-activities/sunset.jpg', alt: 'Sunset', value: 'Sunset Watching', label: 'WATCH THE SUNSET' },
-        { src: '/Valentines/5-activities/music-store.jpg', alt: 'Music Store', value: 'Music Store', label: 'MUSIC STORE' },
-        { src: '/Valentines/5-activities/photobooth.jpg', alt: 'Vintage Photo Booth', value: 'Vintage Photo Booth', label: 'PHOTO BOOTH (VINTAGE)' },
-        { src: '/Valentines/5-activities/cafe.jpg', alt: 'Cafe', value: 'Cafe Date', label: 'CAFE DATE' },
-        { src: '/Valentines/5-activities/build-a-bear.jpg', alt: 'Build-A-Bear', value: 'Build-A-Bear', label: 'BUILD-A-BEAR' },
-        { src: '/Valentines/5-activities/aquarium.jpg', alt: 'Aquarium', value: 'Aquarium', label: 'AQUARIUM' },
+        { src: '/Valentines/5-activities/arcade.jpg', alt: 'REC ROOM', value: 'GOING TO THE REC ROOM IN GRANVILLE', label: 'REC ROOM' },
+        { src: '/Valentines/5-activities/museum.jpg', alt: 'MUSEUM DATE', value: 'VISITING A MUSEUM', label: 'MUSEUM DATE' },
+        { src: '/Valentines/5-activities/sunset.jpg', alt: 'WATCH THE SUNSET', value: 'WATCHING THE SUNSET', label: 'WATCH THE SUNSET' },
+        { src: '/Valentines/5-activities/music-store.jpg', alt: 'MUSIC STORE', value: 'CHECKING OUT A MUSIC STORE', label: 'MUSIC STORE' },
+        { src: '/Valentines/5-activities/photobooth.jpg', alt: 'PHOTO BOOTH', value: 'VISITING A VINTAGE PHOTO BOOTH', label: 'PHOTO BOOTH' },
+        { src: '/Valentines/5-activities/cafe.jpg', alt: 'CAFE DATE', value: 'CHILLING AT A CAFE', label: 'CAFE DATE' },
+        { src: '/Valentines/5-activities/build-a-bear.jpg', alt: 'BUILD-A-BEAR', value: 'GOING TO A BUILD-A-BEAR', label: 'BUILD-A-BEAR' },
+        { src: '/Valentines/5-activities/aquarium.jpg', alt: 'AQUARIUM', value: 'CHECKING OUT THE AQUARIUM', label: 'AQUARIUM' },
         { src: '/Valentines/shrug.png', alt: 'Surprise Me', value: "CAN'T DECIDE (SURPRISE ME)", label: "CAN'T DECIDE (SURPRISE ME)" }
     ];
 

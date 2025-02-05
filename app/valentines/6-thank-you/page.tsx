@@ -17,7 +17,6 @@ type FallingRose = {
 export default function ThankYouPage() {
     const router = useRouter();
     const [fallingRoses, setFallingRoses] = useState<FallingRose[]>([]);
-    const [valentineData, setValentineData] = useState<{ [key: string]: any } | null>(null);
 
     useEffect(() => {
         const createFallingRoses = () => {
@@ -38,9 +37,6 @@ export default function ThankYouPage() {
         // Retrieve and parse data from localStorage
         const storedData = JSON.parse(localStorage.getItem("valentineResponse") || "{}");
         console.log("💌 Stored Valentine Response:", storedData);
-
-        // Set the data in state
-        setValentineData(storedData);
     }, []);
 
     return (

@@ -22,33 +22,26 @@ export default function DateSelection() {
         setResponseTime(e.target.value);
     };
 
-    const submitResponse = async () => {
-        try {
-            await fetch('/api/valentines/submit-response', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ responseDate, responseLocation, responseTime }),
-            });
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
-
     const handleSubmit = () => {
         if (!responseDate || !responseLocation || !responseTime) {
             alert("my love you gotta pick all the options! (or try refreshing the page if it's trippin)");
             return;
         }
-    
+
+        // Convert YYYY-MM-DD to "Month Day, Year" format
+        const formattedDate = new Date(responseDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        });
+
         // Store in local storage for future steps
         localStorage.setItem("valentineResponse", JSON.stringify({
-            responseDate,
+            responseDate: formattedDate, // Store the formatted date
             responseLocation,
             responseTime,
         }));
-    
+
         router.push('/valentines/3-food');
     };
 
@@ -77,10 +70,9 @@ export default function DateSelection() {
                 className="w-64 p-2 rounded-md date-page-input-box"
             >
                 <option value="" disabled>📍</option>
-                <option value="Columbia Station">Columbia Station</option>
-                <option value="New West Station">New West Station</option>
-                <option value="Braid Station">Braid Station</option>
-                <option value="The park outside of your place">The park outside of your place</option>
+                <option value="Columbia Station">COLUMBIA STATION</option>
+                <option value="New West Station">NEW WEST STATION</option>
+                <option value="Braid Station">BRAID STATION</option>
             </select>
 
             <br></br>

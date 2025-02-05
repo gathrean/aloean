@@ -90,19 +90,18 @@ export default function FoodSelection() {
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="card-grid">
                     {[
-                        { src: "/Valentines/3-food/sushi.jpg", alt: "SUSHI", value: "Sushi" },
-                        { src: "/Valentines/3-food/tacos.jpg", alt: "TACOS", value: "Tacos" },
+                        { src: "/Valentines/3-food/sushi.jpg", alt: "SUSHI", value: "SUSHI" },
+                        { src: "/Valentines/3-food/tacos.jpg", alt: "TACOS", value: "TACOS" },
                         { src: "/Valentines/3-food/kbbq.jpg", alt: "KBBQ", value: "KBBQ" },
-                        { src: "/Valentines/3-food/bigway.jpg", alt: "BIG WAY HOTPOT", value: "Big Way Hotpot" },
-                        { src: "/Valentines/3-food/poke-bowl.jpg", alt: "POKE BOWLS", value: "Poke Bowls" },
-                        { src: "/Valentines/3-food/chipotle.jpg", alt: "CHIPOTLE", value: "Chipotle" },
-                        { src: "/Valentines/3-food/pizza.jpg", alt: "PIZZA", value: "Pizza" },
-                        { src: "/Valentines/3-food/donair.jpg", alt: "DONAIR", value: "Donair" },
-                        { src: "/Valentines/3-food/sandwich.jpg", alt: "SANDWICH", value: "Sandwich" },
-                        { src: "/Valentines/3-food/chungchun.jpeg", alt: "CHUNG CHUN RICE DOG", value: "Chung Chun Rice Dogs" },
-                        { src: "/Valentines/3-food/fishnchips.jpg", alt: "FISH & CHIPS", value: "Fish and Chips" },
-                        { src: "/Valentines/3-food/pasta.jpg", alt: "PASTA", value: "Pasta" },
-                        { src: "/Valentines/shrug.png", alt: "CAN'T DECIDE (SURPRISE ME)", value: "CAN&apos;T DECIDE (SURPRISE ME)" }
+                        { src: "/Valentines/3-food/bigway.jpg", alt: "BIG WAY HOTPOT", value: "BIG WAY HOTPOT" },
+                        { src: "/Valentines/3-food/poke-bowl.jpg", alt: "POKE BOWLS", value: "POKE BOWLS" },
+                        { src: "/Valentines/3-food/chipotle.jpg", alt: "CHIPOTLE", value: "CHIPOTLE" },
+                        { src: "/Valentines/3-food/pizza.jpg", alt: "PIZZA", value: "PIZZA" },
+                        { src: "/Valentines/3-food/donair.jpg", alt: "DONAIR", value: "DONAIR" },
+                        { src: "/Valentines/3-food/sandwich.jpg", alt: "SANDWICH", value: "SANDWICH" },
+                        { src: "/Valentines/3-food/fishnchips.jpg", alt: "FISH & CHIPS", value: "FISH & CHIPS" },
+                        { src: "/Valentines/3-food/pasta.jpg", alt: "PASTA", value: "PASTA" },
+                        { src: "/Valentines/shrug.png", alt: "CAN'T DECIDE (SURPRISE ME)", value: "CAN'T DECIDE (SURPRISE ME)" }
                     ].map(({ src, alt, value }) => (
                         <label
                             className={`card-selection ${selectedFood.includes(value) ? 'selected' : ''}`}

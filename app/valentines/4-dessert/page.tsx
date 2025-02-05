@@ -10,8 +10,6 @@ export default function DessertSelection() {
     const router = useRouter();
 
     useEffect(() => {
-        // Retrieve previous selections
-        const storedValentineResponse = JSON.parse(localStorage.getItem('valentineResponse') || '{}');
         const storedDesserts = JSON.parse(sessionStorage.getItem('selectedDesserts') || '[]');
 
         // Set the previous dessert from storage
@@ -91,6 +89,7 @@ export default function DessertSelection() {
                         { src: "/Valentines/4-dessert/bubble-tea.jpg", alt: "BUBBLE TEA", value: "BUBBLE TEA" },
                         { src: "/Valentines/4-dessert/mochi.jpg", alt: "MOCHI", value: "MOCHI" },
                         { src: "/Valentines/4-dessert/matcha.jpg", alt: "MATCHA", value: "MATCHA" },
+                        { src: "/Valentines/4-dessert/chungchun.jpeg", alt: "CHUNG CHUN RICE DOG", value: "CHUNG CHUN RICE DOGS" },
                         { src: "/Valentines/4-dessert/chocolate.jpg", alt: "CHOCOLATES", value: "CHOCOLATES" },
                         { src: "/Valentines/4-dessert/frozen-yogurt.jpg", alt: "FROZEN YOGURT", value: "FROZEN YOGURT" },
                         { src: "/Valentines/4-dessert/indian-desserts.jpg", alt: "INDIAN DESSERTS", value: "INDIAN DESSERTS" },
