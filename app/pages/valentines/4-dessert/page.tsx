@@ -5,19 +5,6 @@ import Image from 'next/image';
 
 import '../valentines.css';
 
-const desserts = [
-    { name: 'Ice Cream', src: '/Valentines/4-dessert/icecream.jpg', label: 'ICE CREAM' },
-    { name: 'Bubble Tea', src: '/Valentines/4-dessert/bubble-tea.jpg', label: 'BUBBLE TEA' },
-    { name: 'Mochi', src: '/Valentines/4-dessert/mochi.jpg', label: 'MOCHI' },
-    { name: 'Matcha', src: '/Valentines/4-dessert/matcha.jpg', label: 'MATCHA' },
-    { name: 'Chocolate', src: '/Valentines/4-dessert/chocolate.jpg', label: 'CHOCOLATES' },
-    { name: 'Frozen Yogurt', src: '/Valentines/4-dessert/frozen-yogurt.jpg', label: 'FROZEN YOGURT' },
-    { name: 'Indian Desserts', src: '/Valentines/4-dessert/indian-desserts.jpg', label: 'INDIAN DESSERTS' },
-    { name: 'Filipino Desserts', src: '/Valentines/4-dessert/filipino-desserts.jpg', label: 'FILIPINO DESSERTS' },
-    { name: 'No Desserts', src: '/Valentines/4-dessert/no-desserts.jpg', label: 'NO DESSERTS' },
-    { name: "(I can't decide on desserts, surprise me)", src: '/Valentines/idk.gif', label: "CAN'T DECIDE (SURPRISE ME)" }
-];
-
 export default function DessertSelection() {
     const [selectedDesserts, setSelectedDesserts] = useState<string[]>([]);
     const router = useRouter();
@@ -31,12 +18,11 @@ export default function DessertSelection() {
 
     const submitResponse = async (response: string) => {
         try {
-            const res = await fetch('/api/valentines/submit-response', {
+            await fetch('/api/valentines/submit-response', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ response }),
             });
-            if (!res.ok) throw new Error('Failed to submit response');
         } catch (error) {
             console.error('Error submitting response:', error);
         }
@@ -64,25 +50,53 @@ export default function DessertSelection() {
         }
     };
 
+    const handleBack = () => {
+        router.back();
+    };
+
     return (
         <div className="valentines-page">
             <h1 className="text-xl font-bold mb-2">( LEVEL 4 )</h1>
             <h1 className="text-4xl font-bold mb-4">WHICH DESSERTS / SNACKS ARE WE EATING, MY LOVE?</h1>
+            <p className="text-lg font-bold mt-1 mb-4">
+                SELECT 1 - 3
+            </p>
+
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
-                <p className="text-lg mt-2 mb-4 font-medium">SELECT 1 - 3</p>
                 <div className="checkbox-container">
-                    {desserts.map((dessert) => (
-                        <label key={dessert.name} className="checkbox-option">
-                            <Image src={dessert.src} alt={dessert.name} className="checkbox-image" width={300} height={300} />
-                            <span>
-                                <input type="checkbox" value={dessert.name} onChange={handleDessertChange} />
-                                {dessert.label}
+                    {[
+                        { src: "/Valentines/4-dessert/icecream.jpg", alt: "ICE CREAM", value: "ICE CREAM" },
+                        { src: "/Valentines/4-dessert/bubble-tea.jpg", alt: "BUBBLE TEA", value: "BBUBBLE TEA" },
+                        { src: "/Valentines/4-dessert/mochi.jpg", alt: "MOCHI", value: "MOCHI" },
+                        { src: "/Valentines/4-dessert/matcha.jpg", alt: "MATCHA", value: "MATCHA" },
+                        { src: "/Valentines/4-dessert/chocolate.jpg", alt: "CHOCOLATES", value: "CHOCOLATES" },
+                        { src: "/Valentines/4-dessert/frozen-yogurt.jpg", alt: "FROZEN YOGURT", value: "FROZEN YOGURT" },
+                        { src: "/Valentines/4-dessert/indian-desserts.jpg", alt: "INDIAN DESSERTS", value: "INDIAN DESSERTS" },
+                        { src: "/Valentines/4-dessert/filipino-desserts.jpg", alt: "FILIPINO DESSERTS", value: "FILIPINO DESSERTS" },
+                        { src: "/Valentines/4-dessert/no-desserts.jpg", alt: "NO DESSERTS", value: "NO DESSERTS" },
+                        { src: "/Valentines/idk.gif", alt: "CAN'T DECIDE; SURPRISE ME", value: "CAN'T DECIDE; SURPRISE ME" }
+                    ].map(({ src, alt, value }) => (
+                        <label
+                            className={`checkbox-option ${selectedDesserts.includes(value) ? 'selected' : ''}`}
+                            key={value}
+                        >
+                            <div className="image-container">
+                                <Image src={src} alt={alt} width={120} height={120} className="checkbox-image" />
+                            </div>
+                            <span className="checkbox-text">
+                                <input
+                                    type="checkbox"
+                                    value={value}
+                                    onChange={handleDessertChange}
+                                />
+                                {alt}
                             </span>
                         </label>
                     ))}
                 </div>
+
                 <div className="mt-8">
-                    <button onClick={() => router.back()} className="back-button font-bold">GO BACK</button>
+                    <button onClick={handleBack} className="back-button font-bold">GO BACK</button>
                     <button onClick={handleSubmit} className="valentines-button font-bold">NEXT LEVEL</button>
                 </div>
             </form>

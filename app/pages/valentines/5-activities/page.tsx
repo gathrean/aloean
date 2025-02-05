@@ -1,21 +1,8 @@
 'use client';
-import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
+import Image from 'next/image';
 import '../valentines.css';
-
-const activities = [
-    { src: '/Valentines/5-activities/arcade.jpg', alt: 'Arcade', value: 'Arcade', label: 'ARCADE (GRANVILLE REC ROOM)' },
-    { src: '/Valentines/5-activities/museum.jpg', alt: 'Museum', value: 'Museum Date', label: 'MUSEUM DATE' },
-    { src: '/Valentines/5-activities/sunset.jpg', alt: 'Sunset', value: 'Sunset Watching', label: 'WATCH THE SUNSET' },
-    { src: '/Valentines/5-activities/music-store.jpg', alt: 'Music Store', value: 'Music Store', label: 'MUSIC STORE' },
-    { src: '/Valentines/5-activities/photobooth.jpg', alt: 'Vintage Photo Booth', value: 'Vintage Photo Booth', label: 'PHOTO BOOTH (VINTAGE) 👀' },
-    { src: '/Valentines/5-activities/cafe.jpg', alt: 'Cafe', value: 'Cafe Date', label: 'CAFE DATE' },
-    { src: '/Valentines/5-activities/build-a-bear.jpg', alt: 'Build-A-Bear', value: 'Build-A-Bear', label: 'BUILD-A-BEAT' },
-    { src: '/Valentines/5-activities/aquarium.jpg', alt: 'Aquarium', value: 'Aquarium', label: 'AQUARIUM' },
-    { src: '/Valentines/idk.gif', alt: 'Surprise Me', value: "CAN'T DECIDE (SURPRISE ME)", label: "CAN'T DECIDE (SURPRISE ME)" }
-];
 
 export default function ActivitiesSelection() {
     const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
@@ -30,12 +17,11 @@ export default function ActivitiesSelection() {
 
     const submitResponse = async (response: string) => {
         try {
-            const res = await fetch('/api/valentines/submit-response', {
+            await fetch('/api/valentines/submit-response', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ response })
+                body: JSON.stringify({ response }),
             });
-            if (!res.ok) throw new Error('Failed to submit response');
         } catch (error) {
             console.error('Error submitting response:', error);
         }
@@ -49,13 +35,35 @@ export default function ActivitiesSelection() {
             alert("Damnnnn you don't want us to do anything? :((( (Select up to 5)");
             return;
         }
+
+        const formattedResponse =
+            selectedActivities.length === 1
+                ? `I want to do ${selectedActivities[0]}`
+                : `I want to do ${selectedActivities.join(' and ')}`;
+
         try {
-            await Promise.all(selectedActivities.map(activity => submitResponse(activity)));
+            await submitResponse(formattedResponse);
             router.push('/pages/valentines/6-thank-you');
         } catch (error) {
-            console.error("Failed to submit responses:", error);
+            console.error("Failed to submit response:", error);
         }
     };
+
+    const handleBack = () => {
+        router.back();
+    };
+
+    const activities = [
+        { src: '/Valentines/5-activities/arcade.jpg', alt: 'Arcade', value: 'Arcade', label: 'ARCADE (GRANVILLE REC ROOM)' },
+        { src: '/Valentines/5-activities/museum.jpg', alt: 'Museum', value: 'Museum Date', label: 'MUSEUM DATE' },
+        { src: '/Valentines/5-activities/sunset.jpg', alt: 'Sunset', value: 'Sunset Watching', label: 'WATCH THE SUNSET' },
+        { src: '/Valentines/5-activities/music-store.jpg', alt: 'Music Store', value: 'Music Store', label: 'MUSIC STORE' },
+        { src: '/Valentines/5-activities/photobooth.jpg', alt: 'Vintage Photo Booth', value: 'Vintage Photo Booth', label: 'PHOTO BOOTH (VINTAGE)' },
+        { src: '/Valentines/5-activities/cafe.jpg', alt: 'Cafe', value: 'Cafe Date', label: 'CAFE DATE' },
+        { src: '/Valentines/5-activities/build-a-bear.jpg', alt: 'Build-A-Bear', value: 'Build-A-Bear', label: 'BUILD-A-BEAR' },
+        { src: '/Valentines/5-activities/aquarium.jpg', alt: 'Aquarium', value: 'Aquarium', label: 'AQUARIUM' },
+        { src: '/Valentines/idk.gif', alt: 'Surprise Me', value: "CAN'T DECIDE (SURPRISE ME)", label: "CAN'T DECIDE (SURPRISE ME)" }
+    ];
 
     return (
         <div className="valentines-page">
@@ -66,17 +74,27 @@ export default function ActivitiesSelection() {
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="checkbox-container">
                     {activities.map(({ src, alt, value, label }) => (
-                        <label key={value} className="checkbox-option">
-                            <Image src={src} alt={alt} className="checkbox-image" width={500} height={300} />
-                            <span>
-                                <input type="checkbox" value={value} onChange={handleActivityChange} />
+                        <label
+                            key={value}
+                            className={`checkbox-option ${selectedActivities.includes(value) ? 'selected' : ''}`}
+                        >
+                            <div className="image-container">
+                                <Image src={src} alt={alt} className="checkbox-image" width={120} height={120} />
+                            </div>
+                            <span className="checkbox-text">
+                                <input
+                                    type="checkbox"
+                                    value={value}
+                                    onChange={handleActivityChange}
+                                />
                                 {label}
                             </span>
                         </label>
                     ))}
                 </div>
+
                 <div className="mt-8">
-                    <button type="button" onClick={router.back} className="back-button font-bold">GO BACK</button>
+                    <button onClick={handleBack} className="back-button font-bold">GO BACK</button>
                     <button type="submit" className="valentines-button font-bold">NEXT LEVEL</button>
                 </div>
             </form>

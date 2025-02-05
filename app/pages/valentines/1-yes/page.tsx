@@ -11,13 +11,15 @@ export default function ThankYou() {
             <h1 className="text-xl font-bold mb-2">( LEVEL 1 )</h1>
             <h1 className="text-4xl font-bold">LET&apos;S GOOOOOOOOOO</h1>
 
-            <Image
-                src="/Valentines/1/bee.gif"
-                alt="bee gif"
-                width={300}
-                height={300}
-                className="mt-4 object-cover"
-            />
+            <div className="image-container mt-4">
+                <Image
+                    src="/Valentines/1/bee.gif"
+                    alt="bee gif"
+                    width={300}
+                    height={300}
+                    className="object-cover"
+                />
+            </div>
 
             <p className="font-bold mt-4">✋🏽</p>
             <p className="font-bold">WAIT!</p>

@@ -11,14 +11,15 @@ export default function Nope() {
             <h1 className="text-4xl font-bold text-gray-300">
                 i see...
             </h1>
-
-            <Image
-                src="/Valentines/1/spiderman.jpeg"
-                alt="Sad cat gif"
-                width={400} 
-                height={300}
-                className="mt-4"
-            />
+            <div className="image-container mt-4">
+                <Image
+                    src="/Valentines/1/spiderman.jpeg"
+                    alt="Sad cat gif"
+                    width={400}
+                    height={300}
+                    className="mt-4"
+                />
+            </div>
 
             <br></br>
 

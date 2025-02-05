@@ -85,9 +85,14 @@ export default function FoodSelection() {
                         { src: "/Valentines/3-food/pasta.jpg", alt: "PASTA", value: "Pasta" },
                         { src: "/Valentines/idk.gif", alt: "CAN'T DECIDE (SURPRISE ME)", value: "CAN&apos;T DECIDE (SURPRISE ME)" }
                     ].map(({ src, alt, value }) => (
-                        <label className="checkbox-option" key={value}>
-                            <Image src={src} alt={alt} width={120} height={120} className="checkbox-image" />
-                            <span>
+                        <label
+                            className={`checkbox-option ${selectedFood.includes(value) ? 'selected' : ''}`}
+                            key={value}
+                        >
+                            <div className="image-container">
+                                <Image src={src} alt={alt} width={120} height={120} className="checkbox-image" />
+                            </div>
+                            <span className="checkbox-text">
                                 <input
                                     type="checkbox"
                                     value={value}

@@ -54,6 +54,16 @@ html, body {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    color: var(--valentines-bg);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+.checkbox-text {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
 }
 
 .checkbox-option input {
@@ -62,18 +72,24 @@ html, body {
 }
 
 .checkbox-image {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 125px;
     margin-bottom: 0.5rem;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
-.checkbox-option:hover .checkbox-image {
-    transform: scale(0.95);
+.checkbox-option {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkbox-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .checkbox-option input {
+    display: none;
     margin-left: 0.5rem;
 }
 
@@ -87,6 +103,16 @@ html, body {
 
 .valentines-header {
     text-color: #fff;
+}
+
+.checkbox-option.selected {
+    background-color: #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.checkbox-option.selected .checkbox-text {
+    color: #fff;
 }
 
 .valentines-button {
@@ -125,6 +151,21 @@ html, body {
     transform: scale(1.1);
 }
 
+.image-container {
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    object-fit: cover;
+    object-position: center;
+}
+
 .hidden {
     opacity: 0;
     transform: translateY(20px);
@@ -138,7 +179,7 @@ html, body {
 
 .falling-rose {
     position: absolute;
-    top: -10px;
+    top: -100px;
     width: 50px;
     height: 50px;
     opacity: 1;
