@@ -77,7 +77,7 @@ export default function ThankYouPage() {
             <p className="mt-1 mb-4 font-bold text-xl">-BUBS</p>
 
             <button onClick={() => router.push('/valentines/7-results')} className="font-bold valentines-page-button next-button mt-8">
-                PRINT RESULTS
+                VIEW RESULTS
             </button>
 
             <div className="mt-4">

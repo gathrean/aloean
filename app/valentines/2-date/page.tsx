@@ -70,7 +70,7 @@ export default function DateSelection() {
             />
 
             <br></br>
-            <label className="block font-bold text-lg mb-2">AT THIS PLACE _____</label>
+            <label className="block font-bold text-lg mb-2">MEET UP AT _____</label>
             <select
                 value={responseLocation}
                 onChange={handleLocationChange}

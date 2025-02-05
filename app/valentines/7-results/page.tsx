@@ -13,34 +13,34 @@ export default function ResultsPage() {
         setValentineData(storedData);
     }, []);
 
+    const handleBack = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        router.back();
+    };
+
     return (
         <div className="valentines-page">
-            <h1 className="text-3xl font-bold">💖 Your Valentine's Date Plan 💖</h1>
+            <h1 className="text-3xl font-bold">HONEY, WE GOT PLACES TO BE</h1>
 
             {valentineData ? (
-                <div className="mt-6 p-4 border border-red-400 rounded-lg bg-white shadow-lg">
-                    <p><strong>📅 Date:</strong> {valentineData.responseDate || "Not selected"}</p>
-                    <p><strong>📍 Location:</strong> {valentineData.responseLocation || "Not selected"}</p>
-                    <p><strong>⏰ Time:</strong> {valentineData.responseTime || "Not selected"}</p>
+                <div className="mt-6 p-4">
+                    <p><strong>WE WILL SEE EACH OTHER ON </strong> {valentineData.responseDate || "Not selected"}</p>
+                    <p><strong>MEET UP AT </strong> {valentineData.responseLocation || "Not selected"}</p>
+                    <p><strong>@ </strong> {valentineData.responseTime || "Not selected"}</p>
 
-                    <h3 className="text-xl font-bold mt-4">🍽️ FOOD SELECTION:</h3>
+                    <h3 className="text-xl font-bold mt-4">WE WILL BE EATING</h3>
                     <ul>
-                        <li>{valentineData.responseDessert1 || "No selection"}</li>
-                        <li>{valentineData.responseDessert2 || "No selection"}</li>
+                        <li>{valentineData.responseFood1 || "N/A"}</li>
+                        <li>{valentineData.responseFood2 || "N/A"}</li>
                     </ul>
 
-                    <h3 className="text-xl font-bold mt-4">🍰 DESSERT SELECTION:</h3>
+                    <h3 className="text-xl font-bold mt-4">AND THEN WE WILL BE MUNCHING ON</h3>
                     <ul>
-                        {valentineData.selectedDesserts?.length > 0 ? (
-                            valentineData.selectedDesserts.map((dessert: string, index: number) => (
-                                <li key={index}>{dessert}</li>
-                            ))
-                        ) : (
-                            <li>No desserts selected</li>
-                        )}
+                        <li>{valentineData.responseFood1 || "N/A"}</li>
+                        <li>{valentineData.responseFood2 || "N/A"}</li>
                     </ul>
 
-                    <h3 className="text-xl font-bold mt-4">🎭 ACTIVITY SELECTION:</h3>
+                    <h3 className="text-xl font-bold mt-4">AND WE WILL BE DOING</h3>
                     <ul>
                         {[
                             valentineData.responseActivity1,
@@ -57,9 +57,9 @@ export default function ResultsPage() {
                 <p className="mt-4 text-red-500">No data available. Please complete the Valentine’s form.</p>
             )}
 
-            <button onClick={() => router.push('/')} className="font-bold valentines-page-button back-button mt-8">
-                GO HOME
-            </button>
+            <div className="mt-8">
+                <button onClick={handleBack} className="font-bold valentines-page-button back-button">GO BACK</button>
+            </div>
         </div>
     );
 }
