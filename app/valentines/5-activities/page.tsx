@@ -37,10 +37,10 @@ export default function ActivitiesSelection() {
 
     const handleSubmit = async () => {
         if (selectedActivities.length === 0) {
-            alert("baby you didn’t pick one!\n\n(Select up to 2)");
+            alert("My love, you should pick at least one! Or you can select the SURPRISE ME option at the end.\n\n(Select up to 2)");
             return;
         } else if (selectedActivities.length > 5) {
-            alert("damn hol up we can only do so much in one day???\n\n(Select up to 5)");
+            alert("DAMN. I would love to do all of these with you in one day as well but we can do them during another day!\n\n(Select up to 5)");
             return;
         }
 

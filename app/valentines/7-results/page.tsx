@@ -42,19 +42,20 @@ export default function ResultsPage() {
             <h1 className="text-2xl font-bold">WE GOT PLACES TO BE</h1>
 
             {valentineData ? (
-                <div className="mt-4 p-4">
-                    <p><strong>WE ARE NOW EACH OTHER&apos;S VALENTINES ON  {valentineData.responseDate || "Not selected"}</strong></p>
+                <div className="mt-4">
+                    <h3 className="text-xl font-bold mt-4"><strong>WE ARE NOW EACH OTHER&apos;S VALENTINES ON</strong></h3>
+                    <p>{valentineData.responseDate || "Not selected"}</p>
 
-                    <h3 className="text-xl font-bold mt-4">MEET UP AT</h3>
+                    <h3 className="text-xl font-bold mt-4">AND WE WILL MEET UP AT</h3>
                     <p>{valentineData.responseLocation || "Not selected"} <strong>@ </strong> {valentineData.responseTime || "Not selected"}</p>
 
-                    <h3 className="text-xl font-bold mt-4">WE WILL BE EATING</h3>
+                    <h3 className="text-xl font-bold mt-4">AND WE WILL BE EATING</h3>
                     <ul>
                         <li>{valentineData.responseFood1 || ""}</li>
                         <li>{valentineData.responseFood2 || ""}</li>
                     </ul>
 
-                    <h3 className="text-xl font-bold mt-4">WE WILL BE MUNCHING ON</h3>
+                    <h3 className="text-xl font-bold mt-4">AND WE WILL BE MUNCHING ON</h3>
                     <ul>
                         <li>{valentineData.responseDessert1 || ""}</li>
                         <li>{valentineData.responseDessert2 || ""}</li>
@@ -75,6 +76,7 @@ export default function ResultsPage() {
 
             <br></br>
             <p className="text-3xl font-bold mt-2">🐢❤️🐻‍❄️</p>
+            <p>( SCREENSHOT THIS PAGE )</p>
 
             <div className="mt-8">
                 <button onClick={handleBack} className="font-bold aloean-button back-button">GO BACK</button>

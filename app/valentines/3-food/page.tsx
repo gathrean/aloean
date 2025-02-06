@@ -42,10 +42,10 @@ export default function FoodSelection() {
 
     const handleSubmit = async () => {
         if (selectedFood.length === 0) {
-            alert("my love you didnt pick one!\n\n(Select up to 2)");
+            alert("My love, you should pick at least one! Or you can select the SURPRISE ME option at the end.\n\n(Select up to 2)");
             return;
         } else if (selectedFood.length > 2) {
-            alert("damnnnn are we big backing???\n\n(Select up to 2)");
+            alert("DAMN. Are we big backing? In this economy?\n\n(Select up to 2)");
             return;
         }
 
