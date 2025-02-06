@@ -95,7 +95,7 @@ export default function DessertSelection() {
                         { src: "/Valentines/4-dessert/indian-desserts.jpg", alt: "INDIAN DESSERTS", value: "INDIAN DESSERTS" },
                         { src: "/Valentines/4-dessert/filipino-desserts.jpg", alt: "FILIPINO DESSERTS", value: "FILIPINO DESSERTS" },
                         { src: "/Valentines/4-dessert/no-desserts.jpg", alt: "NO DESSERTS", value: "NO DESSERTS" },
-                        { src: "/Valentines/shrug.png", alt: "CAN'T DECIDE; SURPRISE ME", value: "CAN'T DECIDE; SURPRISE ME" }
+                        { src: "/Valentines/shrug.png", alt: "CAN'T DECIDE; SURPRISE ME", value: "CAN'T DECIDE (SURPRISE ME)" }
                     ].map(({ src, alt, value }) => (
                         <label
                             className={`card-selection ${selectedDesserts.includes(value) ? 'selected' : ''}`}
