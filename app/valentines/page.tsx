@@ -30,8 +30,8 @@ export default function Valentines() {
             <Image
                 src="/Valentines/cat-begging.gif"
                 alt="Valentine's Day Image"
-                width={300}
-                height={300}
+                width={200}
+                height={200}
                 className="mt-2"
             />
             <br />

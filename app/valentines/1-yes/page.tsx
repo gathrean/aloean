@@ -15,8 +15,8 @@ export default function ThankYou() {
                 <Image
                     src="/Valentines/1/bee.gif"
                     alt="bee gif"
-                    width={300}
-                    height={300}
+                    width={200}
+                    height={200}
                     className="object-cover"
                 />
             </div>
