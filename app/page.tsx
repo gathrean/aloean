@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import MiloJump from "./MiloJump/page";
 
 
 import './home.css';
@@ -29,11 +28,11 @@ export default function Home() {
         </p>
 
         <div className="mt-8 flex flex-col gap-4">
-          <Link href="/MiloJump">
+          {/* <Link href="/MiloJump">
             <button className="aloean-button homepage-button">
               🐈‍⬛ Milo Jump
             </button>
-          </Link>
+          </Link> */}
 
           <Link href="/valentines">
             <button className="aloean-button homepage-button font-bold">
