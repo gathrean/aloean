@@ -77,8 +77,8 @@ export default function DessertSelection() {
     return (
         <div className="valentines-page">
             <h1 className="text-xl font-bold mb-2">( LEVEL 4 )</h1>
-            <h1 className="text-4xl font-bold mb-4">WHICH DESSERTS / SNACKS ARE WE EATING, MY LOVE?</h1>
-            <p className="text-lg font-bold mt-1 mb-4">
+            <h1 className="text-3xl font-bold mb-4">WHICH DESSERTS / SNACKS ARE WE EATING, MY LOVE?</h1>
+            <p className="text-lg font-bold mt-1 mb-8">
                 SELECT 1 - 2
             </p>
 
@@ -119,8 +119,8 @@ export default function DessertSelection() {
                 </div>
 
                 <div className="mt-8">
-                    <button onClick={handleBack} className="font-bold valentines-page-button back-button">GO BACK</button>
-                    <button onClick={handleSubmit} className="font-bold valentines-page-button next-button">NEXT LEVEL</button>
+                    <button onClick={handleBack} className="font-bold aloean-button back-button">GO BACK</button>
+                    <button onClick={handleSubmit} className="font-bold aloean-button next-button">NEXT LEVEL</button>
                 </div>
             </form>
         </div>

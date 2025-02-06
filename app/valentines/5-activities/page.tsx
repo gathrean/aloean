@@ -92,8 +92,8 @@ export default function ActivitiesSelection() {
     return (
         <div className="valentines-page">
             <h1 className="text-xl font-bold mb-2">( LEVEL 5 )</h1>
-            <h1 className="text-4xl font-bold mb-4">WHAT ACTIVITIES DO YOU WANT TO DO AFTER, MY LOVE?</h1>
-            <p className="text-lg mt-2 mb-4 font-bold">SELECT 1 - 5</p>
+            <h1 className="text-3xl font-bold mb-4">WHAT ACTIVITIES DO YOU WANT TO DO AFTER, MY LOVE?</h1>
+            <p className="text-lg mt-2 mb-8 font-bold">SELECT 1 - 5</p>
 
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="card-grid">
@@ -120,8 +120,8 @@ export default function ActivitiesSelection() {
                 </div>
 
                 <div className="mt-8">
-                    <button onClick={handleBack} className="font-bold valentines-page-button back-button">GO BACK</button>
-                    <button type="submit" className="font-bold valentines-page-button next-button">NEXT LEVEL</button>
+                    <button onClick={handleBack} className="font-bold aloean-button back-button">GO BACK</button>
+                    <button type="submit" className="font-bold aloean-button next-button">NEXT LEVEL</button>
                 </div>
             </form>
         </div>

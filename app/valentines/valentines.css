@@ -9,21 +9,6 @@
     --valentines-font: 'Helvetica', Arial, sans-serif;
 }
 
-::selection {
-    background-color: #8F0600;
-    color: white;
-}
-
-::-moz-selection {
-    background-color: #8F0600;
-    color: white;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
 .gif-container {
     width: 280px;
     height: 280px;
@@ -108,7 +93,7 @@ html, body {
     background-color: #000;
     color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 /* The red text show on top and bottom sides of each card */
@@ -132,8 +117,8 @@ html, body {
 ************************/
 
 .card-image-container {
-    width: 400px;
-    height: 200px;
+    width: 300px;
+    height: 150px;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -156,31 +141,3 @@ html, body {
     opacity: 1;
     transform: translateY(0);
 } 
-
-/************************
-        BUTTONS
-************************/
-
-.valentines-page-button {
-    background-color: #FFF;
-    padding: 1rem;
-    border-radius: 25px;
-    width: 12rem;
-    margin: 0 10px 0 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1.2rem;
-}
-
-.valentines-page-button:hover {
-    background-color: #FFF;
-    transform: scale(1.1);
-}
-
-.next-button {
-    color: var(--valentines-bg);
-}
-
-.back-button {
-    color: #4A4547;
-}

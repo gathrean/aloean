@@ -1,0 +1,12 @@
+.home-page {
+    background-color: #499F68;
+    color: #FFFCFF;
+    font-family: var(--valentines-font);
+    text-align: center;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -82,8 +82,8 @@ export default function FoodSelection() {
     return (
         <div className="valentines-page">
             <h1 className="text-xl font-bold mb-2">( LEVEL 3 )</h1>
-            <h1 className="text-4xl font-bold mb-4">WHAT FOOD WOULD YOU LIKE TO EAT, MY LOVE?</h1>
-            <p className="text-lg font-bold mt-1 mb-4">
+            <h1 className="text-3xl font-bold mb-4">WHAT FOOD WOULD YOU LIKE TO EAT, MY LOVE?</h1>
+            <p className="text-lg font-bold mt-1 mb-8">
                 SELECT 1 - 2
             </p>
 
@@ -125,8 +125,8 @@ export default function FoodSelection() {
                 </div>
 
                 <div className="mt-8">
-                    <button onClick={handleBack} className="font-bold back-button valentines-page-button">GO BACK</button>
-                    <button onClick={handleSubmit} className="font-bold next-button valentines-page-button">NEXT LEVEL</button>
+                    <button onClick={handleBack} className="font-bold back-button aloean-button">GO BACK</button>
+                    <button onClick={handleSubmit} className="font-bold next-button aloean-button">NEXT LEVEL</button>
                 </div>
             </form>
         </div>

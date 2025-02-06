@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import '../valentines.css';
 import './falling-roses.css';
 
-// Define the type for the falling rose
 type FallingRose = {
     id: number;
     left: number;
@@ -34,7 +33,6 @@ export default function ThankYouPage() {
 
         createFallingRoses();
 
-        // Retrieve and parse data from localStorage
         const storedData = JSON.parse(localStorage.getItem("valentineResponse") || "{}");
         console.log("💌 Stored Valentine Response:", storedData);
     }, []);
@@ -50,15 +48,15 @@ export default function ThankYouPage() {
                     height={10}
                     className="falling-rose"
                     style={{
-                        left: `${rose.left}%`,
+                        left: `${rose.left / 1.20}%`,
                         animationDuration: `${rose.duration}s`,
                         animationDelay: `${rose.delay}s`
                     }}
                 />
             ))}
 
-            <h1 className="text-4xl font-bold">MY BABY, حبيبتي, MY LOVE,</h1>
-            <h1 className="text-4xl font-bold">THANK YOU FOR BEING MY VALENTINE AND MY GIRLFRIEND :)</h1>
+            <h1 className="text-3xl font-bold">MY BABY, حبيبتي, MY LOVE,</h1>
+            <h1 className="text-3xl font-bold">THANK YOU FOR BECOMING MY VALENTINE & MY GIRLFRIEND :)</h1>
             <Image
                 src="/Valentines/red-roses.gif"
                 alt="Thank you flowers gif"
@@ -72,7 +70,7 @@ export default function ThankYouPage() {
             <p className="mt-1 mb-1 font-bold text-xl">SEE YOU SOON !!!</p>
             <p className="mt-1 mb-4 font-bold text-xl">-BUBS</p>
 
-            <button onClick={() => router.push('/valentines/7-results')} className="font-bold valentines-page-button next-button mt-8">
+            <button onClick={() => router.push('/valentines/7-results')} className="font-bold aloean-button next-button mt-8">
                 VIEW RESULTS
             </button>
 
@@ -83,11 +81,13 @@ export default function ThankYouPage() {
                         sessionStorage.clear();
                         router.push('/valentines'); // Redirects to the restart page
                     }}
-                    className="font-bold valentines-page-button back-button mt-8"
+                    className="font-bold aloean-button back-button mt-8"
                 >
                     RESTART
                 </button>
-                <button onClick={() => router.push('/')} className="font-bold valentines-page-button back-button mt-8">
+            </div>
+            <div className="mt-4 mb-8">
+                <button onClick={() => router.push('/')} className="font-bold aloean-button back-button mt-8">
                     GO HOME
                 </button>
             </div>

@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import './home.css';
+
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="home-page flex flex-col min-h-screen">
       <main className="flex-1 flex flex-col items-center justify-center p-8">
         <Image
           src="/AloEan.png"
@@ -26,13 +28,13 @@ export default function Home() {
 
         <div className="mt-8 flex flex-col gap-4">
           <Link href="/MiloJump/index.html">
-            <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
+            <button className="aloean-button homepage-button">
               🐈‍⬛ Milo Jump
             </button>
           </Link>
 
           <Link href="/valentines">
-            <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
+            <button className="aloean-button homepage-button">
             💘 Valentine&apos;s 2025
             </button>
           </Link>

@@ -9,7 +9,7 @@ export default function ThankYou() {
     return (
         <div className="valentines-page">
             <h1 className="text-xl font-bold mb-2">( LEVEL 1 )</h1>
-            <h1 className="text-4xl font-bold">LET&apos;S GOOOOOOOOOO</h1>
+            <h1 className="text-3xl font-bold">LET&apos;S GOOOOOOOOOO</h1>
 
             <div className="gif-container mt-4">
                 <Image
@@ -21,14 +21,14 @@ export default function ThankYou() {
                 />
             </div>
 
-            <p className="font-bold mt-4">✋🏽</p>
+            <p className="font-bold text-5xl mt-4">✋🏽</p>
             <p className="font-bold">WAIT!</p>
             <p className="font-bold">HOLD ON MY LOVE THERE&apos;S MORE</p>
 
             <br></br>
             <button
                 onClick={() => router.push('/valentines/2-date')}
-                className="font-bold next-button valentines-page-button"
+                className="font-bold next-button aloean-button"
             >
                 NEXT LEVEL
             </button>

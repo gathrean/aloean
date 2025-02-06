@@ -3,12 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #3C9054; /* Sea green */
-  --foreground: #171717; /* Eerie black */
-  --primary-bg-color: #f8f9fa; /* Sea salt white */
-  --primary-text-color: #333333; /* Jet gray */
-  --primary-button-color: #38a169; /* Shamrock green */
-  --primary-button-hover-color: #2f855a; /* Sea green */
+  --background: #3C9054;
+  --foreground: #171717;
+  --primary-bg-color: #f8f9fa; 
+  --primary-text-color: #333333;
+  --primary-button-color: #FFF;
+  --primary-button-hover-color: #FFF;
+}
+
+::selection {
+  background-color: #000;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #000;
+  color: white;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,9 +28,56 @@
   }
 }
 
+html {
+  height: 100%;
+  weight: 100%;
+  margin: 0;
+}
+
 body {
-  background-color: #307343;
+  height: 100%;
+  weight: 100%;
+  margin: 0;
+  background-color: #FFF;
   color: var(--primary-text-color);
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-size: 16px;
+}
+
+/************************
+        BUTTONS
+************************/
+
+.button-grid {
+  display: flex;
+}
+
+.aloean-button {
+  background-color: #FFF;
+  padding: 0.75rem;
+  border-radius: 25px;
+  width: 10rem;
+  margin: 0 5px 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+}
+
+.aloean-button:hover {
+  background-color: #FFF;
+  transform: scale(1.1);
+}
+
+.next-button {
+  color: var(--valentines-bg);
+}
+
+.back-button {
+  color: #4A4547;
+}
+
+.homepage-button {
+  color: #4A4547;
+  width: 12rem;
+  padding: 1rem;
 }
