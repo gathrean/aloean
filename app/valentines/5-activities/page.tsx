@@ -121,7 +121,7 @@ export default function ActivitiesSelection() {
 
                 <div className="mt-8">
                     <button onClick={handleBack} className="font-bold aloean-button back-button">GO BACK</button>
-                    <button type="submit" className="font-bold aloean-button next-button">NEXT LEVEL</button>
+                    <button onClick={handleSubmit} type="submit" className="font-bold aloean-button next-button">NEXT LEVEL</button>
                 </div>
             </form>
         </div>
