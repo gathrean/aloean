@@ -1,0 +1,24 @@
+.milo-jump-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+}
+
+.milo-jump-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.milo-jump-canvas {
+    border: 2px solid white;
+}
+
+.milo-jump-instructions {
+    color: white;
+    margin-top: 1rem;
+}  
