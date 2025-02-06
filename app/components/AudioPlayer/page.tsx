@@ -14,12 +14,18 @@ export default function AudioPlayer() {
         audio.loop = true; // Ensure it loops
         audioRef.current = audio;
 
-        // Auto-play when component mounts
-        audio.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.code === 'Space') {
+                event.preventDefault();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
 
         return () => {
             audio.pause();
             audio.src = ''; // Clean up memory
+            document.removeEventListener('keydown', handleKeyDown);
         };
     }, []);
 
