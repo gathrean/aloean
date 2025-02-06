@@ -6,6 +6,7 @@ import './style.css';
 const MiloJump = () => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const [isJumping, setIsJumping] = useState(false);
+    const scoreRef = useRef(0); // Track score without re-renders
     let jumpCount = 0; // Track jumps
 
     useEffect(() => {
@@ -66,6 +67,7 @@ const MiloJump = () => {
                 obstacle.x -= 5;
                 ctx.fillRect(obstacle.x, 160 - obstacle.height, obstacle.width, obstacle.height);
 
+                // Check for collision
                 if (
                     milo.x < obstacle.x + obstacle.width &&
                     milo.x + milo.width > obstacle.x &&
@@ -76,10 +78,17 @@ const MiloJump = () => {
                     document.location.reload();
                 }
 
+                // Increase score if obstacle passes by without collision
                 if (obstacle.x + obstacle.width < 0) {
                     obstacles.splice(index, 1);
+                    scoreRef.current += 1; // Increment score directly
                 }
             });
+
+            // Display score without re-rendering
+            ctx.fillStyle = 'black';
+            ctx.font = '20px Arial';
+            ctx.fillText(`Score: ${scoreRef.current}`, 10, 30);
 
             requestAnimationFrame(update);
         };
@@ -88,7 +97,7 @@ const MiloJump = () => {
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, []);
+    }, []); // Only run on mount
 
     return (
         <div className="milo-jump-container">
