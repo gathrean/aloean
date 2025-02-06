@@ -90,17 +90,23 @@ export default function FoodSelection() {
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="card-grid">
                     {[
+                        { src: "/Valentines/3-food/cactus-club.jpg", alt: "CACTUS CLUB", value: "CACTUS CLUB" },
                         { src: "/Valentines/3-food/sushi.jpg", alt: "SUSHI", value: "SUSHI" },
                         { src: "/Valentines/3-food/tacos.jpg", alt: "TACOS", value: "TACOS" },
-                        { src: "/Valentines/3-food/k-bbq.jpg", alt: "KBBQ", value: "KBBQ" },
-                        { src: "/Valentines/3-food/bigway.jpg", alt: "BIG WAY HOTPOT", value: "BIG WAY HOTPOT" },
-                        { src: "/Valentines/3-food/poke-bowl.jpg", alt: "POKE BOWLS", value: "POKE BOWLS" },
-                        { src: "/Valentines/3-food/chipotle.jpg", alt: "CHIPOTLE", value: "CHIPOTLE" },
-                        { src: "/Valentines/3-food/pizza.jpg", alt: "PIZZA", value: "PIZZA" },
+                        { src: "/Valentines/3-food/fishnchips.jpg", alt: "FISH & CHIPS", value: "FISH & CHIPS" },
                         { src: "/Valentines/3-food/donair.jpg", alt: "DONAIR", value: "DONAIR" },
                         { src: "/Valentines/3-food/sandwich.jpg", alt: "SANDWICH", value: "SANDWICH" },
-                        { src: "/Valentines/3-food/fishnchips.jpg", alt: "FISH & CHIPS", value: "FISH & CHIPS" },
+                        { src: "/Valentines/3-food/pho.jpg", alt: "PHO", value: "PHO" },
+                        { src: "/Valentines/3-food/chipotle.jpg", alt: "CHIPOTLE", value: "CHIPOTLE" },
+                        { src: "/Valentines/3-food/aw.jpg", alt: "A&W", value: "A&W" },
+                        { src: "/Valentines/3-food/pizza.jpg", alt: "PIZZA", value: "PIZZA" },
+                        { src: "/Valentines/3-food/poke-bowl.jpg", alt: "POKE BOWLS", value: "POKE BOWLS" },
                         { src: "/Valentines/3-food/pasta.jpg", alt: "PASTA", value: "PASTA" },
+                        { src: "/Valentines/3-food/indian-food.jpg", alt: "INDIAN FOOD", value: "INDIAN FOOD" },
+                        { src: "/Valentines/3-food/filipino-food.jpeg", alt: "FILIPINO FOOD", value: "FILIPINO FOOD" },
+                        { src: "/Valentines/3-food/jollibee.jpeg", alt: "JOLLIBEE", value: "JOLLIBEE" },
+                        { src: "/Valentines/3-food/sooda.jpg", alt: "SOODA", value: "SOODA" },
+                        { src: "/Valentines/3-food/bigway.jpg", alt: "BIG WAY HOTPOT", value: "BIG WAY HOTPOT" },
                         { src: "/Valentines/shrug.png", alt: "CAN'T DECIDE (SURPRISE ME)", value: "CAN'T DECIDE (SURPRISE ME)" }
                     ].map(({ src, alt, value }) => (
                         <label

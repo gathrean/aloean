@@ -80,15 +80,17 @@ export default function ActivitiesSelection() {
     const activities = [
         { src: '/Valentines/5-activities/build-a-bear.jpg', alt: 'BUILD-A-BEAR', value: 'GOING TO A BUILD-A-BEAR', label: 'BUILD-A-BEAR' },
         { src: '/Valentines/5-activities/funk-coffee.jpg', alt: 'CAFE + PHOTO BOOTH (FUNK COFFEE)', value: 'VISITING FUNK COFFEE, AND THEIR PHOTO BOOTH', label: 'CAFE + PHOTO BOOTH (FUNK COFFEE)' },
-        { src: '/Valentines/5-activities/photobooth.jpg', alt: 'CAFE + PHOTO BOOTH (SLICE OF LIFE)', value: 'VISITING SLICE OF LIFE CAFE, AND THEIR VINTAGE PHOTO BOOTH', label: 'CAFE + PHOTO BOOTH (SLICE OF LIFE)' },
+        { src: '/Valentines/5-activities/photobooth.jpg', alt: 'CAFE + VINTAGE BOOTH (SLICE OF LIFE)', value: 'VISITING SLICE OF LIFE CAFE, AND THEIR VINTAGE PHOTO BOOTH', label: 'CAFE + VINTAGE BOOTH (SLICE OF LIFE)' },
         { src: '/Valentines/5-activities/neptoon.jpg', alt: 'NEPTOON RECORDS', value: 'CHECKING OUT NEPTOON RECORDS, A MUSIC STORE', label: 'NEPTOON RECORDS' },
         { src: '/Valentines/5-activities/lighthouse.jpeg', alt: 'LIGHTHOUSE PARK', value: 'CHECK OUT LIGHTHOUSE PARK', label: 'LIGHT HOUSE PARK' },
         { src: '/Valentines/5-activities/coal-harbour.jpg', alt: 'COAL HARBOUR', value: 'WALK AROUND COAL HARBOUR', label: 'COAL HARBOUR' },
+        { src: '/Valentines/5-activities/stanley-park.jpg', alt: 'STANLEY PARK', value: 'WALK AROUND STANLEY PARK', label: 'STANLEY PARK' },        
         { src: '/Valentines/5-activities/sunset.jpg', alt: 'WATCH THE SUNSET', value: 'WATCHING THE SUNSET', label: 'WATCH THE SUNSET' },
         { src: '/Valentines/5-activities/arcade.jpg', alt: 'REC ROOM', value: 'GOING TO THE REC ROOM IN GRANVILLE', label: 'REC ROOM' },
         { src: '/Valentines/5-activities/aquarium.jpg', alt: 'AQUARIUM', value: 'CHECKING OUT THE AQUARIUM', label: 'AQUARIUM' },
-        { src: '/Valentines/5-activities/museum.jpg', alt: 'MUSEUM DATE', value: 'VISITING A MUSEUM', label: 'MUSEUM DATE' },
-        { src: '/Valentines/shrug.png', alt: 'Surprise Me', value: "CAN'T DECIDE (SURPRISE ME)", label: "CAN'T DECIDE (SURPRISE ME)" }
+        { src: '/Valentines/5-activities/museum.jpg', alt: 'MUSEUM', value: 'VISITING A MUSEUM', label: 'MUSEUM' },
+        { src: '/Valentines/5-activities/thrifting.jpg', alt: 'THRIFTING', value: 'THRIFTING', label: 'THRIFTING' },
+        { src: '/Valentines/shrug.png', alt: 'CANT DECIDE (SURPRISE ME)', value: "CAN'T DECIDE (SURPRISE ME)", label: "CAN'T DECIDE (SURPRISE ME)" }
     ];
 
     return (

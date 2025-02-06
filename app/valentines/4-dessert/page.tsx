@@ -85,16 +85,16 @@ export default function DessertSelection() {
             <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                 <div className="card-grid">
                     {[
+                        { src: "/Valentines/4-dessert/no-desserts.jpg", alt: "NO DESSERTS", value: "NO DESSERTS" },
+                        { src: "/Valentines/4-dessert/chungchun.jpeg", alt: "CHUNG CHUN RICE DOG", value: "CHUNG CHUN RICE DOGS" },
                         { src: "/Valentines/4-dessert/icecream.jpg", alt: "ICE CREAM", value: "ICE CREAM" },
                         { src: "/Valentines/4-dessert/bubble-tea.jpg", alt: "BUBBLE TEA", value: "BUBBLE TEA" },
+                        { src: "/Valentines/4-dessert/tteokbokki.jpeg", alt: "TTEOKBOKKI", value: "TTEOKBOKKI" },
                         { src: "/Valentines/4-dessert/mochi.jpg", alt: "MOCHI", value: "MOCHI" },
                         { src: "/Valentines/4-dessert/matcha.jpg", alt: "MATCHA", value: "MATCHA" },
-                        { src: "/Valentines/4-dessert/chungchun.jpeg", alt: "CHUNG CHUN RICE DOG", value: "CHUNG CHUN RICE DOGS" },
                         { src: "/Valentines/4-dessert/chocolate.jpg", alt: "CHOCOLATES", value: "CHOCOLATES" },
-                        { src: "/Valentines/4-dessert/frozen-yogurt.jpg", alt: "FROZEN YOGURT", value: "FROZEN YOGURT" },
                         { src: "/Valentines/4-dessert/indian-desserts.jpg", alt: "INDIAN DESSERTS", value: "INDIAN DESSERTS" },
-                        { src: "/Valentines/4-dessert/filipino-desserts.jpg", alt: "FILIPINO DESSERTS", value: "FILIPINO DESSERTS" },
-                        { src: "/Valentines/4-dessert/no-desserts.jpg", alt: "NO DESSERTS", value: "NO DESSERTS" },
+                        { src: "/Valentines/4-dessert/bakd-cookies.jpeg", alt: "BAK'D COOKIES", value: "SWEETS FROM BAK'D COOKIES" },
                         { src: "/Valentines/shrug.png", alt: "CAN'T DECIDE; SURPRISE ME", value: "CAN'T DECIDE (SURPRISE ME)" }
                     ].map(({ src, alt, value }) => (
                         <label
