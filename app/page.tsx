@@ -20,22 +20,22 @@ export default function Home() {
 
         <br />
 
-        <h1 className="text-4xl font-bold text-white">AloEan</h1>
+        <h1 className="text-4xl font-bold text-white">ALOEAN</h1>
 
         <p className="mt-4 text-md text-gray-200">
-          Choose a game below
+          More soon
         </p>
 
         <div className="mt-8 flex flex-col gap-4">
-          <Link href="/MiloJump/index.html">
+          {/* <Link href="/MiloJump/index.html">
             <button className="aloean-button homepage-button">
               🐈‍⬛ Milo Jump
             </button>
-          </Link>
+          </Link> */}
 
           <Link href="/valentines">
-            <button className="aloean-button homepage-button">
-            💘 Valentine&apos;s 2025
+            <button className="aloean-button homepage-button font-bold">
+            VALENTINE&apos;S 2025
             </button>
           </Link>
 
