@@ -120,7 +120,7 @@ export default function DessertSelection() {
 
                 <div className="mt-8">
                     <button onClick={handleBack} className="font-bold aloean-button back-button">GO BACK</button>
-                    <button onClick={handleSubmit} className="font-bold aloean-button next-button">NEXT LEVEL</button>
+                    <button className="font-bold aloean-button next-button">NEXT LEVEL</button>
                 </div>
             </form>
         </div>

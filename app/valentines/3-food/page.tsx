@@ -126,7 +126,7 @@ export default function FoodSelection() {
 
                 <div className="mt-8">
                     <button onClick={handleBack} className="font-bold back-button aloean-button">GO BACK</button>
-                    <button onClick={handleSubmit} className="font-bold next-button aloean-button">NEXT LEVEL</button>
+                    <button className="font-bold next-button aloean-button">NEXT LEVEL</button>
                 </div>
             </form>
         </div>
