@@ -1,4 +1,4 @@
-/* .milo-jump-container {
+.milo-jump-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,4 +21,4 @@
 .milo-jump-instructions {
     color: white;
     margin-top: 1rem;
-}   */
+}  
