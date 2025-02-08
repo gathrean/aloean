@@ -34,19 +34,18 @@ export default function Home() {
             </button>
           </Link> */}
 
-          <Link href="/valentines">
+          <Link href="mayibeyours">
             <button className="aloean-button homepage-button font-bold">
-              VALENTINE&apos;S 2025
+              MAY I BE YOURS? (1/28/2025)
             </button>
           </Link>
 
-          {/* <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
-            📍 places to be
-          </button> */}
+          <Link href="/valentines">
+            <button className="aloean-button homepage-button font-bold">
+              VALENTINE&apos;S (2/14/2025) 
+            </button>
+          </Link>
 
-          {/* <button className="bg-forest_light text-white p-4 rounded-full w-full hover:bg-forest">
-            🌹 Will I See You Again?
-          </button> */}
         </div>
 
       </main>
