@@ -24,7 +24,7 @@
     color: var(--valentines-text);
     font-family: var(--valentines-font);
     text-align: center;
-    padding: 2rem;
+    padding: 100px 2rem 2rem 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import AudioPlayer from './components/AudioPlayer/page';
+import Navbar from "@/app/components/Navbar/page";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "600"] });
 
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   description: "Hey hey hey",
 };
 
-export default function RootLayout({ 
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -24,6 +25,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       </head>
       <body className={`${inter.className} antialiased`}>
+        <Navbar />
         {children}
         <AudioPlayer />
       </body>

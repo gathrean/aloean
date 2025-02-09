@@ -38,7 +38,7 @@ body {
   height: 100%;
   weight: 100%;
   margin: 0;
-  background-color: #FFF;
+  background-color: #000;
   color: var(--primary-text-color);
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-size: 16px;
