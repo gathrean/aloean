@@ -44,7 +44,7 @@ export default function Navbar() {
                 <Link href="/" className="navbar-logo font-bold">AloEan</Link>
 
                 {/* Desktop Navigation (Right-Aligned) */}
-                <div className="navbar-links font-bold hidden lg:flex">
+                <div className="navbar-links font-bold lg:flex">
                     <Link href="/mayibeyours">MIBY?</Link>
                     <Link href="/valentines">VALENTINE&apos;S</Link>
                 </div>
