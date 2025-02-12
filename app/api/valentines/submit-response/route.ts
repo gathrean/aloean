@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/mongodb';
 
 export async function POST(request: Request) {
+    console.log('API route hit');
     try {
         // Ensure the content type is JSON
         if (!request.headers.get('content-type')?.includes('application/json')) {
