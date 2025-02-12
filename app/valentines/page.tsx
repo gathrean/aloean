@@ -2,7 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import './/valentines.css';
+
+import '@/app/styles/valentines.css';
 
 export default function Valentines() {
     const router = useRouter();

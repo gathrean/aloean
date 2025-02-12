@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import '../valentines.css';
+import '@/app/styles/valentines.css';
 
 export default function ResultsPage() {
     const router = useRouter();

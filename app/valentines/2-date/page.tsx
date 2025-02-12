@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import '../valentines.css';
+import '@/app/styles/valentines.css';
 
 export default function DateSelection() {
     const [responseDate, setResponseDate] = useState('');

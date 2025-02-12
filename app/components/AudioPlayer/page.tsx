@@ -1,7 +1,7 @@
 'use client';
 
-import "../../globals.css";
-import "./style.css";
+import "@/app/styles/globals.css";
+import "@/app/styles/AudioPlayer.css";
 
 import { useEffect, useRef, useState } from 'react';
 

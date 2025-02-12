@@ -3,8 +3,8 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import '../valentines.css';
-import './falling-roses.css';
+import '@/app/styles/valentines.css';
+import '@/app/styles/falling-roses.css';
 
 type FallingRose = {
     id: number;

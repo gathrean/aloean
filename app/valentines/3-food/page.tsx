@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
-import '../valentines.css';
+import '@/app/styles/valentines.css';
 
 export default function FoodSelection() {
     const [selectedFood, setSelectedFood] = useState<string[]>([]);

@@ -1,7 +1,8 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';  // ✅ Import Image from Next.js
-import '../valentines.css';
+import Image from 'next/image';
+
+import '@/app/styles/valentines.css';
 
 export default function ThankYou() {
     const router = useRouter();

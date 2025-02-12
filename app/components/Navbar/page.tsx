@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import "@/app/components/Navbar/style.css"; // Import CSS file
+
+import "@/app/styles/Navbar.css";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);

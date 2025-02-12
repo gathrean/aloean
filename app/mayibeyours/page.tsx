@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import "./miby.css";
+
+import "@/app/styles/mayibeyours.css";
 
 export default function MayIBeYours() {
     return (
         <div className="miby-page flex flex-col items-center justify-center min-h-screen">
-            {/* Display the image */}
             <Image
                 src="/mayibeyours/mayibeyours.jpg"
                 alt="May I Be Yours?"

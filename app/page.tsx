@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import './home.css';
+import '@/app/styles/home.css';
 
 export default function Home() {
   return (
