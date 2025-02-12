@@ -38,6 +38,17 @@ export async function POST(request: Request) {
             return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
         }
 
+        // Get the current timestamp
+        const timestamp = new Date().toLocaleString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
+        });
+
         // Proceed with DB connection and insertion
         const db = await connectToDatabase();
         const collection = db.collection('responses');
@@ -54,7 +65,8 @@ export async function POST(request: Request) {
             responseActivity2,
             responseActivity3,
             responseActivity4,
-            responseActivity5
+            responseActivity5,
+            timestamp
         });
 
         console.log('Inserted document:', result);
